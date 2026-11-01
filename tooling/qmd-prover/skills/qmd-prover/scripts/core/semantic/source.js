@@ -1,0 +1,112 @@
+import { readFile } from 'node:fs/promises';
+function parseFence(line) {
+    const match = line.match(/^(\s*)(:{3,})\s*(?:\{([^}]*)\})?\s*$/);
+    return match ? { indent: match[1].length, length: match[2].length, attrs: match[3] ?? '' } : null;
+}
+function parseAttrs(source = '') {
+    const tokens = source.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g) ?? [];
+    const id = tokens.find((token) => token.startsWith('#'))?.slice(1) ?? '';
+    const classes = tokens.filter((token) => token.startsWith('.')).map((token) => token.slice(1));
+    const values = {};
+    for (const token of tokens) {
+        const equals = token.indexOf('=');
+        if (equals < 1)
+            continue;
+        const key = token.slice(0, equals);
+        const raw = token.slice(equals + 1);
+        values[key] = raw.replace(/^(?:"([\s\S]*)"|'([\s\S]*)')$/, (_, double, single) => double ?? single);
+    }
+    return { id, classes, values };
+}
+export function locateDivs(source) {
+    const lines = source.split(/(?<=\n)/);
+    let offset = 0;
+    const stack = [];
+    const found = [];
+    for (let lineNumber = 0; lineNumber < lines.length; lineNumber += 1) {
+        const line = lines[lineNumber];
+        const fence = parseFence(line.replace(/\r?\n$/, ''));
+        if (fence) {
+            if (!fence.attrs) {
+                const open = stack.pop();
+                if (open)
+                    found.push({ ...open, end: offset + line.length, endLine: lineNumber + 1 });
+            }
+            else
+                stack.push({ attrs: parseAttrs(fence.attrs), rawAttrs: fence.attrs, start: offset, startLine: lineNumber + 1, bodyStart: offset + line.length });
+        }
+        offset += line.length;
+    }
+    return found.sort((left, right) => left.start - right.start);
+}
+/**
+ * The searches below come in two forms. The `find*` pair takes an already-located list, so a caller
+ * with many lookups against one file scans it once; the `locate*` pair scans and searches in a
+ * single step, for the common case of one lookup.
+ */
+export function findDiv(divs, id) {
+    return divs.find((div) => div.attrs.id === id) ?? null;
+}
+/** Every `.proof` div targeting `target`, in document order (an abandoned attempt may sit beside the active proof). */
+export function findProofs(divs, target) {
+    const id = target.replace(/^@/, '');
+    return divs.filter((div) => div.attrs.classes.includes('proof') && div.attrs.values.of?.replace(/^@/, '') === id);
+}
+export function locateDiv(source, id) {
+    return findDiv(locateDivs(source), id);
+}
+export function locateProof(source, target) {
+    return locateProofs(source, target)[0] ?? null;
+}
+export function locateProofs(source, target) {
+    return findProofs(locateDivs(source), target);
+}
+function body(source, div) {
+    if (!div)
+        return null;
+    const raw = source.slice(div.bodyStart, div.end);
+    const closing = raw.lastIndexOf(':::');
+    const bodyEnd = div.bodyStart + Math.max(0, closing);
+    return { bodyStart: div.bodyStart, bodyEnd, text: source.slice(div.bodyStart, bodyEnd).trim() };
+}
+export async function readLocatedBlock(file, id) {
+    const source = await readFile(file, 'utf8');
+    const divs = locateDivs(source);
+    const div = findDiv(divs, id);
+    if (!div)
+        return null;
+    const proofDiv = findProofs(divs, id)[0] ?? null;
+    return {
+        source,
+        div,
+        raw: source.slice(div.start, div.end),
+        statement: body(source, div),
+        proof: proofDiv ? body(source, proofDiv) : null,
+        proofDiv
+    };
+}
+export async function readLocatedProof(file, id) {
+    const source = await readFile(file, 'utf8');
+    const proofDiv = locateProof(source, id);
+    return proofDiv ? { source, proofDiv, proof: body(source, proofDiv), raw: source.slice(proofDiv.start, proofDiv.end) } : null;
+}
+/**
+ * Set or clear the engine-written `status` attribute on a located div's opening fence, leaving the
+ * body — and therefore every content hash — untouched. Returns the source unchanged when the
+ * attribute is already what we want, so a no-op inspection rewrites nothing.
+ */
+export function setStatusAttribute(source, div, status) {
+    const fence = source.slice(div.start, div.bodyStart);
+    const next = fence.replace(/\{([^}]*)\}/, (_, inner) => `{${withStatus(inner, status)}}`);
+    return next === fence ? source : `${source.slice(0, div.start)}${next}${source.slice(div.bodyStart)}`;
+}
+/** Rewrite a fence's attribute contents: drop any existing `status=…` token, then append the new one. */
+function withStatus(inner, status) {
+    const cleaned = inner
+        .replace(/(^|\s)status=(?:"[^"]*"|'[^']*'|[^\s}]+)/g, '')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/^\s+|\s+$/g, '');
+    if (!status)
+        return cleaned;
+    return `${cleaned}${cleaned ? ' ' : ''}status="${status}"`;
+}

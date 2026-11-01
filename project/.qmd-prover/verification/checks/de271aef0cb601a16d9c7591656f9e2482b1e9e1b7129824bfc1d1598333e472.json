@@ -1,0 +1,120 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {},
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 143304,
+    "usage": {
+      "total_tokens": 18239
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-reflex-monotone-edge",
+      "identity": {
+        "proof_hash": "sha256:7b493b8b9766bbb143dacbcfeffdb4af2c151e9a00a2bb4223f67606de51d553",
+        "statement_hash": "sha256:c58c2dcd8bf8cc0a52ba9eb72692b16b7a9ab333c2aa32e3a60c64130153eab5"
+      },
+      "kind": "lemma",
+      "proof": "Write $x=\\cot(\\theta/2)$ and $x_j=\\cot(\\theta_j/2)$. The Schwarz--Christoffel formula gives\n$$\n(\\log h)'=bx+C_*+\\sum_j\\frac{a_j(1+x_j^2)}{x-x_j},\n\\qquad C_*:=\\sum_ja_jx_j.\n$$\nIf $C_*\\ge0$, choose the first edge to the right of $0$; on that arc $x>0$ and $x>x_j$ for every positive prevertex, so every term is nonnegative and $h$ is increasing. If $C_*<0$, choose the last edge to the left; all terms are nonpositive and $h$ is decreasing. Reversing orientation if needed, assume $h$ decreases. If the selected edge has parameter length $\\varepsilon$, its positive endpoint has weight $a$. On its central subarc, the endpoint term is\n$$\n\\frac{1+\\cot^2(\\varepsilon/2)}{\\cot(\\theta/2)-\\cot(\\varepsilon/2)}\n=\\frac{\\sin(\\theta/2)}{\\sin(\\varepsilon/2)\\sin((\\varepsilon-\\theta)/2)}\\ge c/\\varepsilon.\n$$\nThe negative atom contributes the same lower bound with $b$; integrating over the central half gives the stated logarithmic drop.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Suppose the turn measure in @def-turn-measure has exactly one negative atom $-b$ at $0$, with $0<b<1/2$, and let $a$ be the turn weight at one of the two adjacent positive vertices. There is a choice of one adjacent edge on which $h=|F'|$ is monotone and, after orienting it decreasingly,\n$$\n\\log h(\\theta_-)-\\log h(\\theta_+)\\ge c(a+b)\n$$\non a central half of the edge.",
+      "title": "Monotone edge next to the unique reflex corner",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:c28cf71e1145137b96ee3745fe830cc4d4f072072108de7256fd5bb3e223e1e5",
+  "proof_hash": "sha256:7b493b8b9766bbb143dacbcfeffdb4af2c151e9a00a2bb4223f67606de51d553",
+  "report": {
+    "critical_errors": [
+      "The proof simply asserts the identity $(\\log h)'=bx+C_*+\\sum_j a_j(1+x_j^2)/(x-x_j)$ as a Schwarz–Christoffel formula, but the packet supplies no dependency or hypotheses establishing that $F$ is in the required Schwarz–Christoffel setting, nor does it define the $a_j$ and $\\theta_j$ appearing in the identity. All subsequent monotonicity and drop estimates depend on this unsupported identity."
+    ],
+    "gaps": [
+      "The claims that the selected edge has $x>0$ (or $x<0$), that $x>x_j$ (or $x<x_j$) for every positive prevertex, and hence that every summand has the asserted sign are not justified; the needed angular ordering and edge-length restriction should be stated and proved.",
+      "The proof does not specify the differentiation variable in $(\\log h)'$ or explicitly integrate over the central half, including the coefficient $a$ and the contribution $b|x|$, to obtain a universal constant times $a+b$.",
+      "The phrase “central half” is not defined, and the lower bound for the negative-atom term is asserted rather than shown on that subarc."
+    ],
+    "nonblocking_comments": [
+      "The endpoint-term algebra is consistent with the displayed cotangent expression provided the intended angular parametrization and differentiation convention are supplied."
+    ],
+    "refutation": "",
+    "repair_hints": "State the precise Schwarz–Christoffel theorem being used, define the prevertices and weights, and verify that the hypotheses follow from the turn-measure setup. Specify that the derivative is with respect to $\\theta$, prove the selected edge lies in the relevant half-circle so the sign comparisons hold, define the central half, and carry out the two integrals with explicit constants.",
+    "summary": "The argument relies on a load-bearing Schwarz–Christoffel derivative identity whose applicability is not established by the packet. Since no semantic dependencies are supplied, the proof does not connect the turn-measure hypothesis to the asserted formula or define the auxiliary prevertex data it uses.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:c58c2dcd8bf8cc0a52ba9eb72692b16b7a9ab333c2aa32e3a60c64130153eab5",
+  "target": "lem-reflex-monotone-edge",
+  "verification_key": "sha256:de271aef0cb601a16d9c7591656f9e2482b1e9e1b7129824bfc1d1598333e472",
+  "verified_at": "2026-10-31T22:43:24.386Z"
+}

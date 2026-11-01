@@ -1,0 +1,3 @@
+*.pdf binary
+project/.qmd-prover/graphs/*.json linguist-generated=true
+project/.qmd-prover/verification/** linguist-generated=true

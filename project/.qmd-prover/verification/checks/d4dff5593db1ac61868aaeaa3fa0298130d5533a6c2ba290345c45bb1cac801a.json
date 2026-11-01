@@ -1,0 +1,209 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-positive-kernel": {
+      "identity": {
+        "statement_hash": "sha256:3cda493db3c31447f7728121364cc674f76df436b04057a5346a56d0c5bbe680"
+      },
+      "origin": "fact"
+    },
+    "lem-energy-deletion-identity": {
+      "identity": {
+        "statement_hash": "sha256:f39a3d1940c6ac15b0e42f5916c5fe8657b3d66d5ad20dd9f8ac99060f61b2ca"
+      },
+      "origin": "fact"
+    },
+    "lem-signed-turn-lower-bound": {
+      "identity": {
+        "statement_hash": "sha256:3b73e5b6cf1b7c9841b2f32a5ef537dfad9c00cadb41840481f3f6d7b52c304f"
+      },
+      "origin": "fact"
+    },
+    "lem-single-reflex-small-atom": {
+      "identity": {
+        "statement_hash": "sha256:de7fb88a83cdeefc5b78331248b4bc13814773f8213e13ad15ba85ff60da7a14"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 113208,
+    "usage": {
+      "total_tokens": 16039
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-positive-kernel",
+        "identity": {
+          "statement_hash": "sha256:3cda493db3c31447f7728121364cc674f76df436b04057a5346a56d0c5bbe680"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $j=j_{0,1}$ be the first positive zero of the Bessel function $J_0$, let $\\kappa=j^2/2-1>0$, and define for $n\\ge1$\n$$\nb_n=\\frac1{n(n^2+\\kappa)},\\qquad\nE_b(\\mu)=\\sum_{n\\ge1}b_n|\\widehat\\mu(n)|^2,\n$$\nfor a finite real atomic measure $\\mu$ of total mass $1$ as in @def-turn-measure. For every positive integer $p$, set\n$$\nB_p=\\sum_{\\ell\\ge1}\\frac1{\\ell p((\\ell p)^2+\\kappa)}.\n$$\nThe series defining $E_b$ and $B_p$ converge absolutely because $b_n=O(n^{-3})$ and finite atomic measures have bounded Fourier coefficients.",
+        "title": "Positive comparison kernel"
+      },
+      {
+        "id": "lem-energy-deletion-identity",
+        "identity": {
+          "statement_hash": "sha256:f39a3d1940c6ac15b0e42f5916c5fe8657b3d66d5ad20dd9f8ac99060f61b2ca"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $\\mu$ be a finite real atomic measure of total mass $1$ and let $0<a<1$. For $\\theta_*$ set\n$$\n\\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a},\n\\qquad\nU_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta}),\n\\qquad K_b(0)=\\sum_{n\\ge1}b_n.\n$$\nThen\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=\n\\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}.\n$$",
+        "title": "Exact normalized energy deletion identity"
+      },
+      {
+        "id": "lem-signed-turn-lower-bound",
+        "identity": {
+          "statement_hash": "sha256:3b73e5b6cf1b7c9841b2f32a5ef537dfad9c00cadb41840481f3f6d7b52c304f"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a stationary polygon in the regime of @lem-spectral-core, if $p$ is its number of convex corners, then\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+4B_p-C S^{3/2}\\sqrt{\\log(e/S)}.\n$$",
+        "title": "Signed-turn spectral lower bound"
+      },
+      {
+        "id": "lem-single-reflex-small-atom",
+        "identity": {
+          "statement_hash": "sha256:de7fb88a83cdeefc5b78331248b4bc13814773f8213e13ad15ba85ff60da7a14"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There is a universal $C$ such that a stationary admissible $N$-gon satisfying the edge moments of @lem-edge-moments, with exactly one reflex corner and in the regime of @lem-near-circle-conformal, has an adjacent convex corner $i$ whose turn weight $a=w_i>0$ in @def-turn-measure satisfies\n$$\na\\le C N^{-9/4}\\sqrt{\\log N}.\n$$",
+        "title": "Single-reflex small positive atom"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-positive-kernel",
+        "lem-energy-deletion-identity",
+        "lem-signed-turn-lower-bound",
+        "lem-single-reflex-small-atom"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-atom-deletion",
+      "identity": {
+        "proof_hash": "sha256:7c72dd4f8482fe25dd230846ff63b721fcb052778a5b10d6e3c3befb6e72eeea",
+        "statement_hash": "sha256:82db2816b32a96c42297d04b6b4ef0513edc7f82b78e080135ff950dae45b5d1"
+      },
+      "kind": "lemma",
+      "proof": "Let $\\delta=E_b(\\mu)-B_{N-1}\\ge0$. By @lem-signed-turn-lower-bound, the assumed upper bound and the regular-polygon asymptotic imply\n$$\n\\delta\\le CN^{-9/2}\\sqrt{\\log N}.\n$$\nBy @lem-energy-deletion-identity, the exact difference is\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=\n\\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}.\n$$\nFor $U_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta})$, the Laplace representation in @def-positive-kernel and Cauchy--Schwarz give\n$$\n\\|U_b\\|_\\infty\\le C\\sqrt\\delta+CN^{-5/2}.\n$$\nwhere $K_b(0)=\\sum_{n\\ge1}b_n$. Since @lem-single-reflex-small-atom gives $a=O(N^{-9/4}\\sqrt{\\log N})$ and $E_b(\\mu)=O(N^{-3})$, the displayed identity and the bound on $U_b$ give $E_b(\\widetilde\\mu)-E_b(\\mu)=O(N^{-9/2}\\log N)=o(N^{-4})$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $P$ be a stationary admissible $N$-gon in the one-reflex regime satisfying $J(P)\\le J(R_{N-1})$, with $J,R$ as in @def-j-functional and $\\mu$ the one-reflex measure in @def-turn-measure. Let $p=N-1$, and let $a$ be the small positive atom from @lem-single-reflex-small-atom. Put\n$$\n\\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a}.\n$$\nThen $\\widetilde\\mu$ has total mass $1$ and $N-2$ positive atoms, and\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=o(N^{-4}).\n$$",
+      "title": "Deletion preserves the comparison energy",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:50dbf92c1310e4673ea9e6a604808affe91978e003f3f886382e6dc497415be7",
+  "proof_hash": "sha256:7c72dd4f8482fe25dd230846ff63b721fcb052778a5b10d6e3c3befb6e72eeea",
+  "report": {
+    "critical_errors": [
+      "The deduction that δ=E_b(μ)-B_{N-1} is nonnegative and satisfies δ≤C N^{-9/2}√log N does not follow from @lem-signed-turn-lower-bound: that lemma gives a lower bound involving J(P), B_p, and S, but no relation connecting J(P) or S to E_b(μ)-B_p is supplied, nor is the invoked regular-polygon asymptotic provided.",
+      "The estimate ||U_b||_∞≤C√δ+C N^{-5/2} is not entailed by @def-positive-kernel. That definition only specifies b_n, E_b, and B_p; it contains no Laplace representation or cancellation estimate. Cauchy–Schwarz from the supplied definition gives only ||U_b||_∞≤√(K_b(0)E_b(μ)), which is insufficient for the claimed final order.",
+      "The applications of @lem-signed-turn-lower-bound and @lem-single-reflex-small-atom do not establish their stated hypotheses: the required spectral-core regime, edge moments, and near-circle-conformal regime are not among the target assumptions or justified in the proof."
+    ],
+    "gaps": [
+      "The atom-count conclusion is asserted without spelling out from the turn-measure definition that μ has exactly N−1 distinct positive atoms and that the selected atom is one of them.",
+      "The deletion identity requires 0<a<1, while the supplied small-atom statement gives only a>0 and an asymptotic upper bound; eventual a<1 should be stated if the result is intended asymptotically."
+    ],
+    "nonblocking_comments": [
+      "Conditional on the two missing quantitative estimates and the needed hypotheses, the final order calculation O(N^{-9/2}log N)=o(N^{-4}) is arithmetically correct."
+    ],
+    "refutation": "",
+    "repair_hints": "Provide explicit dependencies proving E_b(μ)≥B_{N-1} and relating the J upper bound and signed-turn estimate to δ, including the required regular-polygon asymptotic and bounds on S. Supply or prove the claimed L∞ estimate for U_b, and explicitly verify the hypotheses of both cited lemmas. State the large-N condition ensuring 0<a<1 and justify the atom count from the measure definition.",
+    "summary": "The proof does not establish the target from the supplied dependencies. Its two essential quantitative estimates are unsupported, and the cited lemmas' hypotheses are not verified for the stated polygon.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-positive-kernel",
+      "lem-energy-deletion-identity",
+      "lem-signed-turn-lower-bound",
+      "lem-single-reflex-small-atom"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:82db2816b32a96c42297d04b6b4ef0513edc7f82b78e080135ff950dae45b5d1",
+  "target": "lem-atom-deletion",
+  "verification_key": "sha256:d4dff5593db1ac61868aaeaa3fa0298130d5533a6c2ba290345c45bb1cac801a",
+  "verified_at": "2026-10-31T22:08:57.914Z"
+}

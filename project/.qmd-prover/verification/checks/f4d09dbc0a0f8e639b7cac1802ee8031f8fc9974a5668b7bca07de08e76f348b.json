@@ -1,0 +1,225 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    },
+    "lem-airy-identity": {
+      "identity": {
+        "statement_hash": "sha256:183086db09decf16c25edb988660b95ec26387bac02ca7e4becc42fcdcf5a68a"
+      },
+      "origin": "fact"
+    },
+    "lem-edge-moments": {
+      "identity": {
+        "statement_hash": "sha256:9fe8d6f1f823d7f899ec056bada7582af5281fd0da8b88781d7c08b1b8a825dd"
+      },
+      "origin": "fact"
+    },
+    "lem-inverse-left-bound": {
+      "identity": {
+        "statement_hash": "sha256:4befe71a52739b91558c97ebc960d966b33082366d930a0d5e8b7405b2724064"
+      },
+      "origin": "fact"
+    },
+    "lem-weighted-eigen-balance": {
+      "identity": {
+        "statement_hash": "sha256:0305b4d688249afe592e8d11e45840a9e6e125997fd3e347222d349d3d1bda5e"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 117953,
+    "usage": {
+      "total_tokens": 16552
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      },
+      {
+        "id": "lem-airy-identity",
+        "identity": {
+          "statement_hash": "sha256:183086db09decf16c25edb988660b95ec26387bac02ca7e4becc42fcdcf5a68a"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be an admissible polygon whose boundary segments are all effective edges, and assume the edge moments in @lem-edge-moments. Then its first eigenfunction satisfies\n$$\n\\int_P|\\nabla u|^4=\\lambda^2\\left(\\int_Pu^4-A(P)^{-1}\\right).\n$$",
+        "title": "Airy fourth-power identity"
+      },
+      {
+        "id": "lem-edge-moments",
+        "identity": {
+          "statement_hash": "sha256:9fe8d6f1f823d7f899ec056bada7582af5281fd0da8b88781d7c08b1b8a825dd"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be admissible and stationary in the sense of @def-stationary-polygon. If $u>0$ is the $L^2$-normalized first eigenfunction, $\\lambda=\\lambda_1(P)$, $c=\\lambda/A(P)$, and $q=|\\partial_\\nu u|^2$, then every effective edge $E$, parametrized by physical arclength $s\\in[0,\\ell_E]$, satisfies\n$$\n\\int_E(q-c)\\,ds=0,\\qquad \\int_Es(q-c)\\,ds=0.\n$$",
+        "title": "Stationary edge moments"
+      },
+      {
+        "id": "lem-inverse-left-bound",
+        "identity": {
+          "statement_hash": "sha256:4befe71a52739b91558c97ebc960d966b33082366d930a0d5e8b7405b2724064"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Under the normalized conformal data of @def-conformal-data, assume the hypotheses of @lem-gradient-perturbation and let $k=(1+g)^{-1}-1$, $T=\\|k\\|_{A^2}^2$, and $a=|\\nabla v_0|^4$. There are universal constants $c,C>0$ such that, for sufficiently small $S$,\n$$\n\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2\\,dA\n\\ge \\int_{\\mathbb D}a\\,dA+cT-C\\bigl(S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\bigr).\n$$",
+        "title": "Inverse-weighted gradient lower bound"
+      },
+      {
+        "id": "lem-weighted-eigen-balance",
+        "identity": {
+          "statement_hash": "sha256:0305b4d688249afe592e8d11e45840a9e6e125997fd3e347222d349d3d1bda5e"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For normalized conformal data in @def-conformal-data with $S$ sufficiently small, let $v$ and $\\lambda$ be the positive weighted first eigenpair in @lem-disk-perturbation, and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Then\n$$\n\\left|\\lambda^2\\int_{\\mathbb D}v^4|1+g|^2\\,dA-\n\\frac{\\lambda^2}{\\pi(1+S)}-\n\\int_{\\mathbb D}|\\nabla v_0|^4\\,dA\\right|\\le CS.\n$$\nThe constant is universal.",
+        "title": "Weighted eigenenergy balance"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data",
+        "lem-airy-identity",
+        "lem-edge-moments",
+        "lem-inverse-left-bound",
+        "lem-weighted-eigen-balance"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-inverse-energy",
+      "identity": {
+        "proof_hash": "sha256:ff3d9a83eaacfd3537334139bb7f981d82db5e8f85306531577f556e438e8df8",
+        "statement_hash": "sha256:2a9db196edc408e2651fbce6655b63c2b3fa3286b997b761b6ed5e395c6630b5"
+      },
+      "kind": "lemma",
+      "proof": "Under the edge-moment hypotheses @lem-edge-moments, @lem-airy-identity and the conformal change of variables in @def-conformal-data give\n$$\n\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2\n=\\lambda^2\\int_{\\mathbb D}v^4|1+g|^2-\\frac{\\lambda^2}{\\pi(1+S)}.\n$$\nBy @lem-inverse-left-bound, the left-hand side is at least\n$$\n\\int_{\\mathbb D}|\\nabla v_0|^4+cT-C\\{S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\}.\n$$\nBy @lem-weighted-eigen-balance, the right-hand side is at most\n$$\n\\int_{\\mathbb D}|\\nabla v_0|^4+CS.\n$$\nComparing these bounds in the identity yields\n$$\nT\\le C\\{S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\}.\n$$\nYoung's inequality absorbs the mixed term and, for sufficiently small $S$, the last two terms, proving $T\\le CS$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For the conformal data in @def-conformal-data of a stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments, @lem-disk-perturbation, and @lem-gradient-perturbation, and in the regime of @lem-near-circle-conformal, one has\n$$\nT\\le CS.\n$$\nThe constant is independent of the number and separation of the vertices and of the angle sizes.",
+      "title": "Inverse derivative energy",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:efb8e96717ede981a9785e89a32e0e1a127b8f5f8e302f07065ae1f96bb612da",
+  "proof_hash": "sha256:ff3d9a83eaacfd3537334139bb7f981d82db5e8f85306531577f556e438e8df8",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The proof leaves implicit that the stated near-circle regime supplies one sufficiently small threshold for S under which both cited estimates and the final absorption are valid."
+    ],
+    "nonblocking_comments": [
+      "The claimed independence from vertex number, separation, and angle sizes follows from the universal constants in the cited bounds and the universal absorption argument."
+    ],
+    "refutation": "",
+    "repair_hints": "Explicitly state that the near-circle hypothesis makes S small enough to satisfy both lemmas and the absorption condition.",
+    "summary": "The proof correctly combines the conformal Airy identity with the cited lower and upper bounds, then absorbs the mixed and linear-in-T error terms for sufficiently small S to obtain T≤CS. The argument establishes the stated target with universal constants.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data",
+      "lem-airy-identity",
+      "lem-edge-moments",
+      "lem-inverse-left-bound",
+      "lem-weighted-eigen-balance"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:2a9db196edc408e2651fbce6655b63c2b3fa3286b997b761b6ed5e395c6630b5",
+  "target": "lem-inverse-energy",
+  "verification_key": "sha256:f4d09dbc0a0f8e639b7cac1802ee8031f8fc9974a5668b7bca07de08e76f348b",
+  "verified_at": "2026-10-31T19:09:58.168Z"
+}

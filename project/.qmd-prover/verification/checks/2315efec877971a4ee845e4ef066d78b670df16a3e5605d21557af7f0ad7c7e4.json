@@ -1,0 +1,162 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-positive-kernel": {
+      "identity": {
+        "statement_hash": "sha256:3cda493db3c31447f7728121364cc674f76df436b04057a5346a56d0c5bbe680"
+      },
+      "origin": "fact"
+    },
+    "lem-toeplitz-positive-atoms": {
+      "identity": {
+        "statement_hash": "sha256:2daeda21ba904e749aa33aa1d097567081f063981251e48f4fd660bf10037e4b"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 80089,
+    "usage": {
+      "total_tokens": 13303
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-positive-kernel",
+        "identity": {
+          "statement_hash": "sha256:3cda493db3c31447f7728121364cc674f76df436b04057a5346a56d0c5bbe680"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $j=j_{0,1}$ be the first positive zero of the Bessel function $J_0$, let $\\kappa=j^2/2-1>0$, and define for $n\\ge1$\n$$\nb_n=\\frac1{n(n^2+\\kappa)},\\qquad\nE_b(\\mu)=\\sum_{n\\ge1}b_n|\\widehat\\mu(n)|^2,\n$$\nfor a finite real atomic measure $\\mu$ of total mass $1$ as in @def-turn-measure. For every positive integer $p$, set\n$$\nB_p=\\sum_{\\ell\\ge1}\\frac1{\\ell p((\\ell p)^2+\\kappa)}.\n$$\nThe series defining $E_b$ and $B_p$ converge absolutely because $b_n=O(n^{-3})$ and finite atomic measures have bounded Fourier coefficients.",
+        "title": "Positive comparison kernel"
+      },
+      {
+        "id": "lem-toeplitz-positive-atoms",
+        "identity": {
+          "statement_hash": "sha256:2daeda21ba904e749aa33aa1d097567081f063981251e48f4fd660bf10037e4b"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $\\mu$ be a finite real atomic measure of total mass $1$ with exactly $p$ positive atoms, allowing arbitrary negative atoms. For $0<\\tau<1$,\n$$\n\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{\\tau^p}{1-\\tau^p}.\n$$",
+        "title": "Positive-atom Toeplitz bound"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-positive-kernel",
+        "lem-toeplitz-positive-atoms"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-kernel-potential-bound",
+      "identity": {
+        "proof_hash": "sha256:302e10a15702f0e699aef362de84c3f8057a1588f146f2f8e43a5e241c32fe4b",
+        "statement_hash": "sha256:4c06b8f885995b311182a15ee4f12035016a238a668afad63fcd65280ca1f439"
+      },
+      "kind": "lemma",
+      "proof": "Use the Laplace representation in @def-positive-kernel and set\n$$\nE(t)=\\sum_{n\\ge1}e^{-nt}|\\widehat\\mu(n)|^2,\n\\qquad E_0(t)=\\frac1{e^{pt}-1}.\n$$\nThe Toeplitz bound @lem-toeplitz-positive-atoms gives $E(t)\\ge E_0(t)$, and Tonelli gives\n$$\n\\delta=\\int_0^\\infty\\frac{1-\\cos(\\sqrt\\kappa t)}\\kappa\\,[E(t)-E_0(t)]dt.\n$$\nBy Cauchy--Schwarz,\n$$\n\\left|\\sum_{n\\ge1}e^{-nt}\\widehat\\mu(n)e^{in\\theta}\\right|\n\\le\\sqrt{\\frac{E(t)}{e^t-1}}.\n$$\nSplitting $E=E-E_0+E_0$ and applying Cauchy--Schwarz to the first part gives $C\\sqrt\\delta$, since\n$$\n\\int_0^\\infty\\frac{1-\\cos(\\sqrt\\kappa t)}{\\kappa(e^t-1)}dt<\\infty.\n$$\nFor the second part, use $1-\\cos(\\sqrt\\kappa t)\\le Ct^2$ near $0$, $e^t-1\\ge t$, and split at $t=p^{-1}$; this gives\n$$\n\\int_0^\\infty\\frac{1-\\cos(\\sqrt\\kappa t)}\\kappa\n\\sqrt{\\frac{E_0(t)}{e^t-1}}dt\\le Cp^{-5/2}.\n$$\nTaking the supremum over $\\theta$ proves the claim.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $\\mu$ be a total-mass-one finite real atomic measure with $p$ positive atoms and put $\\delta=E_b(\\mu)-B_p\\ge0$. For\n$$\nU_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta}),\n$$\none has\n$$\n\\|U_b\\|_\\infty\\le C\\sqrt\\delta+C p^{-5/2}.\n$$",
+      "title": "Laplace kernel potential bound",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:6d546055b9355d5c298208d655b3a3db2fe04a91188c70bc7349b29537989827",
+  "proof_hash": "sha256:302e10a15702f0e699aef362de84c3f8057a1588f146f2f8e43a5e241c32fe4b",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The Laplace identity for b_n and the sum-integral interchanges used to represent U_b and δ are asserted rather than explicitly derived.",
+      "The Cp^{-5/2} estimate for the E_0 contribution is stated without detailing the tail estimate for t≥p^{-1}; exponential lower bounds for e^{pt}-1 and a separate treatment of large t should be supplied.",
+      "The Cauchy–Schwarz decomposition leading to the C√δ term could be written explicitly, including the nonnegativity of E-E_0 and the weight factors."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "State and verify b_n=∫_0^∞e^{-nt}(1−cos(√κt))/κ dt, justify Tonelli/interchange, and split the E_0 integral into (0,p^{-1}), (p^{-1},1), and (1,∞), using exponential bounds on the latter ranges.",
+    "summary": "The argument establishes the stated bound from the supplied definition and Toeplitz inequality. The omitted estimates are routine analytic details rather than invalid steps.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-positive-kernel",
+      "lem-toeplitz-positive-atoms"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:4c06b8f885995b311182a15ee4f12035016a238a668afad63fcd65280ca1f439",
+  "target": "lem-kernel-potential-bound",
+  "verification_key": "sha256:2315efec877971a4ee845e4ef066d78b670df16a3e5605d21557af7f0ad7c7e4",
+  "verified_at": "2026-10-31T23:45:42.877Z"
+}

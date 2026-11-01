@@ -1,0 +1,145 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:874c500dd0c6b65c46eb976deb0fd7a10aecfbccbb2ba34004e995490e6879a8"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 179038,
+    "usage": {
+      "total_tokens": 17202
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:874c500dd0c6b65c46eb976deb0fd7a10aecfbccbb2ba34004e995490e6879a8"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-disk-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-gradient-perturbation",
+      "identity": {
+        "proof_hash": "sha256:e57e67e282ddd0e314bc46dec377b4c1bb83ac288e6a53c58ec4e1956dc06cfa",
+        "statement_hash": "sha256:39a54585d737f6334af6e45ea1844a3b311e0f4e3c477cd8ac37675784858f47"
+      },
+      "kind": "lemma",
+      "proof": "Write $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$. The Bergman estimate and $v_0\\le C d$, $d=1-|z|$, give $|h|\\le C/d$ and $|h|v_0\\le C$. Let $v_1$ be the unique solution orthogonal to $v_0$ of the linearized Dirichlet problem\n$$\n(-\\Delta-j^2)v_1=j^2(h+\\bar h)v_0,\n\\qquad v_1|_{\\partial\\mathbb D}=0,\n\\qquad \\int_{\\mathbb D}v_1v_0=0.\n$$\nThe right side is bounded in $L^4$ and has no radial component because $h$ has no constant term. Standard resolvent estimates for the disk Dirichlet operator on $L^4$ and $W^{-1,4}$ give $\\|v_1\\|_{W^{1,4}}\\le C$ and zero circular mean for $b_1$.\n\nSet $r=v-v_0-tv_1$. Subtracting the disk and linearized equations from the weighted equation gives\n$$\n(-\\Delta-j^2)r=F_t,\n$$\nwhere $F_t$ is a sum of $t h(v-v_0)$, $t\\bar h(v-v_0)$, $t^2|h|^2v$, the eigenvalue correction, and the normalization correction. Hardy's inequality gives $\\|(v-v_0)/d\\|_{L^2}\\le C\\|\\nabla(v-v_0)\\|_{L^2}=O(t)$, while $|h|\\le C/d$ and $|h|^2v_0\\le C/d\\in L^{4/3}(\\mathbb D)$. The form perturbation bound in @lem-disk-perturbation gives $\\|v-v_0\\|_{H^1_0}=O(t)$ and $|\\lambda-j^2|=O(t^2)$. Hence $\\|F_t\\|_{L^{4/3}}\\le Ct^2$. The $L^{4/3}$ Dirichlet resolvent estimate yields $\\|r\\|_{W^{1,4}}\\le Ct^2=CS$.\n\nFinally, the pointwise inequality\n$$\n\\bigl||x+y|^4-|x|^4-4|x|^2x\\cdot y\\bigr|\\le C(|x|^2|y|^2+|y|^4)\n$$\nwith $x=\\nabla v_0$ and $y=t\\nabla v_1+\\nabla r$ gives the stated $L^1$ remainder by Hölder and the $W^{1,4}$ bounds. The constants come only from the fixed disk resolvent, Hardy inequality, and the universal form bounds, so they do not depend on polygonal angles or vertex separation.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. There is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-b_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nThe constant is universal and independent of polygonal angles and vertex separation.",
+      "title": "Gradient perturbation interface",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:58e9a7db33fc1d0d2574c66205bd05204d313ab80a457924ea90905a016625ba",
+  "proof_hash": "sha256:e57e67e282ddd0e314bc46dec377b4c1bb83ac288e6a53c58ec4e1956dc06cfa",
+  "report": {
+    "critical_errors": [
+      "The proof defines r=v-v_0-t v_1 and therefore controls v-v_0-t v_1, while the target asks for v-v_0-v_1. Likewise, the first-order term from the displayed expansion is t b_1, not b_1. The submitted argument never reconciles this mismatch.",
+      "From |h|^2v_0\\le C/d it asserts 1/d\\in L^{4/3}(\\mathbb D), but \\int_{1-\\varepsilon}^1(1-r)^{-4/3}\\,dr diverges. Thus the claimed L^{4/3} bound for the t^2|h|^2v term, and consequently the W^{1,4} remainder estimate, do not follow.",
+      "The only supplied dependency, @lem-disk-perturbation, states an expansion for J(P) and a lower bound; it does not provide the asserted H^1 perturbation estimate \\|v-v_0\\|=O(t), the eigenvalue estimate |\\lambda-j^2|=O(t^2), or the claimed universal form bounds. These load-bearing assertions are therefore unsupported.",
+      "The argument requires h to have no constant Fourier coefficient to make the linearized forcing orthogonal to the radial kernel and to obtain the zero circular mean of b_1, but no supplied dependency establishes this property. Without it, the asserted orthogonal solution and resonance resolvent estimate are not justified."
+    ],
+    "gaps": [
+      "At the eigenvalue j^2, the resolvent estimate must be formulated on the orthogonal complement of v_0 and its compatibility condition for the remainder forcing must be checked explicitly.",
+      "The normalization correction and all components of F_t should be expanded and bounded individually, with the required integrability spaces stated."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Introduce a consistently scaled response (or replace the target's v_1 and b_1 by their t-scaled versions), supply a valid weighted Bergman/integrability estimate for |h|^2v, and add dependencies or proofs establishing the eigenfunction and eigenvalue perturbation bounds and the zero-constant-mode property. Then verify the resonant resolvent compatibility before applying the L^{4/3} estimate.",
+    "summary": "The proof does not establish the stated estimates. It contains a scaling mismatch, relies on a false boundary integrability claim, and invokes estimates not supplied by the sole dependency.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-disk-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:39a54585d737f6334af6e45ea1844a3b311e0f4e3c477cd8ac37675784858f47",
+  "target": "lem-gradient-perturbation",
+  "verification_key": "sha256:5dc2249e80164e0bd2466f940c5358f37e3527d42ca754afd52cbdf8a95ca89d",
+  "verified_at": "2026-10-31T18:19:32.501Z"
+}

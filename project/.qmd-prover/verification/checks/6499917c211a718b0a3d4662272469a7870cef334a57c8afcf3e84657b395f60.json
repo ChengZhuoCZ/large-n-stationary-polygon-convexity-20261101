@@ -1,0 +1,117 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {},
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 53807,
+    "usage": {
+      "total_tokens": 11709
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-bessel-ratio-decay",
+      "identity": {
+        "proof_hash": "sha256:e55f72acbe67c1e4116b89ef40cd3d15a3e6b5d4267ecdfde793546db390e68a",
+        "statement_hash": "sha256:ef72b3b7db73739ee5d0af73ac4ffe50536f62bdc7e77525d7a037f57635308f"
+      },
+      "kind": "lemma",
+      "proof": "Write\n$$\nJ_n(j)=\\frac{(j/2)^n}{n!}H_n,\n\\qquad\nH_n=\\sum_{m\\ge0}\\frac{(-j^2/4)^m n!}{m!(n+m)!}.\n$$\nThe alternating-series estimate gives $H_n\\ge1-j^2/[4(n+1)]>1/2$ for $n\\ge2$, while absolute summation gives $|H_{n+1}|\\le C$. Hence\n$$\n\\rho_n=\\frac{j^2}{2(n+1)}\\frac{H_{n+1}}{H_n},\n$$\nwhich proves the upper bound. Positivity follows from the standard interlacing of the first positive zeros, since $j_{0,1}<j_{n,1}$ and $J_n(j)>0$ for $n\\ge1$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For $j=j_{0,1}$ and $\\rho_n=jJ_{n+1}(j)/J_n(j)$,\n$$\n0<\\rho_n\\le\\frac{C}{n+1}\\qquad(n\\ge2).\n$$",
+      "title": "Large-order Bessel ratio decay",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:92a6344dc37556905f9ff18f744696baa0118750479bdbae262a55d82ea1a6ac",
+  "proof_hash": "sha256:e55f72acbe67c1e4116b89ef40cd3d15a3e6b5d4267ecdfde793546db390e68a",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The claim $1-j^2/[4(n+1)]>1/2$ requires an explicit bound such as $j_{0,1}^2<6$, which is not supplied.",
+      "The alternating-series estimate should state why the terms decrease (their successive ratio is at most $j^2/[4(n+1)]<1$).",
+      "The uniform bound $|H_{n+1}|\\le C$ is asserted without a comparison proving that the absolute sums are uniformly bounded in $n$.",
+      "From $j<j_{n,1}$ to $J_n(j)>0$, the proof should note that $J_n$ is positive near zero and has no zero before its first positive zero; this applies also to $J_{n+1}$ for the ratio."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "State the Bessel power-series ratio estimate, give a numerical or standard bound $j_{0,1}<\\sqrt6$, bound the absolute series by an exponential (for example $|H_{n+1}|\\le \\exp(j^2/[4(n+2)])$), and explicitly use continuity plus the sign near zero before the first zero to establish positivity.",
+    "summary": "The argument establishes the stated bound, using the Bessel power series for the upper estimate and positivity before the first positive zero. Several routine but nontrivial justifications are omitted.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:ef72b3b7db73739ee5d0af73ac4ffe50536f62bdc7e77525d7a037f57635308f",
+  "target": "lem-bessel-ratio-decay",
+  "verification_key": "sha256:6499917c211a718b0a3d4662272469a7870cef334a57c8afcf3e84657b395f60",
+  "verified_at": "2026-10-31T22:19:08.748Z"
+}

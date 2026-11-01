@@ -1,0 +1,205 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-edge-pressure-oscillation": {
+      "identity": {
+        "statement_hash": "sha256:0f4562f7fa1e13c04609c27386f77e78ed35832db76f949c01176044c23a4157"
+      },
+      "origin": "fact"
+    },
+    "lem-monotone-weight-comparison": {
+      "identity": {
+        "statement_hash": "sha256:0d4d37eb5922e08283a22a6057abb6d250a8937b8323fc93c50d880aba4e5bef"
+      },
+      "origin": "fact"
+    },
+    "lem-physical-pressure-moment": {
+      "identity": {
+        "statement_hash": "sha256:391b17363e5068277c1e93e0fe56b40df5856803341b575ddb849cbe7164ed56"
+      },
+      "origin": "fact"
+    },
+    "lem-reflex-monotone-edge": {
+      "identity": {
+        "statement_hash": "sha256:c58c2dcd8bf8cc0a52ba9eb72692b16b7a9ab333c2aa32e3a60c64130153eab5"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 105790,
+    "usage": {
+      "total_tokens": 15656
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-edge-pressure-oscillation",
+        "identity": {
+          "statement_hash": "sha256:0f4562f7fa1e13c04609c27386f77e78ed35832db76f949c01176044c23a4157"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "In the regime of @lem-disk-perturbation, for every prevertex arc $I$ corresponding to a straight effective edge, the disk normal derivative $p=-\\partial_rv|_{\\partial\\mathbb D}$ satisfies\n$$\n\\operatorname{osc}_I p\n\\le C S^{3/4}\\sqrt{\\log(e/S)}.\n$$\nMoreover $p\\ge p_D/2$ on the boundary for sufficiently small $S$.\nAlso, for sufficiently small $S$,\n$$\n\\|p-p_D\\|_{L^\\infty(\\partial\\mathbb D)}\\le C\\sqrt S+CS,\n$$\nso $p\\le2p_D$.",
+        "title": "Uniform disk pressure oscillation"
+      },
+      {
+        "id": "lem-monotone-weight-comparison",
+        "identity": {
+          "statement_hash": "sha256:0d4d37eb5922e08283a22a6057abb6d250a8937b8323fc93c50d880aba4e5bef"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $h>0$ be monotone on $[0,\\varepsilon]$. Define the normalized physical coordinate\n$$\nx(s)=\\frac{\\int_0^s h(t)dt}{\\int_0^\\varepsilon h(t)dt},\n\\qquad \\widetilde k_0(x)=h(s(x))^{-2}.\n$$\nSuppose $p_0>0$ and $p_0\\le p(s(x))\\le C_0p_0$ for a fixed $C_0$ and\n$$\n\\int_0^1(x-1/2)p(s(x))^2\\widetilde k_0(x)dx=0.\n$$\nThen\n$$\nD:=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))dsdt}\n{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))dsdt}\n\\le C\\frac{\\operatorname{osc}p}{p_0}.\n$$",
+        "title": "Monotone weight double-integral comparison"
+      },
+      {
+        "id": "lem-physical-pressure-moment",
+        "identity": {
+          "statement_hash": "sha256:391b17363e5068277c1e93e0fe56b40df5856803341b575ddb849cbe7164ed56"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be admissible and stationary in the senses of @def-admissible-polygon and @def-stationary-polygon, let $E$ be an effective edge, and use the normalized conformal data in @def-conformal-data. Under @lem-edge-moments, let $p=-\\partial_rv|_{\\partial\\mathbb D}$, $h=|F'|$, and normalize $E$ by physical arclength $x\\in[0,1]$. Then\n$$\nq(x)=p(\\theta(x))^2h(\\theta(x))^{-2},\n$$\nand, with $k_0=h^{-2}$,\n$$\n\\int_0^1(x-1/2)p(\\theta(x))^2k_0(x)\\,dx=0.\n$$",
+        "title": "Conformal pressure moment identity"
+      },
+      {
+        "id": "lem-reflex-monotone-edge",
+        "identity": {
+          "statement_hash": "sha256:c58c2dcd8bf8cc0a52ba9eb72692b16b7a9ab333c2aa32e3a60c64130153eab5"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Suppose the turn measure in @def-turn-measure has exactly one negative atom $-b$ at $0$, with $0<b<1/2$, and let $a$ be the turn weight at one of the two adjacent positive vertices. There is a choice of one adjacent edge on which $h=|F'|$ is monotone and, after orienting it decreasingly,\n$$\n\\log h(\\theta_-)-\\log h(\\theta_+)\\ge c(a+b)\n$$\non a central half of the edge.",
+        "title": "Monotone edge next to the unique reflex corner"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-edge-pressure-oscillation",
+        "lem-monotone-weight-comparison",
+        "lem-physical-pressure-moment",
+        "lem-reflex-monotone-edge"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-reflex-edge-pressure-comparison",
+      "identity": {
+        "proof_hash": "sha256:98296ed301e84a309ff07ae25a282054285104450fb97b8817c8a56cb7b49b1c",
+        "statement_hash": "sha256:281477997f89928139157b3a13ac9bda106afa6df5bfe5a7274616f5799cd007"
+      },
+      "kind": "lemma",
+      "proof": "By @lem-reflex-monotone-edge, the selected adjacent edge has monotone $h$ and a central logarithmic drop at least $c(a+v)$. On the two central rectangles, the ratio $h(s)/h(t)$ is at least $e^{c(a+v)}$, while the denominator is positive; hence the elementary rectangle comparison gives\n$$\nD_I\\ge c\\min\\{a+v,1\\}.\n$$\nBy @lem-physical-pressure-moment, the edge moments give the centered condition in the normalized physical coordinate, and @lem-monotone-weight-comparison applies with $p_0=p_D/2$, $C_0=4$ once $S$ is sufficiently small. By @lem-edge-pressure-oscillation, $p_D/2\\le p\\le2p_D$ and therefore\n$$\nD_I\\le C\\operatorname{osc}_I p.\n$$\nThe right-hand side is $O(S^{3/4}\\sqrt{\\log(e/S)})$, so after decreasing the universal small-$S$ threshold it is below the fixed constant in the lower bound whenever $a+v\\ge1$. Thus $a+v<1$, and the lower bound becomes $D_I\\ge c(a+v)$. Combining the inequalities proves the result.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $P$ be an admissible stationary polygon with normalized conformal data in the small-$S$ regime of @lem-disk-perturbation, satisfying @lem-edge-moments. Suppose the turn measure in @def-turn-measure has exactly one negative atom $-v$ at a prevertex, with $0<v<1/2$, and let $a>0$ be one of the two adjacent positive atoms selected by the monotonicity sign. Then there is a corresponding effective edge arc $I$ such that\n$$\nc(a+v)\\le D_I\\le C\\operatorname{osc}_I p,\n$$\nwhere\n$$\nD_I=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))\\,dsdt}\n{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))\\,dsdt},\n\\qquad h=|F'|.\n$$",
+      "title": "One-reflex edge pressure comparison",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:3839960291548cd99869ab5d98fcab8fc0d1d233eae1cd458a61a750d6c57d69",
+  "proof_hash": "sha256:98296ed301e84a309ff07ae25a282054285104450fb97b8817c8a56cb7b49b1c",
+  "report": {
+    "critical_errors": [
+      "With \\(p_0=p_D/2\\), @lem-monotone-weight-comparison gives \\(D_I\\le 2C\\,\\operatorname{osc}_I p/p_D\\). The bounds \\(p_D/2\\le p\\le2p_D\\) do not imply a universal lower bound for \\(p_D\\), nor do they remove this denominator. Thus the claimed \\(D_I\\le C\\operatorname{osc}_I p\\), and consequently the small-\\(S\\) contradiction based on that bound, are unsupported by the supplied dependencies."
+    ],
+    "gaps": [
+      "The asserted elementary rectangle comparison is not spelled out: a ratio bound on central rectangles must be converted into a lower bound for the quotient over the entire double-integral domain, including control of contributions outside those rectangles.",
+      "Uniformity of the constants and of the reduced small-\\(S\\) threshold is not justified, especially in the presence of the missing \\(p_D\\) factor."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Supply an explicit normalization or hypothesis giving a universal lower bound for \\(p_D\\) (or state the upper bound with the factor \\(1/p_D\\)), then redo the small-\\(S\\) argument. Also state the precise rectangle estimate used for the lower bound.",
+    "summary": "The proof does not establish the asserted upper bound. The monotone-weight comparison yields a factor of \\(1/p_D\\), which the argument incorrectly drops.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-edge-pressure-oscillation",
+      "lem-monotone-weight-comparison",
+      "lem-physical-pressure-moment",
+      "lem-reflex-monotone-edge"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:281477997f89928139157b3a13ac9bda106afa6df5bfe5a7274616f5799cd007",
+  "target": "lem-reflex-edge-pressure-comparison",
+  "verification_key": "sha256:601e857f8b0a4ade9b8e42a0aead95b9b23a450febde8b92db5e0c57f62edc10",
+  "verified_at": "2026-10-31T23:11:52.101Z"
+}

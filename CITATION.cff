@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this dated private research archive using the author and snapshot metadata."
+title: "Large-N Convexity of Low-Threshold Stationary Polygons"
+version: "2026-11-01-research-snapshot"
+date-released: 2026-11-01
+authors:
+  - family-names: Cheng
+    given-names: Zhuo
+    affiliation: "School of Mathematics and Statistics, HNP-LAMA, Central South University, Changsha, Hunan 410083, P. R. China"
+    email: "zhuo@outlook.cz"
+url: "https://github.com/ChengZhuoCZ/large-n-stationary-polygon-convexity-20261101"
+abstract: "Research archive on large-N non-convex exclusion for low-threshold stationary simple planar polygons, containing the full QMD proof, original drafts, AI-assisted checking evidence, dependency graphs, and a reproducible reading copy."
+keywords:
+  - Dirichlet eigenvalues
+  - polygonal domains
+  - shape optimization
+  - conformal mapping
+  - proof verification

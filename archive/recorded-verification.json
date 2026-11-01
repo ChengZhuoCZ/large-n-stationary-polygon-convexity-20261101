@@ -1,0 +1,35 @@
+{
+  "snapshot_id": "sha256:63be430a02203b4bced45b05809a765d8e3061f052e0f1e5c734d4ab288e8a8a",
+  "facts": 45,
+  "global_statuses": {
+    "verified": 45
+  },
+  "cycles": [],
+  "main_theorem": {
+    "id": "thm-main-large-n-convexity",
+    "title": "Large-N low-threshold stationary polygons are convex",
+    "statement_text": "There is a universal \\(N_0\\) such that, for every \\(N\\ge N_0\\), every admissible stationary simple \\(N\\)-gon \\(P\\) satisfying \\[ J(P)\\le J(R_{N-1}) \\] is convex. Consequently, no such polygon satisfies \\(J(P)<m_{N-1}\\) while being non-convex.",
+    "status": "verified",
+    "global_verification": {
+      "assumptions": [],
+      "blockers": [],
+      "status": "verified"
+    }
+  },
+  "render_report": {
+    "diagnostics": [],
+    "summary": {
+      "errors": 0,
+      "files": 2,
+      "results": 45,
+      "warnings": 0
+    }
+  },
+  "checker_configuration": {
+    "backend": "codex",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "citations": "standard",
+    "rigor": "standard"
+  }
+}

@@ -1,0 +1,5 @@
+---
+title: "Large-N non-convex exclusion: reconstructed proof"
+---
+
+This project reconstructs and audits the supplied proof draft. The semantic mathematics is in `workspace/large-n-proof.qmd`.

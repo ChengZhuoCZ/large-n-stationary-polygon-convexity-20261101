@@ -1,0 +1,146 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 162415,
+    "usage": {
+      "total_tokens": 18053
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-c1-perturbation",
+      "identity": {
+        "proof_hash": "sha256:3a3d70875a3bb46b97f1b670bcdd129f7528a6887604b9ea32cdf97d9efc652e",
+        "statement_hash": "sha256:9d884a480d45bd3d2a5ba2b05d8dcb403f36ec90c05c2f31b2585d4b03cc80fe"
+      },
+      "kind": "lemma",
+      "proof": "By @def-conformal-data, $g$ is analytic, has no constant or linear coefficient, and satisfies $S=\\|g\\|_{A^2}^2$; its normalized conformal pullback is the weighted disk problem used below. Put $d(z)=1-|z|$. The Green kernel of the disk satisfies\n$$\n|\\nabla_xG_D(x,z)|\\le C|x-z|^{-1},\n\\qquad\n|\\nabla_xG_D(x,z)|\\le C\\frac{d(z)}{|x-z|^2}.\n$$\nThe Bergman pointwise estimate gives $|g(z)|\\le C\\|g\\|_{A^2}/d(z)$ for $g\\in A^2$ with vanishing constant coefficient. If $h\\in X$, then $|h(z)|\\le d(z)\\|h\\|_X$. Splitting the Green integral into $|x-z|<d(x)/2$, the annulus $d(x)/2\\le|x-z|<2d(x)$, and dyadic outer annuli, the two kernel bounds give\n$$\n\\|G_D(gh)\\|_X\\le C\\|g\\|_{A^2}\\|h\\|_X,\n\\qquad\n\\|G_D(g_1\\overline{g_2}h)\\|_X\\le C\\|g_1\\|_{A^2}\\|g_2\\|_{A^2}\\|h\\|_X.\n$$\nFor example, in the near region $d(z)\\simeq d(x)$ and the pointwise bounds leave an integrable $|x-z|^{-1}$ kernel; in the outer annuli $d(z)\\le d(x)+|x-z|$ cancels one power of the second Green bound, and Cauchy--Schwarz gives $\\|g_1g_2\\|_{L^1}\\le C\\|g_1\\|_{A^2}\\|g_2\\|_{A^2}$. Polynomial approximation extends these estimates to all $A^2$ data, and the Green potential has a continuous boundary derivative.\n\nDefine the real quadratic compact-operator family\n$$\nK_g h=G_D[|1+g|^2h]=G_D[h+2\\operatorname{Re}(g)h+|g|^2h]\n$$\nonlinearly in $g$. The estimates give $\\|K_g-K_0\\|_{B(X)}\\le C(\\sqrt S+S)$. The operator $K_0$ is compact on $X$ by disk Poisson regularity and the compact embedding $C^{2,\\alpha}(\\overline{\\mathbb D})\\Subset C^1(\\overline{\\mathbb D})$. Its nonzero eigenvalues are the reciprocals of the Dirichlet eigenvalues; $1/j^2$ is an isolated simple eigenvalue.\n\nChoose a fixed small contour $\\Gamma$ enclosing only $1/j^2$. For $S$ small, the Neumann series uniformly bounds $(zI-K_g)^{-1}$ on $\\Gamma$ and defines the rank-one Riesz projection\n$$\n\\Pi_g=\\frac1{2\\pi i}\\int_\\Gamma(zI-K_g)^{-1}\\,dz.\n$$\nThe normalized vector\n$$\n\\widetilde v(g)=\\Pi_gv_0,\n\\qquad\nv(g)=\\frac{\\widetilde v(g)}{\\left(\\int_{\\mathbb D}\\widetilde v(g)^2|1+g|^2\\right)^{1/2}}\n$$\ntherefore depends real-analytically on $g$ in a fixed $A^2$ neighborhood; the denominator stays uniformly away from zero. Writing $g=t h$, define $v_1=Dv(0)[h]$; its forcing has no radial Fourier mode because $h$ has no constant coefficient. The remaining Taylor terms give $v^{(2)}+R$, and Cauchy estimates on this fixed neighborhood give the displayed bounds with constants independent of the direction of $g$.\n\nThe form identity\n$$\n\\int_{\\mathbb D}|g|^2|\\phi|^2\\,dA\n\\le C\\|g\\|_{A^2}^2\\int_{\\mathbb D}|\\nabla\\phi|^2\\,dA,\n\\qquad \\phi\\in H^1_0(\\mathbb D),\n$$\nwhich follows from Hardy's inequality, shows that the pulled-back eigenfunction belongs to the weighted Dirichlet space and that the branch is the first Dirichlet branch. Since $v_0\\ge c,d$ and $\\|v-v_0\\|_X\\le C\\sqrt S$, the branch is strictly positive in $\\mathbb D$. This proves the lemma.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let\n$$\nX=\\{\\phi\\in C^1(\\overline{\\mathbb D};\\mathbb R):\\phi|_{\\partial\\mathbb D}=0\\},\n\\qquad \\|\\phi\\|_X=\\|\\nabla\\phi\\|_{L^\\infty}.\n$$\nFor normalized conformal data from @def-conformal-data with $S=\\|g\\|_{A^2}^2$ sufficiently small, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the pulled-back first eigenfunction has a uniform real-analytic expansion\n$$\nv=v_0+t v_1+v^{(2)}+R,\n\\qquad \\|v_1\\|_X\\le C,\n\\qquad \\|v^{(2)}\\|_X\\le CS,\n\\qquad \\|R\\|_X\\le CS^{3/2},\n$$\nwhere $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$, $v_1$ has no radial Fourier mode, and the corresponding eigenvalue branch is the positive first branch.",
+      "title": "Uniform C1 conformal perturbation",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:0f8a62113fd07150740fd8f0f6788edc3867a376a52278f1ba19f5de3988d689",
+  "proof_hash": "sha256:3a3d70875a3bb46b97f1b670bcdd129f7528a6887604b9ea32cdf97d9efc652e",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The conformal change of variables leading to the weighted Dirichlet problem and the precise eigenvalue correspondence with K_g are asserted but not derived.",
+      "The Green-kernel estimates, dyadic-annulus summation, extension from polynomial data, and continuity of the boundary derivative are compressed into a sketch; these estimates are central to boundedness of K_g on X.",
+      "The real-analytic dependence of the Riesz projection and the normalization denominator on the A^2 parameter is asserted without explicitly showing the required operator-valued analyticity and uniform nonvanishing.",
+      "The claim that v_1 has no radial Fourier mode requires checking that the first eigenvalue derivative and normalization derivative vanish, in addition to observing that h has no constant coefficient.",
+      "The notation v^(2) is not defined explicitly as the quadratic Taylor term, and the Cauchy estimates yielding the O(S) and O(S^{3/2}) bounds are only stated.",
+      "The conclusion that the positive eigenfunction corresponds to the first weighted Dirichlet branch should invoke the relevant principal-eigenvalue or positivity argument explicitly; the displayed form estimate alone does not establish that conclusion."
+    ],
+    "nonblocking_comments": [
+      "The phrase v_0≥c,d is ambiguous; it should state v_0(r)≥c(1-r) (or c d(r))."
+    ],
+    "refutation": "",
+    "repair_hints": "State the conformal pullback eigenproblem and eigenvalue relation, prove the two Green-operator bounds with the annular estimates, define v^(2) as the quadratic Taylor coefficient, compute the vanishing first-order eigenvalue and normalization terms to justify the radial-mode claim, and explicitly apply the principal-eigenvalue theorem to identify the positive branch.",
+    "summary": "The argument establishes the stated perturbative expansion, including uniform bounds and positivity of the first branch, assuming the supplied conformal-data statement. Several nontrivial analytic and spectral steps are only sketched and should be made explicit at standard rigor.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:9d884a480d45bd3d2a5ba2b05d8dcb403f36ec90c05c2f31b2585d4b03cc80fe",
+  "target": "lem-c1-perturbation",
+  "verification_key": "sha256:39767d86feb530879020ec6b0aa5aabd02f487c10d99f588b84dc1b7e0a74e5d",
+  "verified_at": "2026-10-31T18:47:35.819Z"
+}

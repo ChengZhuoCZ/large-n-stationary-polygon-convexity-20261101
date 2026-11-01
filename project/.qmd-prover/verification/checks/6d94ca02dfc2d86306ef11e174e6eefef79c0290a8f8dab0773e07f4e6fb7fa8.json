@@ -1,0 +1,158 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-admissible-polygon": {
+      "identity": {
+        "statement_hash": "sha256:2994844cae476d15e6073ce67d07df80b59ef968a1ebf96824d7cd0f54d3e73f"
+      },
+      "origin": "fact"
+    },
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:f8e6de31ba91d2de0a393b0b16e259153f0fdf6aac69fdfd8b5bf2595510b6c6"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 153953,
+    "usage": {
+      "total_tokens": 14095
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-admissible-polygon",
+        "identity": {
+          "statement_hash": "sha256:2994844cae476d15e6073ce67d07df80b59ef968a1ebf96824d7cd0f54d3e73f"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "An admissible polygon is a bounded simple planar polygonal domain whose boundary is a simple cyclic union of finitely many nonzero straight segments, with no self-contact. A genuine corner is a boundary vertex at which the two incident directed segments are not collinear; its interior angle is required to lie strictly between $0$ and $2\\pi$. Starting from any polygonal presentation, delete adjacent collinear redundant vertices cyclically until no such vertex remains; the resulting effective-edge count is the invariant number $N$, and $A(P)$ is the Euclidean area.",
+        "title": "Admissible simple polygon"
+      },
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:f8e6de31ba91d2de0a393b0b16e259153f0fdf6aac69fdfd8b5bf2595510b6c6"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative.",
+        "title": "Normalized conformal data"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a definition: its construction introduces a term, object, or notation and normally carries no separate proof. Confirm that everything needed to make the construction meaningful is supplied or available from the semantic context and that it is not circular through itself or its dependencies. Do not demand a theorem-style proof for a purely definitional stipulation; judge any existence, uniqueness, or well-definedness claim it actually asserts at the rigor level stated below.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-admissible-polygon",
+        "def-conformal-data"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "construction": "At the prevertices $e^{i\\theta_i}$ of an admissible polygon in @def-admissible-polygon, with normalized conformal map from @def-conformal-data, put\n$$\nw_i=\\frac{\\pi-\\omega_i}{2\\pi},\\qquad\n\\mu=\\sum_iw_i\\delta_{\\theta_i},\\qquad \\widehat\\mu(n)=\\int e^{-in\\theta}d\\mu(\\theta).\n$$\nThen $\\sum_iw_i=1$ and $\\widehat\\mu(1)=0$ in the chosen $F''(0)=0$ normalization. The Schwarz--Christoffel derivative has logarithm\n$$\nL(z)=\\log F'(z)=2\\sum_{n\\ge1}\\frac{\\widehat\\mu(n)}n z^n,\n$$\nso $L_n=2\\widehat\\mu(n)/n$. This definition applies to finite real atomic measures induced by such polygons; all Fourier series below are interpreted in that class.",
+      "id": "def-turn-measure",
+      "identity": {
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "statement_hash": "sha256:dec9ad81511a71a3ea5c5b3a1b010827e74aef8719df2eac818d9dc00798dbef"
+      },
+      "kind": "definition",
+      "proof": "",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "title": "Signed Schwarz-Christoffel turn measure",
+      "verification_mode": "definition-construction"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:6c06d00faa37c8e6820d620c53b34358b40c43c8f8e8c49ca594f30e49d334a8",
+  "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "report": {
+    "critical_errors": [],
+    "gaps": [],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "",
+    "summary": "The construction is meaningful and the stated identities follow from the polygon angle-sum formula, the Schwarz–Christoffel derivative formula, and the normalization F''(0)=0 with F'(0)=1. No critical errors or material gaps are present.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-admissible-polygon",
+      "def-conformal-data"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:dec9ad81511a71a3ea5c5b3a1b010827e74aef8719df2eac818d9dc00798dbef",
+  "target": "def-turn-measure",
+  "verification_key": "sha256:6d94ca02dfc2d86306ef11e174e6eefef79c0290a8f8dab0773e07f4e6fb7fa8",
+  "verified_at": "2026-10-31T15:32:43.825Z"
+}

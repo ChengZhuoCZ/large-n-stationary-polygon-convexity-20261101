@@ -1,0 +1,140 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-stationary-polygon": {
+      "identity": {
+        "statement_hash": "sha256:c75899144f424dcfb258bc6ec4b595ae640e9b284bbf7fda7b32db936307b77f"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 54372,
+    "usage": {
+      "total_tokens": 13492
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-stationary-polygon",
+        "identity": {
+          "statement_hash": "sha256:c75899144f424dcfb258bc6ec4b595ae640e9b284bbf7fda7b32db936307b77f"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "An admissible polygon in @def-admissible-polygon is stationary when, in a differentiable local chart of its effective vertex coordinates, $DJ(P)[V]=0$ for every vertex variation $V$. On the same chart this is equivalent to $D\\lambda_1(P)[V]=0$ for every variation with $DA(P)[V]=0$: the forward implication follows from $DJ=A\\,D\\lambda_1+\\lambda_1\\,DA$, and the converse follows by applying the scaling identities $D\\lambda_1[X]=-2\\lambda_1$ and $DA[X]=2A$ to the radial variation and then using the Lagrange-multiplier decomposition.",
+        "title": "Vertex stationary polygon"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-stationary-polygon"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-edge-moments",
+      "identity": {
+        "proof_hash": "sha256:fae3a8c47081ba6d3be271c8f3bceec20de7a98bf6744db00b67f83972037186",
+        "statement_hash": "sha256:07aff343977bfec90391555a0d168fdd918b58daa3d387fb22c5e4dec888e152"
+      },
+      "kind": "lemma",
+      "proof": "By @def-stationary-polygon, the derivative of $J=A\\lambda$ vanishes for every vertex displacement. Hadamard's formula is\n$$\nDJ[V]=A\\int_{\\partial P}(c-q)V\\cdot\\nu\\,ds.\n$$\nMoving one endpoint of an effective edge while keeping the other fixed produces an affine normal velocity on that edge, and the two endpoint velocities give the independent functions $1$ and $s/\\ell_E$. Since adjacent effective edge normals are linearly independent at a genuine corner, stationarity forces both coefficients of these two affine test functions to vanish. Rescaling $s/\\ell_E$ gives the displayed moments.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $P$ be admissible and stationary in the sense of @def-stationary-polygon. If $u>0$ is the $L^2$-normalized first eigenfunction, $\\lambda=\\lambda_1(P)$, $c=\\lambda/A(P)$, and $q=|\\partial_\\nu u|^2$, then every effective edge $E$, parametrized by physical arclength $s\\in[0,\\ell_E]$, satisfies\n$$\n\\int_E(q-c)\\,ds=0,\\qquad \\int_Es(q-c)\\,ds=0.\n$$",
+      "title": "Stationary edge moments",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:f8b080eea2bac17883725428d686765aa9ed622e9f48b17fe88ef9e094cb7070",
+  "proof_hash": "sha256:fae3a8c47081ba6d3be271c8f3bceec20de7a98bf6744db00b67f83972037186",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The applicability of the Hadamard formula to polygonal domains under piecewise-affine vertex deformations is invoked without explicitly stating its regularity hypotheses.",
+      "The coupled contributions from the two edges incident to a moved vertex are not written as an explicit vector equation; spelling this out would make the use of normal independence fully transparent."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "State the polygonal Hadamard formula with its hypotheses, and for a vertex variation write the stationarity equation as the sum of the two incident-edge normal vectors multiplied by their respective weighted integrals. Linear independence then gives each coefficient separately.",
+    "summary": "The argument correctly applies the Hadamard shape derivative to vertex variations and uses linear independence of adjacent edge normals to force the two weighted edge moments to vanish, which yields the stated zeroth and first moments.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-stationary-polygon"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:07aff343977bfec90391555a0d168fdd918b58daa3d387fb22c5e4dec888e152",
+  "target": "lem-edge-moments",
+  "verification_key": "sha256:cef7533586f4e92eb758b0ac6d464cf607d0b11b0927abff4bb57fc66f74751b",
+  "verified_at": "2026-10-31T15:33:38.278Z"
+}

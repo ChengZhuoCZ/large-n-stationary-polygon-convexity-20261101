@@ -1,0 +1,39 @@
+{
+  "thread": {
+    "id": "01a1925b-e627-7933-b8e7-cb35b9d43a1a",
+    "name": null,
+    "cwd": "/srv/codex-workspaces/8215",
+    "path": "/var/lib/codex-web-8215-app-server/sessions/2026/10/31/rollout-2026-10-31T22-27-38-01a1925b-e627-7933-b8e7-cb35b9d43a1a.jsonl",
+    "status": {
+      "type": "idle"
+    },
+    "createdAt": 1793456858,
+    "updatedAt": 1793491327,
+    "createdAtTimestamp": {
+      "utc": "2026-10-31T14:27:38+00:00",
+      "asia_shanghai": "2026-10-31T22:27:38+08:00"
+    },
+    "updatedAtTimestamp": {
+      "utc": "2026-11-01T00:02:07+00:00",
+      "asia_shanghai": "2026-11-01T08:02:07+08:00"
+    }
+  },
+  "goal": {
+    "threadId": "01a1925b-e627-7933-b8e7-cb35b9d43a1a",
+    "objective": "请你修复证明，直到完成证明为止",
+    "status": "complete",
+    "tokenBudget": null,
+    "tokensUsed": 4282785,
+    "timeUsedSeconds": 22487,
+    "createdAt": 1793468824,
+    "updatedAt": 1793491312,
+    "createdAtTimestamp": {
+      "utc": "2026-10-31T17:47:04+00:00",
+      "asia_shanghai": "2026-11-01T01:47:04+08:00"
+    },
+    "updatedAtTimestamp": {
+      "utc": "2026-11-01T00:01:52+00:00",
+      "asia_shanghai": "2026-11-01T08:01:52+08:00"
+    }
+  }
+}

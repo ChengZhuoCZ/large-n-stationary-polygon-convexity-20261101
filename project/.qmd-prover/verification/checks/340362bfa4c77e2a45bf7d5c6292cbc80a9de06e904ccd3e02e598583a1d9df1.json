@@ -1,0 +1,205 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-energy-deletion-identity": {
+      "identity": {
+        "statement_hash": "sha256:f39a3d1940c6ac15b0e42f5916c5fe8657b3d66d5ad20dd9f8ac99060f61b2ca"
+      },
+      "origin": "fact"
+    },
+    "lem-kernel-potential-bound": {
+      "identity": {
+        "statement_hash": "sha256:4c06b8f885995b311182a15ee4f12035016a238a668afad63fcd65280ca1f439"
+      },
+      "origin": "fact"
+    },
+    "lem-one-reflex-energy-gap": {
+      "identity": {
+        "statement_hash": "sha256:a4cef041e9e69ed465a840de5bb325d7b27b20b76420ff399964b1a85b413bb5"
+      },
+      "origin": "fact"
+    },
+    "lem-single-reflex-small-atom": {
+      "identity": {
+        "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 69894,
+    "usage": {
+      "total_tokens": 13625
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-energy-deletion-identity",
+        "identity": {
+          "statement_hash": "sha256:f39a3d1940c6ac15b0e42f5916c5fe8657b3d66d5ad20dd9f8ac99060f61b2ca"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $\\mu$ be a finite real atomic measure of total mass $1$ and let $0<a<1$. For $\\theta_*$ set\n$$\n\\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a},\n\\qquad\nU_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta}),\n\\qquad K_b(0)=\\sum_{n\\ge1}b_n.\n$$\nThen\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=\n\\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}.\n$$",
+        "title": "Exact normalized energy deletion identity"
+      },
+      {
+        "id": "lem-kernel-potential-bound",
+        "identity": {
+          "statement_hash": "sha256:4c06b8f885995b311182a15ee4f12035016a238a668afad63fcd65280ca1f439"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $\\mu$ be a total-mass-one finite real atomic measure with $p$ positive atoms and put $\\delta=E_b(\\mu)-B_p\\ge0$. For\n$$\nU_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta}),\n$$\none has\n$$\n\\|U_b\\|_\\infty\\le C\\sqrt\\delta+C p^{-5/2}.\n$$",
+        "title": "Laplace kernel potential bound"
+      },
+      {
+        "id": "lem-one-reflex-energy-gap",
+        "identity": {
+          "statement_hash": "sha256:a4cef041e9e69ed465a840de5bb325d7b27b20b76420ff399964b1a85b413bb5"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a sequence of admissible stationary $N$-gons with effective-edge canonical presentations, satisfying @lem-edge-moments, @lem-disk-perturbation, @lem-gradient-perturbation, @lem-spectral-core, and $J(P)\\le J(R_{N-1})$, with exactly one reflex corner, let $p=N-1$ and define $E_b$ and $B_p$ as in @def-positive-kernel. In the regime of @lem-near-circle-conformal, with $\\delta=E_b(\\mu)-B_p$, one has\n$$\n0\\le\\delta\\le C N^{-9/2}\\sqrt{\\log N},\n\\qquad E_b(\\mu)=O(N^{-3}).\n$$",
+        "title": "One-reflex energy gap estimate"
+      },
+      {
+        "id": "lem-single-reflex-small-atom",
+        "identity": {
+          "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There is a universal $C$ such that a stationary admissible $N$-gon with an effective-edge canonical presentation, satisfying @lem-edge-moments, @lem-disk-perturbation, and $J(P)\\le J(R_{N-1})$ in the regime of @lem-near-circle-conformal, with exactly one reflex corner, has an adjacent convex corner $i$ whose turn weight $a=w_i>0$ in @def-turn-measure satisfies\n$$\na\\le C N^{-9/4}\\sqrt{\\log N}.\n$$",
+        "title": "Single-reflex small positive atom"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-energy-deletion-identity",
+        "lem-kernel-potential-bound",
+        "lem-one-reflex-energy-gap",
+        "lem-single-reflex-small-atom"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-atom-deletion",
+      "identity": {
+        "proof_hash": "sha256:808d8e41746e34850883d629314b2911bf96ca5d66a442926b85c091cdfad9e9",
+        "statement_hash": "sha256:e7c3f2828a1f78e5ea59232d436ee9ce4870e6b67be70232ef7e04345edce6f4"
+      },
+      "kind": "lemma",
+      "proof": "By @lem-one-reflex-energy-gap, with $p=N-1$,\n$$\n0\\le\\delta:=E_b(\\mu)-B_{N-1}\\le CN^{-9/2}\\sqrt{\\log N},\n\\qquad E_b(\\mu)=O(N^{-3}).\n$$\nBy @lem-energy-deletion-identity, the exact difference is\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=\n\\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}.\n$$\nBy @lem-kernel-potential-bound, $\\|U_b\\|_\\infty\\le C\\sqrt\\delta+CN^{-5/2}$. Since @lem-single-reflex-small-atom gives $a=O(N^{-9/4}\\sqrt{\\log N})$, the displayed identity and the bounds on $U_b$ and $E_b(\\mu)$ give\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=O(N^{-9/2}\\log N)=o(N^{-4}).\n$$",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $P$ be a stationary admissible $N$-gon with an effective-edge canonical presentation, satisfying @lem-edge-moments, @lem-signed-turn-lower-bound, @lem-near-circle-conformal, and $J(P)\\le J(R_{N-1})$, in the one-reflex regime of @def-turn-measure. Let $p=N-1$, and let $a$ be the small positive atom from @lem-single-reflex-small-atom. Put\n$$\n\\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a}.\n$$\nThen $\\widetilde\\mu$ has total mass $1$ and $N-2$ positive atoms, and\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=o(N^{-4}).\n$$",
+      "title": "Deletion preserves the comparison energy",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:6796e41bebb5590db42ce3f38f109b33e7728985cd7cec480594c300e0eef25f",
+  "proof_hash": "sha256:808d8e41746e34850883d629314b2911bf96ca5d66a442926b85c091cdfad9e9",
+  "report": {
+    "critical_errors": [
+      "The exact identity contains $a^2K_b(0)$, but no dependency supplies a uniform bound on $K_b(0)$ (or otherwise relates it to the stated estimates). Since $a^2=O(N^{-9/2}\\log N)$, an uncontrolled or $N$-dependent $K_b(0)$ can invalidate the claimed asymptotic bound."
+    ],
+    "gaps": [
+      "The proof does not explicitly justify that $0<a<1$, which is required to apply the deletion identity and control $(1-a)^{-2}$; this follows only after invoking a sufficiently-large-$N$ interpretation of the atom estimate.",
+      "The proof does not explain why deleting and renormalizing the selected atom leaves total mass $1$ and exactly $N-2$ positive atoms."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Add and use a uniform bound such as $K_b(0)=O(1)$, and explicitly note that for sufficiently large $N$ the atom estimate gives $0<a<1$ and the denominator is bounded away from zero. State the atom-count and mass argument from the one-reflex turn-measure structure.",
+    "summary": "The argument does not control the $a^2K_b(0)$ term in the deletion identity. The supplied bounds on $U_b$ and $E_b(\\mu)$ do not imply the claimed $O(N^{-9/2}\\log N)$ estimate without a uniform bound on $K_b(0)$.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-energy-deletion-identity",
+      "lem-kernel-potential-bound",
+      "lem-one-reflex-energy-gap",
+      "lem-single-reflex-small-atom"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:e7c3f2828a1f78e5ea59232d436ee9ce4870e6b67be70232ef7e04345edce6f4",
+  "target": "lem-atom-deletion",
+  "verification_key": "sha256:340362bfa4c77e2a45bf7d5c6292cbc80a9de06e904ccd3e02e598583a1d9df1",
+  "verified_at": "2026-10-31T23:35:20.209Z"
+}

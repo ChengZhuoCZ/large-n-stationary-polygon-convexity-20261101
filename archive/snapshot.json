@@ -1,0 +1,60 @@
+{
+  "author": {
+    "name": "Zhuo Cheng",
+    "affiliation": "School of Mathematics and Statistics, HNP-LAMA, Central South University, Changsha, Hunan 410083, P. R. China",
+    "email": "zhuo@outlook.cz"
+  },
+  "thread_url": "http://100.95.50.98:8215/thread/01a1925b-e627-7933-b8e7-cb35b9d43a1a",
+  "thread_id": "01a1925b-e627-7933-b8e7-cb35b9d43a1a",
+  "source_project_root": "/srv/codex-workspaces/8215/nconvex-qmd-review",
+  "snapshot_started": {
+    "utc": "2026-11-01T06:23:25.512409+00:00",
+    "asia_shanghai": "2026-11-01T14:23:25.512409+08:00"
+  },
+  "snapshot_completed": {
+    "utc": "2026-11-01T06:23:30.157824+00:00",
+    "asia_shanghai": "2026-11-01T14:23:30.157824+08:00"
+  },
+  "source_thread_created": {
+    "utc": "2026-10-31T14:27:38+00:00",
+    "asia_shanghai": "2026-10-31T22:27:38+08:00"
+  },
+  "source_thread_last_updated": {
+    "utc": "2026-11-01T00:02:07+00:00",
+    "asia_shanghai": "2026-11-01T08:02:07+08:00"
+  },
+  "recorded_goal_completion": {
+    "utc": "2026-11-01T00:01:52+00:00",
+    "asia_shanghai": "2026-11-01T08:01:52+08:00"
+  },
+  "runtime": {
+    "name": "qmd-prover",
+    "version": "0.1.0",
+    "license": "MIT",
+    "engines": {
+      "node": ">=20"
+    }
+  },
+  "project_file_count": 338,
+  "project_bytes": 30851485,
+  "runtime_file_count": 52,
+  "input_attachment_count": 2,
+  "visible_message_count": 40,
+  "tool_record_count": 2382,
+  "omitted_internal_record_counts": {
+    "message": 3,
+    "reasoning": 750
+  },
+  "native_rollout_sha256": "c4b9a41e09cdc9a921d2f43bf935248ffa6a312dcdfc5120eaf8528ea7f623c3",
+  "native_rollout_bytes": 19723961,
+  "credential_redaction_counts": {
+    "api_key": 0,
+    "github_token": 0,
+    "jwt": 0,
+    "bearer": 0,
+    "credential_assignment": 0
+  },
+  "original_project_byte_identical": true,
+  "mathematical_content_edited": false,
+  "new_model_verification_requested": false
+}

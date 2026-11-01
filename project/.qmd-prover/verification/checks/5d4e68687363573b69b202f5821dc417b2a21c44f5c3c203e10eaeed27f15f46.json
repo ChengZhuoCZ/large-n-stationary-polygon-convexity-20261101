@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {},
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 219645,
+    "usage": {
+      "total_tokens": 15103
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-toeplitz-positive-atoms",
+      "identity": {
+        "proof_hash": "sha256:2956ddc2912e0641574429e38c927490bb9c95b2c5af2dd743143b9dd08ed964",
+        "statement_hash": "sha256:2daeda21ba904e749aa33aa1d097567081f063981251e48f4fd660bf10037e4b"
+      },
+      "kind": "lemma",
+      "proof": "Define on $\\ell^2(\\mathbb N_0)$ the self-adjoint matrix\n$$\nA_{rs}=\\tau^{(r+s)/2}\\widehat\\mu(r-s)=\\sum_iw_i(v_i)_r\\overline{(v_i)_s},\n\\qquad (v_i)_r=\\tau^{r/2}e^{-ir\\theta_i}.\n$$\nThe Vandermonde vectors at distinct nodes are linearly independent, so $A$ has exactly $p$ positive eigenvalues $\\alpha_1\\ge\\cdots\\ge\\alpha_p>0$. The trace is $(1-\\tau)^{-1}$, and the negative eigenvalues can only decrease the trace, hence $Q:=\\sum_i\\alpha_i\\ge(1-\\tau)^{-1}$. The shift compression and the min--max principle give $\\alpha_{i+1}\\le\\tau\\alpha_i$. For fixed $Q$ and these ratio constraints, a finite exchange argument (move mass from an earlier coordinate to the latest coordinate until the active constraint is met) shows that the minimum of the strictly convex function $\\sum_i\\alpha_i^2$ is attained at\n$$\n\\alpha_i=Q\\frac{(1-\\tau)\\tau^{i-1}}{1-\\tau^p},\\qquad 1\\le i\\le p.\n$$\nConsequently\n$$\n\\sum_i\\alpha_i^2\\ge Q^2\\frac{1-\\tau}{1+\\tau}\\frac{1+\\tau^p}{1-\\tau^p}\n\\ge\\frac{1+\\tau^p}{(1-\\tau^2)(1-\\tau^p)}.\n$$\nOn the other hand,\n$$\n\\|A\\|_{HS}^2=\\frac{1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2}{1-\\tau^2}\n$$\nand the Hilbert--Schmidt norm dominates the squared positive eigenvalues. Rearranging gives\n$$\n1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{1+\\tau^p}{1-\\tau^p},\n$$\nwhich is exactly the claimed bound.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $\\mu$ be a finite real atomic measure of total mass $1$ with exactly $p$ positive atoms, allowing arbitrary negative atoms. For $0<\\tau<1$,\n$$\n\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{\\tau^p}{1-\\tau^p}.\n$$",
+      "title": "Positive-atom Toeplitz bound",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:f796c0a76f6b1f9f03efd310edc19f45844503b8f3142e18d9646c80efbd6f67",
+  "proof_hash": "sha256:2956ddc2912e0641574429e38c927490bb9c95b2c5af2dd743143b9dd08ed964",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The constrained minimization of ∑α_i² under α_{i+1}≤τα_i is only sketched; a brief induction or convex-optimization argument should show that all constraints are active at the minimizer.",
+      "The claim that Vandermonde independence implies exactly p positive eigenvalues for the signed Gram matrix should explicitly invoke the corresponding inertia argument (for example, Sylvester’s law applied to V W V*)."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Add a short proof of the finite constrained minimization and state why injectivity of the Vandermonde map preserves the positive inertia of the diagonal weight matrix.",
+    "summary": "The proof establishes the stated lower bound. Its spectral compression, eigenvalue-ratio, trace, optimization, and Hilbert–Schmidt arguments are mathematically consistent.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:2daeda21ba904e749aa33aa1d097567081f063981251e48f4fd660bf10037e4b",
+  "target": "lem-toeplitz-positive-atoms",
+  "verification_key": "sha256:5d4e68687363573b69b202f5821dc417b2a21c44f5c3c203e10eaeed27f15f46",
+  "verified_at": "2026-10-31T15:26:39.886Z"
+}

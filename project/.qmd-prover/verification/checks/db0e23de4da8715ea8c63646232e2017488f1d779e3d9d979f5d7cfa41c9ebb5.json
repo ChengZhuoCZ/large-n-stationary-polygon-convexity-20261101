@@ -1,0 +1,115 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {},
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 91722,
+    "usage": {
+      "total_tokens": 14745
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-airy-boundary-flux",
+      "identity": {
+        "proof_hash": "sha256:757e79a5ff38315a4375d3712837ff41ba75fc3ecf4f743d0aabdfe3c2f8ded6",
+        "statement_hash": "sha256:4652fb4bf0b5fddaf01de238dbc7492e275ed9eda148d908961019366ab8d6bd"
+      },
+      "kind": "lemma",
+      "proof": "Set\n$$\nT=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I.\n$$\nThe equation $-\\Delta u=\\lambda u$ gives $\\operatorname{div}T=0$. The planar Airy-potential theorem supplies a global $\\psi$ on the simply connected smooth domain; set $\\Phi=\\psi-c|x|^2/4$. On $\\partial\\Omega$, $u=0$ and $\\nabla u=-\\partial_\\nu u\\,\\nu$. The Hessian formula is\n$$\nD^2\\Phi=\\frac12(|\\nabla u|^2+\\lambda u^2-c)I-\\nabla u\\otimes\\nabla u.\n$$\nIf $\\tau$ is the unit tangent, this gives $D^2\\Phi\\,\\tau=(q-c)\\tau/2$. Since $dF(e^{i\\theta})/d\\theta=i e^{i\\theta}F'(e^{i\\theta})$, the first identity follows.\n\nThe eigenvalues of $D^2\\Phi$ are $(\\lambda u^2-c\\pm|\\nabla u|^2)/2$, hence\n$$\n-4\\det D^2\\Phi=|\\nabla u|^4-\\lambda^2u^4+2\\lambda c u^2-c^2.\n$$\nIntegrating and using $\\int u^2dA=1$ and $c=\\lambda/A$ gives $\\mathscr H=-4\\int_\\Omega\\det D^2\\Phi$. The gradient-map Stokes identity\n$$\n\\int_\\Omega\\det D^2\\Phi=\\operatorname{Area}_{\\rm signed}(\\Gamma)\n$$\nproves the second formula.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $\\Omega$ be a simply connected smooth planar domain, $u$ its $L^2$-normalized first Dirichlet eigenfunction with eigenvalue $\\lambda$, $A=|\\Omega|$, $c=\\lambda/A$, and $q=|\\partial_\\nu u|^2$. Put\n$$\nT=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I.\n$$\nLet $\\Phi=\\psi-c|x|^2/4$, where $\\psi$ is an Airy potential with $D^2\\psi=R^TTR$ and $R$ is rotation by $\\pi/2$. If $F(e^{i\\theta})$ parametrizes $\\partial\\Omega$ counterclockwise and $\\Gamma(\\theta)=\\nabla\\Phi(F(e^{i\\theta}))$ is identified with a complex vector, then\n$$\n\\frac{d\\Gamma}{d\\theta}=\\frac12(q-c)i e^{i\\theta}F'(e^{i\\theta}).\n$$\nMoreover, for\n$$\n\\mathscr H=\\int_\\Omega|\\nabla u|^4dA-\\lambda^2\\int_\\Omega u^4dA+\\frac{\\lambda^2}{A},\n$$\none has\n$$\n\\mathscr H=-4\\operatorname{Area}_{\\rm signed}(\\Gamma).\n$$",
+      "title": "Airy boundary flux and area identity",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:ffab5079638bf07011e09ce67d06183c14eae6acdd1b2247e682121cd6bd2de1",
+  "proof_hash": "sha256:757e79a5ff38315a4375d3712837ff41ba75fc3ecf4f743d0aabdfe3c2f8ded6",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The existence invocation for the global Airy potential could explicitly state that T is symmetric and sufficiently smooth, in addition to being divergence-free on the simply connected domain.",
+      "The gradient-map Stokes identity could be briefly justified by writing the boundary integral for signed area and applying Green's theorem, including the counterclockwise orientation."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Add the stated regularity and symmetry hypotheses when invoking the Airy-potential theorem, and include a one-line Green's theorem calculation showing that (1/2)∮(Φ_x dΦ_y−Φ_y dΦ_x)=∫Ω det(D²Φ).",
+    "summary": "The proof establishes both stated identities. The stress-tensor computation, Hessian/eigenvalue algebra, boundary differentiation, integration, and gradient-map area relation are all valid under the stated assumptions.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:4652fb4bf0b5fddaf01de238dbc7492e275ed9eda148d908961019366ab8d6bd",
+  "target": "lem-airy-boundary-flux",
+  "verification_key": "sha256:db0e23de4da8715ea8c63646232e2017488f1d779e3d9d979f5d7cfa41c9ebb5",
+  "verified_at": "2026-10-31T20:30:37.236Z"
+}

@@ -1,0 +1,161 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    },
+    "lem-gradient-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:f6066fc6cdf591f4ae0e39620749ad0ba8e7cb15652f65ed58e96f874db44475"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 80087,
+    "usage": {
+      "total_tokens": 18782
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      },
+      {
+        "id": "lem-gradient-perturbation",
+        "identity": {
+          "statement_hash": "sha256:f6066fc6cdf591f4ae0e39620749ad0ba8e7cb15652f65ed58e96f874db44475"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nThe constant is universal and independent of polygonal angles and vertex separation.",
+        "title": "Gradient perturbation interface"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data",
+        "lem-gradient-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-inverse-left-bound",
+      "identity": {
+        "proof_hash": "sha256:7631ca388a23c05fa196399ae4c22995271581e3ef27f1d9f6caf21c924b1b4c",
+        "statement_hash": "sha256:2b5a0b9a28fc820b8fbdbb4777a3049ce48efe53fadd722da376f916cdab38ca"
+      },
+      "kind": "lemma",
+      "proof": "If $S=0$ the assertion is immediate. Otherwise write $g=th$ with $t=\\sqrt S$. By @def-conformal-data, $k(0)=0$, so the constant coefficient of the analytic function $k$ is zero and\n$$\n\\int_{\\mathbb D}a\\operatorname{Re}k\\,dA=0\n$$\nbecause $a$ is radial. The function $a$ is bounded below on the fixed annulus $A_0=\\{1/2\\le|z|\\le1\\}$. The Bergman pointwise estimate on $|z|\\le1/2$ gives $|g|\\le C\\sqrt S$ there, hence $|k|\\le C\\sqrt S$ for small $S$. Thus\n$$\nT\\le CS+C\\int_{A_0}|k|^2\\,dA\n\\le CS+c^{-1}\\int_{\\mathbb D}a|k|^2\\,dA.\n$$\nBy @lem-gradient-perturbation, $\\|b_1\\|_{L^\\infty}\\le C$ and, from the $C^1$ remainder used in its proof, $\\|R_1\\|_{L^\\infty}\\le CS$ for $R_1=|\\nabla v|^4-a-tb_1$. Expanding the weighted integral, using the vanishing radial pairing, and applying Cauchy--Schwarz gives\n$$\n\\begin{aligned}\n\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2\\,dA\n&\\ge \\int_{\\mathbb D}a\\,dA+\\int_{\\mathbb D}a|k|^2\\,dA\\\\\n&\\quad-C\\bigl(\\sqrt S\\sqrt T+\\sqrt S\\,T+S+S\\sqrt T+ST\\bigr).\n\\end{aligned}\n$$\nThe first two errors come from $t b_1(2\\operatorname{Re}k+|k|^2)$, and the remaining ones from $R_1(1+2\\operatorname{Re}k+|k|^2)$. Since $S\\sqrt T\\le S+ST$, the preceding control of $T$ by the $a|k|^2$ term yields the stated inequality after adjusting $c,C$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Under the normalized conformal data of @def-conformal-data, assume the hypotheses of @lem-gradient-perturbation and let $k=(1+g)^{-1}-1$, $T=\\|k\\|_{A^2}^2$, and $a=|\\nabla v_0|^4$. There are universal constants $c,C>0$ such that, for sufficiently small $S$,\n$$\n\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2\\,dA\n\\ge \\int_{\\mathbb D}a\\,dA+cT-C\\bigl(S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\bigr).\n$$",
+      "title": "Inverse-weighted gradient lower bound",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:034e070eaeecb34c49fe7239e19b9291cd44248a078609594b8a78e76322d29f",
+  "proof_hash": "sha256:7631ca388a23c05fa196399ae4c22995271581e3ef27f1d9f6caf21c924b1b4c",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The S=0 case is called immediate without explicitly noting that g=0 implies k=0 and the perturbation estimate forces v=v0, yielding equality.",
+      "The load-bearing claim that a=|∇v0|^4 is bounded below on the annulus should be justified from the Bessel formula, using that j is the first positive zero of J0 and J1(jr) does not vanish for r∈[1/2,1]."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Explicitly handle S=0 via g=k=0 and the perturbation estimate, and briefly justify the Bessel-function lower bound on the annulus. State explicitly that the angular-mean condition also gives ∫b1 dA=0.",
+    "summary": "The argument establishes the stated lower bound: it cancels the radial linear term, controls T by the weighted quadratic term, and estimates all perturbative and remainder contributions with the claimed error orders. No critical error is present.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data",
+      "lem-gradient-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:2b5a0b9a28fc820b8fbdbb4777a3049ce48efe53fadd722da376f916cdab38ca",
+  "target": "lem-inverse-left-bound",
+  "verification_key": "sha256:b966b287b301a1a6dee7a05c6c57f20b54accd45d87d899d4deb1031d2a564fd",
+  "verified_at": "2026-10-31T19:12:50.216Z"
+}

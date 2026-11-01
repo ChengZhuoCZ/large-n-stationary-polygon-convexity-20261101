@@ -1,0 +1,2016 @@
+{
+  "cycles": [],
+  "edges": [
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-conformal-data",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-conformal-data",
+      "to": "def-j-functional"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-j-functional",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-positive-kernel",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-stationary-polygon",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-stationary-polygon",
+      "to": "def-j-functional"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-turn-measure",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "def-turn-measure",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-boundary-quadratic",
+      "to": "lem-airy-boundary-flux"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-boundary-quadratic",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-identity",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-identity",
+      "to": "lem-edge-moments"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-airy-boundary-quadratic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-airy-identity"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-bilinear-mode-replacement"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-c1-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-frequency-replacement"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-airy-quadratic-response",
+      "to": "lem-inverse-energy"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "lem-energy-deletion-identity"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "lem-kernel-diagonal-bound"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "lem-kernel-potential-bound"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "lem-one-reflex-energy-gap"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-atom-deletion",
+      "to": "lem-single-reflex-small-atom"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-bilinear-mode-replacement",
+      "to": "lem-frequency-replacement"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-bilinear-mode-replacement",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-bp-asymptotic",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-c1-perturbation",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-disk-perturbation",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-disk-perturbation",
+      "to": "def-j-functional"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-disk-perturbation",
+      "to": "lem-c1-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-edge-moments",
+      "to": "def-stationary-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-edge-pressure-oscillation",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-edge-pressure-oscillation",
+      "to": "lem-prevertex-gap"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-energy-deletion-identity",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-frequency-replacement",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-gradient-perturbation",
+      "to": "lem-c1-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-gradient-perturbation",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-energy",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-energy",
+      "to": "lem-airy-identity"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-energy",
+      "to": "lem-edge-moments"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-energy",
+      "to": "lem-inverse-left-bound"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-energy",
+      "to": "lem-weighted-eigen-balance"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-left-bound",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-inverse-left-bound",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-comparison",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-comparison",
+      "to": "lem-spectral-core"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-comparison",
+      "to": "lem-toeplitz-positive-atoms"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-diagonal-bound",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-potential-bound",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-kernel-potential-bound",
+      "to": "lem-toeplitz-positive-atoms"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-log-energy-bound",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-near-circle-conformal",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-near-circle-conformal",
+      "to": "def-j-functional"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-near-circle-conformal",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-near-circle-conformal",
+      "to": "lem-uniform-w14"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "lem-bp-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "lem-kernel-comparison"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "lem-near-circle-conformal"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "lem-regular-polygon-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-one-reflex-energy-gap",
+      "to": "lem-spectral-core"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-physical-pressure-moment",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-physical-pressure-moment",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-physical-pressure-moment",
+      "to": "def-stationary-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-physical-pressure-moment",
+      "to": "lem-edge-moments"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-prevertex-gap",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-reflex-edge-pressure-comparison",
+      "to": "lem-edge-pressure-oscillation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-reflex-edge-pressure-comparison",
+      "to": "lem-monotone-weight-comparison"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-reflex-edge-pressure-comparison",
+      "to": "lem-physical-pressure-moment"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-reflex-edge-pressure-comparison",
+      "to": "lem-reflex-monotone-edge"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-reflex-monotone-edge",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-center-maximizer",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-polygon-asymptotic",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-polygon-asymptotic",
+      "to": "lem-bessel-ratio-decay"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-polygon-asymptotic",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-polygon-asymptotic",
+      "to": "lem-regular-center-maximizer"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-regular-polygon-asymptotic",
+      "to": "lem-regular-sc-coefficient-sum"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-signed-turn-lower-bound",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-signed-turn-lower-bound",
+      "to": "lem-kernel-comparison"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-signed-turn-lower-bound",
+      "to": "lem-spectral-core"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "lem-edge-pressure-oscillation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "lem-near-circle-conformal"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "lem-prevertex-gap"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-single-reflex-small-atom",
+      "to": "lem-reflex-edge-pressure-comparison"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-airy-quadratic-response"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-frequency-replacement"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-inverse-energy"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-spectral-core",
+      "to": "lem-log-energy-bound"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-two-reflex-exclusion",
+      "to": "lem-bp-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-two-reflex-exclusion",
+      "to": "lem-near-circle-conformal"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-two-reflex-exclusion",
+      "to": "lem-regular-polygon-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-two-reflex-exclusion",
+      "to": "lem-signed-turn-lower-bound"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-uniform-w14",
+      "to": "lem-airy-identity"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-weighted-eigen-balance",
+      "to": "def-conformal-data"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-weighted-eigen-balance",
+      "to": "lem-c1-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "lem-weighted-eigen-balance",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "def-admissible-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "def-j-functional"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "def-positive-kernel"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "def-stationary-polygon"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "def-turn-measure"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-atom-deletion"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-bp-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-disk-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-edge-moments"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-gradient-perturbation"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-kernel-comparison"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-near-circle-conformal"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-regular-polygon-asymptotic"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-single-reflex-small-atom"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-spectral-core"
+    },
+    {
+      "checks": {
+        "cycle": "pass",
+        "existence": "pass",
+        "scope": "pass"
+      },
+      "from": "thm-main-large-n-convexity",
+      "to": "lem-two-reflex-exclusion"
+    }
+  ],
+  "nodes": [
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-admissible-polygon",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 5,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Admissible simple polygon"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-conformal-data",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 22,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Normalized conformal data"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-j-functional",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 9,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Area-eigenvalue functional"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-positive-kernel",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 48,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Positive comparison kernel"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-stationary-polygon",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 18,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Vertex stationary polygon"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "def-turn-measure",
+      "intent": "normal",
+      "kind": "definition",
+      "line": 35,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Signed Schwarz-Christoffel turn measure"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-airy-boundary-flux",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 597,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Airy boundary flux and area identity"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-airy-boundary-quadratic",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 638,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Airy boundary quadratic calculation"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-airy-identity",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 76,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Airy fourth-power identity"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-airy-quadratic-response",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 688,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Airy quadratic response"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-atom-deletion",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1201,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Deletion preserves the comparison energy"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-bessel-ratio-decay",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 888,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Large-order Bessel ratio decay"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-bilinear-mode-replacement",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 571,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Bilinear mode replacement"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-bp-asymptotic",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 866,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Discrete comparison energy asymptotic"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-c1-perturbation",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 113,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform C1 conformal perturbation"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-disk-perturbation",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 204,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform disk perturbation expansion"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-edge-moments",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 61,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Stationary edge moments"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-edge-pressure-oscillation",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1042,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform disk pressure oscillation"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-energy-deletion-identity",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1229,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Exact normalized energy deletion identity"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-frequency-replacement",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 487,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Frequency-decaying quadratic replacement"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-gradient-perturbation",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 306,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Gradient perturbation interface"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-inverse-energy",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 458,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Inverse derivative energy"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-inverse-left-bound",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 429,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Inverse-weighted gradient lower bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-kernel-comparison",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 822,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Positive kernel comparison"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-kernel-diagonal-bound",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1317,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform kernel diagonal bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-kernel-potential-bound",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1279,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Laplace kernel potential bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-log-energy-bound",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 550,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Logarithmic Bergman energy bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-monotone-weight-comparison",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1116,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Monotone weight double-integral comparison"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-near-circle-conformal",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 282,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Near-circle conformal deficit"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-one-reflex-energy-gap",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1259,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "One-reflex energy gap estimate"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-physical-pressure-moment",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1096,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Conformal pressure moment identity"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-prevertex-gap",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1024,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Straight-edge prevertex gap bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-reflex-edge-pressure-comparison",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1154,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "One-reflex edge pressure comparison"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-reflex-monotone-edge",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1070,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Monotone edge next to the unique reflex corner"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-regular-center-maximizer",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 909,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Regular polygon center maximizes conformal radius"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-regular-polygon-asymptotic",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 968,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Regular polygon spectral asymptotic"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-regular-sc-coefficient-sum",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 925,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Regular polygon coefficient sum"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-signed-turn-lower-bound",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 851,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Signed-turn spectral lower bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-single-reflex-small-atom",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1179,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Single-reflex small positive atom"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-spectral-core",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 742,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform nonlinear spectral lower bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-toeplitz-positive-atoms",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 789,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Positive-atom Toeplitz bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-two-reflex-exclusion",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 1000,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "At least two reflex corners are excluded"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-uniform-w14",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 101,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Uniform W1,4 bound"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "lem-weighted-eigen-balance",
+      "intent": "normal",
+      "kind": "lemma",
+      "line": 382,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "fact",
+      "ownership": "agent",
+      "status": "verified",
+      "title": "Weighted eigenenergy balance"
+    },
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "global_verification": {
+        "assumptions": [],
+        "blockers": [],
+        "status": "verified"
+      },
+      "id": "thm-main-large-n-convexity",
+      "intent": "normal",
+      "kind": "theorem",
+      "line": 1328,
+      "local_verification": {
+        "status": "verified"
+      },
+      "mechanical": "ok",
+      "origin": "main-goal",
+      "ownership": "user",
+      "status": "verified",
+      "title": "Large-N low-threshold stationary polygons are convex"
+    }
+  ],
+  "schema_version": 8,
+  "snapshot_id": "sha256:63be430a02203b4bced45b05809a765d8e3061f052e0f1e5c734d4ab288e8a8a"
+}

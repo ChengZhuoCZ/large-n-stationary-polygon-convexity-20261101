@@ -1,0 +1,13 @@
+{
+  "source": "project/workspace/large-n-proof.qmd",
+  "semantic_facts": 45,
+  "proof_blocks": 39,
+  "unresolved_cross_references": [],
+  "math_source_modified": false,
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "undefined_references": false,
+  "pdf_bytes": 189987,
+  "pandoc_version": "pandoc 3.10",
+  "xelatex_version": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+}

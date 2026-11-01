@@ -1,0 +1,141 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 81286,
+    "usage": {
+      "total_tokens": 13664
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-prevertex-gap",
+      "identity": {
+        "proof_hash": "sha256:1428a34d24efa6aa408a5d794297a5e2edd9013df1ad7502615aaaea7f5bddd2",
+        "statement_hash": "sha256:c2189cbb5ccf9cb503cec0d51640436035444bc56d1214dae6dbe7a6bd52b79f"
+      },
+      "kind": "lemma",
+      "proof": "By @def-conformal-data, put $H(z)=F(z)-F(0)-z$. The homogeneous boundary $H^{1/2}$ seminorm satisfies\n$$\n\\int_0^{2\\pi}\\!\\int_0^{2\\pi}\n\\frac{|H(e^{i\\theta})-H(e^{i\\varphi})|^2}{|e^{i\\theta}-e^{i\\varphi}|^2},d\\theta d\\varphi\n=4\\pi^2S.\n$$\nOn a straight edge, a fixed unit normal $\\nu$ makes $\\nu\\cdot F(e^{i\\theta})$ constant. Restricting the double integral to the edge arc and projecting onto $\\nu$ gives the quotient of the difference of $\\nu\\cdot e^{i\\theta}$ by $e^{i\\theta}-e^{i\\varphi}$. After centering the arc, the sine part contributes $c\\varepsilon^2$ and the cosine part contributes $c\\varepsilon^4$; the mixed term vanishes by $(\\theta,\\varphi)\\mapsto(-\\theta,-\\varphi)$. Thus the restricted integral is at least $c\\varepsilon^4$, proving the claim.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For normalized conformal data in @def-conformal-data, let $I$ be the prevertex arc corresponding to a straight effective edge and let $\\varepsilon=|I|$. Then\n$$\n\\varepsilon^4\\le CS.\n$$\nThe constant is universal.",
+      "title": "Straight-edge prevertex gap bound",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:a1978efd97483f78d45a1930158abf7213666e2ea3e8d913c3ad44d2b01e9e18",
+  "proof_hash": "sha256:1428a34d24efa6aa408a5d794297a5e2edd9013df1ad7502615aaaea7f5bddd2",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The seminorm identity should be justified explicitly by expanding H(z)=\\sum_{n\\ge2}g_n z^{n+1}/(n+1) and applying the Fourier H^{1/2} identity.",
+      "The trigonometric estimate omits the coefficients: after centering, one should write \\nu\\cdot e^{i(\\theta_0+t)}=a\\cos t+b\\sin t with a^2+b^2=1, show the mixed term vanishes, and establish uniform bounds for the sine and cosine integrals for every 0<\\varepsilon\\le2\\pi.",
+      "The final comparison should explicitly note that the restricted nonnegative integral is at most 4\\pi^2S and convert the lower-bound constant into the universal C."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Include the Fourier coefficient calculation and the centered-arc formula with coefficients a,b. Prove I_sin\\ge c_1\\varepsilon^2 and I_cos\\ge c_2\\varepsilon^4 uniformly on (0,2\\pi], then use a^2+b^2=1 to obtain a universal c\\varepsilon^4.",
+    "summary": "The argument correctly derives a lower bound for the restricted boundary seminorm by projecting onto a unit normal to the straight edge, and this implies the stated universal bound after comparison with the full seminorm.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:c2189cbb5ccf9cb503cec0d51640436035444bc56d1214dae6dbe7a6bd52b79f",
+  "target": "lem-prevertex-gap",
+  "verification_key": "sha256:39f00ad6ea3f9a358a4ab1e14a91e52d08badd0ee47e9839f76c1462ef1af5f1",
+  "verified_at": "2026-10-31T21:43:05.491Z"
+}

@@ -1,0 +1,2254 @@
+{
+  "context_hash": "sha256:04f75a62f601c862340ffe290c0e21a6a7b2a066478834f7d0c10b4d459e236a",
+  "diagnostics": [],
+  "goals": [
+    {
+      "file": "workspace/large-n-proof.qmd",
+      "id": "thm-main-large-n-convexity",
+      "line": 370,
+      "status": "open"
+    }
+  ],
+  "graph": {
+    "cycles": [],
+    "edges": [
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-conformal-data",
+        "to": "def-admissible-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-conformal-data",
+        "to": "def-j-functional"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-j-functional",
+        "to": "def-admissible-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-positive-kernel",
+        "to": "def-turn-measure"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-stationary-polygon",
+        "to": "def-admissible-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-stationary-polygon",
+        "to": "def-j-functional"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-turn-measure",
+        "to": "def-admissible-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "def-turn-measure",
+        "to": "def-conformal-data"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-airy-identity",
+        "to": "def-admissible-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-airy-identity",
+        "to": "lem-edge-moments"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-atom-deletion",
+        "to": "def-positive-kernel"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-atom-deletion",
+        "to": "lem-signed-turn-lower-bound"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-atom-deletion",
+        "to": "lem-single-reflex-small-atom"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-edge-moments",
+        "to": "def-stationary-polygon"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-inverse-energy",
+        "to": "lem-airy-identity"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-inverse-energy",
+        "to": "lem-edge-moments"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-inverse-energy",
+        "to": "lem-near-circle-conformal"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-kernel-comparison",
+        "to": "lem-toeplitz-positive-atoms"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-near-circle-conformal",
+        "to": "lem-uniform-w14"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-signed-turn-lower-bound",
+        "to": "def-turn-measure"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-signed-turn-lower-bound",
+        "to": "lem-kernel-comparison"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-signed-turn-lower-bound",
+        "to": "lem-spectral-core"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-single-reflex-small-atom",
+        "to": "def-conformal-data"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-single-reflex-small-atom",
+        "to": "lem-near-circle-conformal"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-spectral-core",
+        "to": "def-turn-measure"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-spectral-core",
+        "to": "lem-airy-identity"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-spectral-core",
+        "to": "lem-inverse-energy"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-spectral-core",
+        "to": "lem-near-circle-conformal"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-two-reflex-exclusion",
+        "to": "lem-near-circle-conformal"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-two-reflex-exclusion",
+        "to": "lem-signed-turn-lower-bound"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "lem-uniform-w14",
+        "to": "lem-airy-identity"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-atom-deletion"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-kernel-comparison"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-near-circle-conformal"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-signed-turn-lower-bound"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-single-reflex-small-atom"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-spectral-core"
+      },
+      {
+        "checks": {
+          "cycle": "pass",
+          "existence": "pass",
+          "scope": "pass"
+        },
+        "from": "thm-main-large-n-convexity",
+        "to": "lem-two-reflex-exclusion"
+      }
+    ],
+    "nodes": [
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-admissible-polygon",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 5,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Admissible simple polygon"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "def-conformal-data",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 22,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Normalized conformal data"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-j-functional",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 9,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Area-eigenvalue functional"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "def-positive-kernel",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 48,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Positive comparison kernel"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-stationary-polygon",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 18,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Vertex stationary polygon"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "def-turn-measure",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 35,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Signed Schwarz-Christoffel turn measure"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-airy-identity",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 76,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Airy fourth-power identity"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-atom-deletion",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 342,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "Deletion preserves the comparison energy"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-edge-moments",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 61,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Stationary edge moments"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-inverse-energy",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 145,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "Inverse derivative energy"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "lem-kernel-comparison",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 246,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Positive kernel comparison"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-near-circle-conformal",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 113,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "Near-circle conformal deficit"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "lem-signed-turn-lower-bound",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 275,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Signed-turn spectral lower bound"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-single-reflex-small-atom",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 310,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "Single-reflex small positive atom"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-spectral-core",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 166,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "Uniform nonlinear spectral lower bound"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "unverified"
+        },
+        "id": "lem-toeplitz-positive-atoms",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 213,
+        "local_verification": {
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "unverified",
+        "title": "Positive-atom Toeplitz bound"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "lem-two-reflex-exclusion",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 290,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "open",
+        "title": "At least two reflex corners are excluded"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-uniform-w14",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 101,
+        "local_verification": {
+          "status": "verified"
+        },
+        "mechanical": "ok",
+        "origin": "fact",
+        "ownership": "agent",
+        "status": "verified",
+        "title": "Uniform W1,4 bound"
+      },
+      {
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "open"
+        },
+        "id": "thm-main-large-n-convexity",
+        "intent": "draft",
+        "kind": "theorem",
+        "line": 370,
+        "local_verification": {
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "main-goal",
+        "ownership": "user",
+        "status": "open",
+        "title": "Large-N low-threshold stationary polygons are convex"
+      }
+    ],
+    "schema_version": 8,
+    "snapshot_id": "sha256:cda367673da9813af8935a5bee6617855e305c81abc5e01572812c50c32baee3"
+  },
+  "manifest": {
+    "files": [
+      {
+        "imports": [],
+        "path": "index.qmd",
+        "proofs": [],
+        "results": []
+      },
+      {
+        "imports": [],
+        "path": "workspace/large-n-proof.qmd",
+        "proofs": [
+          "lem-edge-moments",
+          "lem-airy-identity",
+          "lem-uniform-w14",
+          "lem-near-circle-conformal",
+          "lem-inverse-energy",
+          "lem-spectral-core",
+          "lem-toeplitz-positive-atoms",
+          "lem-kernel-comparison",
+          "lem-signed-turn-lower-bound",
+          "lem-two-reflex-exclusion",
+          "lem-single-reflex-small-atom",
+          "lem-atom-deletion",
+          "thm-main-large-n-convexity"
+        ],
+        "results": [
+          "def-admissible-polygon",
+          "def-j-functional",
+          "def-stationary-polygon",
+          "def-conformal-data",
+          "def-turn-measure",
+          "def-positive-kernel",
+          "lem-edge-moments",
+          "lem-airy-identity",
+          "lem-uniform-w14",
+          "lem-near-circle-conformal",
+          "lem-inverse-energy",
+          "lem-spectral-core",
+          "lem-toeplitz-positive-atoms",
+          "lem-kernel-comparison",
+          "lem-signed-turn-lower-bound",
+          "lem-two-reflex-exclusion",
+          "lem-single-reflex-small-atom",
+          "lem-atom-deletion",
+          "thm-main-large-n-convexity"
+        ]
+      }
+    ],
+    "proofs": [
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-stationary-polygon"
+        ],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 68,
+        "proof_hash": "sha256:98fd8572ef90d6bc846550297a8f792e43f15ff631e92d632fdb1be1840164ae",
+        "proof_present": true,
+        "proof_text": "By @def-stationary-polygon, the derivative of \\(J=A\\lambda\\) vanishes for every vertex displacement. Hadamard’s formula is \\[ DJ[V]=A\\int_{\\partial P}(c-q)V\\cdot\\nu\\,ds. \\] Moving one endpoint of an effective edge while keeping the other fixed produces an affine normal velocity on that edge, and the two endpoint velocities give the independent functions \\(1\\) and \\(s/\\ell_E\\). Since adjacent effective edge normals are linearly independent at a genuine corner, stationarity forces both coefficients of these two affine test functions to vanish. Rescaling \\(s/\\ell_E\\) gives the displayed moments.",
+        "refutation": false,
+        "target": "lem-edge-moments"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-admissible-polygon",
+          "lem-edge-moments"
+        ],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 83,
+        "proof_hash": "sha256:5a4e02e55d9bc4cc7d937fd4f416edcfe8d8fb7388762a215b8824752fab55ba",
+        "proof_present": true,
+        "proof_text": "Define the divergence-free stress tensor \\[ T=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I. \\] An Airy potential \\(\\psi\\) with \\(D^2\\psi=R^TTR\\) exists locally and, after setting \\(\\Phi=\\psi-c|x|^2/4\\), satisfies \\[ D^2\\Phi=\\tfrac12(|\\nabla u|^2+\\lambda u^2-c)I-\\nabla u\\otimes\\nabla u. \\] Every boundary segment is effective by @def-admissible-polygon, so the identities in @lem-edge-moments apply on each segment. The planar Airy-potential theorem for a symmetric divergence-free stress on the simply connected polygon supplies one global \\(\\psi\\), unique up to an affine function. The two moments imply that \\(\\nabla\\Phi\\) has the same endpoint values on each segment. Propagating around the boundary and subtracting an affine function makes \\(\\Phi=0\\) at every vertex and \\(\\partial_\\nu\\Phi=0\\) on every segment; the mixed Hessian term vanishes there as well. At a corner of angle \\(\\omega<2\\pi\\), the leading Dirichlet mode is \\(r^\\alpha\\sin(\\alpha\\theta)\\) with \\(\\alpha=\\pi/\\omega>1/2\\), hence \\(|\\nabla u|=O(r^{\\alpha-1})\\), \\(|\\nabla\\Phi|=O(r^{2\\alpha-1}+r)\\), and \\(|D^2\\Phi|=O(r^{2\\alpha-2}+1)\\). These estimates make the circular boundary flux \\(O(\\varepsilon^{4\\alpha-2}+\\varepsilon^{2\\alpha})\\to0\\).Apply the divergence identity \\[ \\operatorname{div}\\{\\Delta\\Phi\\nabla\\Phi-D^2\\Phi\\nabla\\Phi\\}=(\\Delta\\Phi)^2-|D^2\\Phi|^2 \\] to \\(P\\) with corner disks removed and let \\(\\varepsilon\\downarrow0\\). The edge terms vanish by the preceding boundary conditions, hence \\(\\int_P\\det D^2\\Phi=0\\). The eigenvalues of \\(D^2\\Phi\\) are \\((\\lambda u^2-c\\pm|\\nabla u|^2)/2\\), so expanding their product and using \\(\\int_Pu^2=1\\) gives the stated identity.",
+        "refutation": false,
+        "target": "lem-airy-identity"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-airy-identity"
+        ],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 105,
+        "proof_hash": "sha256:a05e01505b33e74138d2ddbf11c3cc7fbbcc35e2207542d3eccd7f5c01cd1d46",
+        "proof_present": true,
+        "proof_text": "The domain-independent Dirichlet heat-kernel estimate gives \\(\\|u\\|_\\infty^2\\le e^2\\lambda/(8\\pi)\\) for the normalized first eigenfunction. Under the edge-moment hypotheses, @lem-airy-identity applies, and \\(\\int_Pu^4\\le\\|u\\|_\\infty^2\\int_Pu^2=\\|u\\|_\\infty^2\\); combining these facts yields \\[ \\int_P|\\nabla u|^4\\le \\frac{e^2\\lambda^3}{8\\pi}. \\] The same \\(L^\\infty\\) bound gives \\(\\int_P|u|^4\\le\\|u\\|_\\infty^2\\), so the \\(W^{1,4}(P)\\) norm is bounded by a constant depending only on \\(A_0\\) and \\(\\Lambda\\). Since \\(u\\in H^1_0(P)\\), its zero extension has no boundary distribution term in its weak gradient; the extension therefore lies in \\(W^{1,4}(\\mathbb R^2)\\) with the same gradient bound. Morrey’s inequality in dimension two then gives a \\(C^{0,1/2}\\) representative with the same parameter dependence.",
+        "refutation": false,
+        "target": "lem-uniform-w14"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-uniform-w14"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 121,
+        "proof_hash": "sha256:f36816d3db3588b3041e0bcfd6e73326d95dfd9f2bbf3e9e470df6d53d4488b4",
+        "proof_present": true,
+        "proof_text": "The regular-polygon asymptotic is \\[ \\frac{J(R_M)}{\\pi j^2}=1+\\frac{4\\zeta(3)}{M^3}+O(M^{-5}). \\] After area normalization, the quantitative Faber–Krahn inequality and the assumed upper bound imply convergence in measure to the unit disk. By @lem-uniform-w14, normalized eigenfunctions converge uniformly on compact subsets; positivity of the disk eigenfunction then gives \\(B_{1-\\eta}\\subset P\\) for every fixed \\(\\eta>0\\) and all sufficiently large \\(N\\). The maximum conformal radius is therefore at least \\(1-\\eta\\) and at most \\(1\\). In the normalization \\(F'(0)=1\\), this yields \\(1+S=r_P^{-2}\\to1\\).For the quantitative rate, write the pulled-back eigenproblem as \\[ -\\Delta v=\\lambda|1+g|^2v,\\qquad v|_{\\partial\\mathbb D}=0, \\] with the weighted \\(L^2\\) normalization. The disk Green operator on the zero-trace \\(C^1\\) space satisfies \\[ \\|\\mathcal G(gh)\\|_{C^1}\\le C\\|g\\|_{A^2}\\|h\\|_{C^1},\\qquad \\|\\mathcal G(g_1\\overline{g_2}h)\\|_{C^1}\\le C\\|g_1\\|_{A^2}\\|g_2\\|_{A^2}\\|h\\|_{C^1}. \\] Bergman pointwise bounds near the boundary and the Green kernel estimates prove these inequalities. Analytic perturbation around the simple disk ground state gives \\(v=v_0+v_1+v_2+O_X(S^{3/2})\\) and \\[ \\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}), \\qquad \\rho_n=j\\frac{J_{n+1}(j)}{J_n(j)},\\quad0<\\rho_n<2. \\] Thus the quadratic term is at least \\(S/3\\) and, after shrinking the universal small neighborhood, \\(J(P)/(\\pi j^2)-1\\ge S/6\\). The upper bound is \\(O(N^{-3})\\), hence \\(S\\le CN^{-3}\\).",
+        "refutation": false,
+        "target": "lem-near-circle-conformal"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-airy-identity",
+          "lem-edge-moments",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 153,
+        "proof_hash": "sha256:19219d7a623fc5b7ea401cb8e7889d693ee1a80abeab3b6e26f8b9d7537bc553",
+        "proof_present": true,
+        "proof_text": "Under the edge-moment hypotheses @lem-edge-moments, pull @lem-airy-identity back by \\(F\\) and use \\(F'^{-1}=1+k\\) to obtain \\[ \\int_{\\mathbb D}|\\nabla v|^4|1+k|^2 =\\lambda^2\\int_{\\mathbb D}v^4|1+g|^2-\\frac{\\lambda^2}{\\pi(1+S)}. \\] The perturbation expansion in @lem-near-circle-conformal gives \\(|\\nabla v|^4=a+b_1+O(S)\\), where \\(a=|\\nabla v_0|^4\\) is radial and \\(b_1\\) has zero circular mean. Since the constant Fourier mode of \\(k\\) is zero, orthogonality leaves a term \\(\\int a|k|^2\\) on the left. On a fixed outer annulus \\(a\\) is bounded below, while \\(k=-g/(1+g)=O(\\sqrt S)\\) on the inner disk. Cauchy–Schwarz and the perturbation bounds therefore give \\[ T\\le C\\{S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\}. \\] Young’s inequality absorbs the mixed term and, for sufficiently small \\(S\\), the last two terms, proving \\(T\\le CS\\).",
+        "refutation": false,
+        "target": "lem-inverse-energy"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-turn-measure",
+          "lem-airy-identity",
+          "lem-inverse-energy",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 178,
+        "proof_hash": "sha256:d1c8f91eebe5f7f54aa2ac7853b24f828c2214eeabcfc5f73fbf6ac2990b27f8",
+        "proof_present": true,
+        "proof_text": "The first-order perturbation and the second-order disk calculation from @lem-near-circle-conformal give \\[ \\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}), \\] with \\(\\beta_n=n+1-\\rho_n\\). By @lem-inverse-energy, \\(T\\le CS\\). The identity \\(g+k=-gk\\) gives weighted coefficient bounds; splitting at \\(K=S^{-1/2}\\) yields, for every multiplier \\(O((n+1)^{-2})\\), \\[ \\left|\\sum b_n(|k_n|^2-|g_n|^2)\\right|\\le CS^{3/2}\\sqrt{\\log(e/S)}. \\] The same bound replaces \\(g\\) by \\(L=\\log F'\\) in all such quadratic forms, while the leading \\(T-S\\) term is retained.To compute that leading term, introduce the Airy potential from @lem-airy-identity and the two-variable analytic functional obtained by treating \\(g\\) and \\(k\\) independently. Its quadratic part is computed on a polynomial direction \\(F'(z)=1+ta z^n\\). The first-order boundary flux is \\[ \\delta(q-c)=-\\frac{2p_D^2\\beta_n}{n+1}\\operatorname{Re}(ae^{in\\theta}), \\qquad p_D=j/\\sqrt\\pi. \\] The induced first-order Airy gradient has frequencies \\(n+1\\) and \\(1-n\\); its signed area is \\(-\\pi d_n^2/[8(n^2-1)]\\). Since the Airy identity equals minus four times this area, the quadratic contribution is \\[ 2\\pi p_D^4\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|a|^2. \\] Rotational orthogonality removes cross terms, and density of analytic polynomials extends the calculation to \\(A^2\\). The actual relation \\(g+k=-gk\\) then gives \\[ S-T=2\\sum_{n\\ge2}\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|g_n|^2+O(S^{3/2}\\sqrt{\\log(e/S)}). \\] The logarithmic inequality \\[ \\|L\\|_{A^2}^2\\le (S+T)/2 \\] comes from \\(|f|^2+|f|^{-2}-2\\ge4(\\operatorname{Re}L)^2\\) and equality of real and imaginary Bergman energies. Combining these formulas gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+\\sum_{n\\ge2}\\frac{\\beta_n}{(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right)|L_n|^2-C S^{3/2}\\sqrt{\\log(e/S)}. \\] Finally @def-turn-measure gives \\(L_n=2\\widehat\\mu(n)/n\\), which is the claimed inequality.",
+        "refutation": false,
+        "target": "lem-spectral-core"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 220,
+        "proof_hash": "sha256:2956ddc2912e0641574429e38c927490bb9c95b2c5af2dd743143b9dd08ed964",
+        "proof_present": true,
+        "proof_text": "Define on \\(\\ell^2(\\mathbb N_0)\\) the self-adjoint matrix \\[ A_{rs}=\\tau^{(r+s)/2}\\widehat\\mu(r-s)=\\sum_iw_i(v_i)_r\\overline{(v_i)_s}, \\qquad (v_i)_r=\\tau^{r/2}e^{-ir\\theta_i}. \\] The Vandermonde vectors at distinct nodes are linearly independent, so \\(A\\) has exactly \\(p\\) positive eigenvalues \\(\\alpha_1\\ge\\cdots\\ge\\alpha_p>0\\). The trace is \\((1-\\tau)^{-1}\\), and the negative eigenvalues can only decrease the trace, hence \\(Q:=\\sum_i\\alpha_i\\ge(1-\\tau)^{-1}\\). The shift compression and the min–max principle give \\(\\alpha_{i+1}\\le\\tau\\alpha_i\\). For fixed \\(Q\\) and these ratio constraints, a finite exchange argument (move mass from an earlier coordinate to the latest coordinate until the active constraint is met) shows that the minimum of the strictly convex function \\(\\sum_i\\alpha_i^2\\) is attained at \\[ \\alpha_i=Q\\frac{(1-\\tau)\\tau^{i-1}}{1-\\tau^p},\\qquad 1\\le i\\le p. \\] Consequently \\[ \\sum_i\\alpha_i^2\\ge Q^2\\frac{1-\\tau}{1+\\tau}\\frac{1+\\tau^p}{1-\\tau^p} \\ge\\frac{1+\\tau^p}{(1-\\tau^2)(1-\\tau^p)}. \\] On the other hand, \\[ \\|A\\|_{HS}^2=\\frac{1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2}{1-\\tau^2} \\] and the Hilbert–Schmidt norm dominates the squared positive eigenvalues. Rearranging gives \\[ 1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{1+\\tau^p}{1-\\tau^p}, \\] which is exactly the claimed bound.",
+        "refutation": false,
+        "target": "lem-toeplitz-positive-atoms"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-toeplitz-positive-atoms"
+        ],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 261,
+        "proof_hash": "sha256:f9a5da75dcf296bbe86085872a9dd09771eabe6705a01aa3b7a454440cbca5e7",
+        "proof_present": true,
+        "proof_text": "The Bessel bounds \\(5.78<j^2<5.8\\) give \\(1.89<\\kappa<1.9\\). The recurrence for \\(J_n\\) implies \\(0<\\rho_n<2\\) and, for \\(n\\ge3\\), \\(\\rho_n<n\\alpha/(n^2+\\kappa)\\) with \\(\\alpha=\\kappa+1\\). Substitution into \\[ a_n=\\frac{n-\\rho_n+\\rho_n^2/(n+1)^2}{n^2(n^2-1)} \\] proves \\(a_n\\ge b_n\\); for \\(n=2\\), the identity \\(J_0(j)=0\\) reduces the inequality to \\(\\kappa^3+7\\kappa^2+12\\kappa-54\\ge0\\), which holds for \\(\\kappa\\ge1.89\\).The Laplace representation follows from \\[ \\int_0^\\infty e^{-nt}(1-\\cos(\\sqrt\\kappa t))\\,dt=\\frac{\\kappa}{n(n^2+\\kappa)}. \\] Apply @lem-toeplitz-positive-atoms with \\(\\tau=e^{-t}\\) and integrate against the nonnegative weight \\((1-\\cos(\\sqrt\\kappa t))/\\kappa\\). Tonelli’s theorem gives \\(E_b(\\mu)\\ge B_p\\).",
+        "refutation": false,
+        "target": "lem-kernel-comparison"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-turn-measure",
+          "lem-kernel-comparison",
+          "lem-spectral-core"
+        ],
+        "draft": false,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 282,
+        "proof_hash": "sha256:a1a213ff0829d6170e64e0bf4dc8ec9acc160f6dcb47f5a739868632075284d7",
+        "proof_present": true,
+        "proof_text": "By @lem-spectral-core and @lem-kernel-comparison, \\(a_n\\ge b_n\\) for \\(n\\ge2\\). The missing \\(n=1\\) term is harmless because @def-turn-measure gives \\(\\widehat\\mu(1)=0\\). Hence \\[ \\frac{J(P)}{\\pi j^2}\\ge 1+4E_b(\\mu)-C S^{3/2}\\sqrt{\\log(e/S)}. \\] The lower bound \\(E_b(\\mu)\\ge B_p\\) is exactly @lem-kernel-comparison.",
+        "refutation": false,
+        "target": "lem-signed-turn-lower-bound"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-near-circle-conformal",
+          "lem-signed-turn-lower-bound"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 298,
+        "proof_hash": "sha256:fbe31ae361ee081d757bdcfd921560e133caf3d5ffbba4d0310b353841790ead",
+        "proof_present": true,
+        "proof_text": "If there are at least two reflex corners, the number \\(p\\) of convex corners is at most \\(N-2\\). By @lem-near-circle-conformal, \\(S\\le CN^{-3}\\), and @lem-signed-turn-lower-bound gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4B_{N-2}-o(N^{-4}). \\] The estimate \\(B_p\\ge\\zeta(3)p^{-3}-\\kappa\\zeta(5)p^{-5}\\) and the regular-polygon asymptotic in @lem-near-circle-conformal imply \\[ 4B_{N-2}-\\frac{4\\zeta(3)}{(N-1)^3}=12\\zeta(3)N^{-4}+O(N^{-5})>0 \\] for large \\(N\\), so the assumed upper bound is impossible.",
+        "refutation": false,
+        "target": "lem-two-reflex-exclusion"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-conformal-data",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 317,
+        "proof_hash": "sha256:0105a77da5dfcfd016bc29c1b8c164eb84cba6e0185f938e45233629c93c1009",
+        "proof_present": true,
+        "proof_text": "The boundary identity in @def-conformal-data gives a homogeneous \\(H^{1/2}\\) seminorm of \\(F-F(0)-z\\) equal to \\(S\\); restricting it to a straight prevertex arc of length \\(\\varepsilon\\) gives a lower bound \\(c\\varepsilon^4\\), hence every prevertex gap is at most \\(CS^{1/4}\\). The perturbation estimate in @lem-near-circle-conformal gives for the disk boundary derivative \\(p=-\\partial_rv\\) on every such arc \\[ \\operatorname{osc}_I p\\le C\\{\\sqrt S\\,\\varepsilon\\sqrt{\\log(e/\\varepsilon)}+S\\}\\le CS^{3/4}\\sqrt{\\log(e/S)}. \\]Place the unique negative turn at angle \\(0\\). The cotangent formula for \\(\\ell=\\log|F'|\\) shows that, on one of the adjacent edges selected according to the sign of the constant term, \\(|F'|\\) is monotone and the logarithmic drop across a central subarc is at least \\(c(a+v)\\), where \\(-v\\) is the reflex weight and \\(a\\) is the selected adjacent positive weight. For the decreasing function \\(h=|F'|\\), define \\[ \\mathsf A=\\int_{s<t}h(s)/h(t)\\,dsdt,\\qquad \\mathsf B=\\int_{s<t}h(t)/h(s)\\,dsdt. \\] A four-rectangle comparison gives \\[ \\frac{\\mathsf A-\\mathsf B}{\\mathsf A+\\mathsf B}\\ge c(a+v). \\] Put \\(k_0=h^{-2}\\) and normalize the selected edge to \\(x\\in[0,1]\\). The identity equating \\(D\\) with a first moment of \\(k_0\\) is not valid for a general monotone \\(h\\); the needed valid substitute is the following elementary one-dimensional estimate: \\[ D=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))\\,dsdt}{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))\\,dsdt},\\quad \\int_0^1(x-1/2)p(x)^2k_0(x)\\,dx=0 \\Longrightarrow D\\le C\\frac{\\max_Ip-\\min_Ip}{\\min_Ip}. \\] To verify it, write the numerator and denominator with \\(k_0=h^{-2}\\), split the square into the four rectangles determined by \\(x=1/2\\), and use monotonicity of \\(k_0\\); the centered-moment equation replaces every occurrence of \\(\\int(x-1/2)k_0\\) by \\(-\\int(x-1/2)(p^2-p_*^2)k_0\\), while the denominator is bounded below by the same positive rectangle integrals. Since \\(p\\ge p_D/2\\) uniformly, this gives \\(D\\le C\\operatorname{osc}_I p\\). The lower bound \\(D\\ge c(a+v)\\) and the last inequality imply \\(a+v\\le C S^{3/4}\\sqrt{\\log(e/S)}\\). Combining this with \\(S\\le CN^{-3}\\) proves the stated bound.",
+        "refutation": false,
+        "target": "lem-single-reflex-small-atom"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "def-positive-kernel",
+          "lem-signed-turn-lower-bound",
+          "lem-single-reflex-small-atom"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 353,
+        "proof_hash": "sha256:7ed4e7a07c18565dfb47e410ac6bb45a54bcfae5de97c9ad1af299098dd9bb83",
+        "proof_present": true,
+        "proof_text": "Let \\(\\delta=E_b(\\mu)-B_{N-1}\\ge0\\). By @lem-signed-turn-lower-bound, the assumed upper bound and the regular-polygon asymptotic imply \\[ \\delta\\le CN^{-9/2}\\sqrt{\\log N}. \\] For \\(U_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta})\\), the Laplace representation in @def-positive-kernel and Cauchy–Schwarz give \\[ \\|U_b\\|_\\infty\\le C\\sqrt\\delta+CN^{-5/2}. \\] The exact expansion is \\[ E_b(\\widetilde\\mu)-E_b(\\mu)= \\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}, \\] where \\(K_b(0)=\\sum_{n\\ge1}b_n\\). Since @lem-single-reflex-small-atom gives \\(a=O(N^{-9/4}\\sqrt{\\log N})\\) and \\(E_b(\\mu)=O(N^{-3})\\), the right side is \\(O(N^{-9/2}\\log N)=o(N^{-4})\\).",
+        "refutation": false,
+        "target": "lem-atom-deletion"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "dependencies": [
+          "lem-atom-deletion",
+          "lem-kernel-comparison",
+          "lem-near-circle-conformal",
+          "lem-signed-turn-lower-bound",
+          "lem-single-reflex-small-atom",
+          "lem-spectral-core",
+          "lem-two-reflex-exclusion"
+        ],
+        "draft": true,
+        "file": "workspace/large-n-proof.qmd",
+        "line": 378,
+        "proof_hash": "sha256:ea6d5bfa163c09069860cc5ff1c37b6cfd58941dc372b73d4f31b967ee1a212d",
+        "proof_present": true,
+        "proof_text": "Assume the conclusion fails. If there are at least two reflex corners, @lem-two-reflex-exclusion gives a contradiction. Thus there is exactly one reflex corner. Apply @lem-single-reflex-small-atom and @lem-atom-deletion. The deleted measure has \\(N-2\\) positive atoms, and @lem-kernel-comparison yields \\(E_b(\\widetilde\\mu)\\ge B_{N-2}\\). By the proof of @lem-signed-turn-lower-bound (equivalently, by @lem-spectral-core together with @lem-kernel-comparison), \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4E_b(\\mu)-C S^{3/2}\\sqrt{\\log(e/S)}. \\] Using @lem-atom-deletion and \\(S\\le CN^{-3}\\) from @lem-near-circle-conformal gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4B_{N-2}-o(N^{-4}). \\] The regular-polygon asymptotic gives \\[ \\frac{J(R_{N-1})}{\\pi j^2}=1+\\frac{4\\zeta(3)}{(N-1)^3}+O(N^{-5}), \\] while \\(B_{N-2}=\\zeta(3)(N-2)^{-3}+O(N^{-5})\\). Their difference is \\(12\\zeta(3)N^{-4}+O(N^{-5})\\), contradicting \\(J(P)\\le J(R_{N-1})\\) for large \\(N\\).",
+        "refutation": false,
+        "target": "thm-main-large-n-convexity"
+      }
+    ],
+    "results": [
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-admissible-polygon",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 5,
+        "local_verification": {
+          "metrics": {
+            "cached": true,
+            "duration_ms": 106220,
+            "usage": {
+              "total_tokens": 11966
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [],
+            "nonblocking_comments": [],
+            "refutation": "",
+            "repair_hints": "",
+            "summary": "The construction is meaningful and defines the stated objects. Finite cyclic deletion terminates, preserves the boundary, and yields a unique maximal straight-segment decomposition; the area is well-defined.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:7e5c2befe24463dc71d5be2b69f4165d6fb8f5439b228054069be67520a296fe"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [],
+        "refutation": false,
+        "statement_hash": "sha256:37405282ce04c69408d1eb59b3e1fbf43953d02870323c51e9ed9b878d590dc6",
+        "statement_text": "An admissible polygon is a bounded simple planar polygonal domain whose boundary is a simple cyclic union of finitely many nonzero straight segments, with no self-contact. A genuine corner is a boundary vertex at which the two incident directed segments are not collinear; its interior angle is required to lie strictly between \\(0\\) and \\(2\\pi\\). Starting from any polygonal presentation, delete adjacent collinear redundant vertices cyclically until no such vertex remains; the resulting effective-edge count is the invariant number \\(N\\), and \\(A(P)\\) is the Euclidean area. The cyclic deletion is independent of deletion order because it removes exactly the vertices at which the incoming and outgoing segment directions agree.",
+        "status": "verified",
+        "title": "Admissible simple polygon",
+        "title_hash": "sha256:b9e0f6efabfc581ed8d9119b8593190d8a36bdfbde3fb52b3f018eaa1a166717"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [
+          "def-admissible-polygon",
+          "def-j-functional"
+        ],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-admissible-polygon",
+          "def-j-functional"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "def-conformal-data",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 22,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-admissible-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "def-j-functional",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:b3eff6d971515dc667b61bde728ec73dd8926bebda4b4132de6a44bd24ad55d9",
+        "statement_text": "For a polygon \\(P\\) in @def-admissible-polygon, let \\(r_P\\) be its maximal conformal radius and choose a Riemann map \\(F:\\mathbb D\\to P\\) centered at a maximizing point, with \\(F'(0)=r_P>0\\) and \\(F''(0)=0\\). The equality \\(F''(0)=0\\) is the first-order condition for the maximum of \\((1-|a|^2)|F'(a)|\\). Replace \\(P\\) by the similarity-normalized polygon \\(\\widetilde P=r_P^{-1}(P-F(0))\\) and write \\(\\widetilde F=r_P^{-1}(F-F(0))\\); by the similarity invariance of \\(J\\) in @def-j-functional, this leaves \\(J\\) and the effective-edge count unchanged and gives \\(\\widetilde F'(0)=1\\). In the normalized notation, \\[ \\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n. \\] Set \\[ S=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad T=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA. \\] The area identity is \\(A(\\widetilde P)=\\pi(1+S)\\); all later uses of \\(P,F,A,\\lambda_1\\) are understood in this similarity-normalized representative. The inverse derivative is in \\(A^2\\): at a prevertex with interior angle \\(\\omega\\in(0,2\\pi)\\), the Schwarz–Christoffel exponent is \\(\\alpha=\\omega/\\pi-1<1\\), so \\(|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})\\) and its area integral is bounded by \\(C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty\\).",
+        "status": "unverified",
+        "title": "Normalized conformal data",
+        "title_hash": "sha256:278fbded13184ed462eafebeda55bca7b6b2cdea96253fcc7f419b49924c2666"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [
+          "def-admissible-polygon"
+        ],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-admissible-polygon"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-j-functional",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 9,
+        "local_verification": {
+          "metrics": {
+            "cached": true,
+            "duration_ms": 80086,
+            "usage": {
+              "total_tokens": 11694
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [],
+            "nonblocking_comments": [
+              "Standard facts used implicitly include existence and positivity of the first Dirichlet Rayleigh eigenvalue on a bounded nondegenerate polygonal domain, and similarity invariance of A(P)λ1(P)."
+            ],
+            "refutation": "",
+            "repair_hints": "",
+            "summary": "The construction is meaningful and correctly defines the functional, the infimum sequence, and the reference regular polygon from the supplied admissible-polygon definition and standard mathematics.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:d8d6aebaa1474c860ecc85c19dfc459d4a43e8e181308ddb1955aa3442cb3a31"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-admissible-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:53054b04c549c94bda17d3823792506093e3009a788d21ff01ca9a7fad6d7724",
+        "statement_text": "For an admissible polygon \\(P\\) in @def-admissible-polygon, let \\(\\lambda_1(P)\\) be the first Dirichlet eigenvalue of \\(-\\Delta\\) on the bounded nondegenerate polygonal domain \\(P\\) and define \\[ J(P)=A(P)\\lambda_1(P),\\qquad m_k=\\inf\\{J(Q):Q\\text{ is admissible and has at most }k\\text{ effective edges}\\}. \\] Here \\(k\\ge3\\) is an integer, and \\(R_k\\) denotes the unit-area regular \\(k\\)-gon (its position is irrelevant because \\(J\\) is similarity invariant). The first eigenvalue is defined by the Dirichlet Rayleigh quotient on \\(H_0^1(P)\\).",
+        "status": "verified",
+        "title": "Area-eigenvalue functional",
+        "title_hash": "sha256:8a2e4ca522e927be72f56f49a61bc3500c963b54499bff6b5f1ea973e8292065"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [
+          "def-turn-measure"
+        ],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-turn-measure"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "def-positive-kernel",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 48,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-turn-measure",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:3cda493db3c31447f7728121364cc674f76df436b04057a5346a56d0c5bbe680",
+        "statement_text": "Let \\(j=j_{0,1}\\) be the first positive zero of the Bessel function \\(J_0\\), let \\(\\kappa=j^2/2-1>0\\), and define for \\(n\\ge1\\) \\[ b_n=\\frac1{n(n^2+\\kappa)},\\qquad E_b(\\mu)=\\sum_{n\\ge1}b_n|\\widehat\\mu(n)|^2, \\] for a finite real atomic measure \\(\\mu\\) of total mass \\(1\\) as in @def-turn-measure. For every positive integer \\(p\\), set \\[ B_p=\\sum_{\\ell\\ge1}\\frac1{\\ell p((\\ell p)^2+\\kappa)}. \\] The series defining \\(E_b\\) and \\(B_p\\) converge absolutely because \\(b_n=O(n^{-3})\\) and finite atomic measures have bounded Fourier coefficients.",
+        "status": "unverified",
+        "title": "Positive comparison kernel",
+        "title_hash": "sha256:b3fb855fa69ed427335336f138023ad695668b7205ae463be47c72c11d742d86"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [
+          "def-admissible-polygon",
+          "def-j-functional"
+        ],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-admissible-polygon",
+          "def-j-functional"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "def-stationary-polygon",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 18,
+        "local_verification": {
+          "metrics": {
+            "cached": true,
+            "duration_ms": 96181,
+            "usage": {
+              "total_tokens": 12736
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [
+              "The text should explicitly state that A, λ1, and therefore J are differentiable at P in the chosen vertex chart, and that the radial scaling path is represented in that chart. It should also spell out the decomposition V=W+(DA[V]/(2A))X, although this is routine linear algebra."
+            ],
+            "nonblocking_comments": [
+              "The m_k and R_k material in the J-functional dependency is unused here and does not affect the definition."
+            ],
+            "refutation": "",
+            "repair_hints": "Clarify the differentiability domain and define the radial vector X explicitly; then state the decomposition formula used in the converse implication.",
+            "summary": "The construction is meaningful from the supplied definitions, and the stated equivalence is valid. Since A(P)>0, the radial identity gives DA(P)[X]=2A(P)≠0, so every variation decomposes into a DA-kernel component and a radial component, yielding DJ=0 from the constrained Dλ condition.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:c97dbe405fd73204ab5b5dab16c43b56242afd2b9f9ca0207e47e569ceb2a32f"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-admissible-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "def-j-functional",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:cf6676d47c2db615f107d06ee1e7745cc6182131c1b7e2ef299961a18eb46361",
+        "statement_text": "An admissible polygon in @def-admissible-polygon, with \\(J\\) as defined in @def-j-functional, is stationary when, in a differentiable local chart of its effective vertex coordinates, \\(DJ(P)[V]=0\\) for every vertex variation \\(V\\). On the same chart this is equivalent to \\(D\\lambda_1(P)[V]=0\\) for every variation with \\(DA(P)[V]=0\\): the forward implication follows from \\(DJ=A\\,D\\lambda_1+\\lambda_1\\,DA\\), and the converse follows by applying the scaling identities \\(D\\lambda_1[X]=-2\\lambda_1\\) and \\(DA[X]=2A\\) to the radial variation and then using the Lagrange-multiplier decomposition.",
+        "status": "verified",
+        "title": "Vertex stationary polygon",
+        "title_hash": "sha256:d9cf90d7bc2faab172fbe9ce8d410f079702340d3fc8a50a0d83a81cf33c51ac"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "definition"
+        ],
+        "construction_dependencies": [
+          "def-admissible-polygon",
+          "def-conformal-data"
+        ],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-admissible-polygon",
+          "def-conformal-data"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "def-turn-measure",
+        "intent": "normal",
+        "kind": "definition",
+        "line": 35,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_hash": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "proof_present": false,
+        "proof_text": "",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-admissible-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "def-conformal-data",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:c2f418b6da528c0ee3b88a5bb0f9f4f6c75fd3b52b693f26274bcf2526c3d135",
+        "statement_text": "At the prevertices \\(e^{i\\theta_i}\\) of an admissible polygon in @def-admissible-polygon, with normalized conformal map from @def-conformal-data, put \\[ w_i=\\frac{\\pi-\\omega_i}{2\\pi},\\qquad \\mu=\\sum_iw_i\\delta_{\\theta_i},\\qquad \\widehat\\mu(n)=\\int e^{-in\\theta}d\\mu(\\theta). \\] Then \\(\\sum_iw_i=1\\) and \\(\\widehat\\mu(1)=0\\) in the chosen \\(F''(0)=0\\) normalization. The Schwarz–Christoffel derivative has logarithm \\[ L(z)=\\log F'(z)=2\\sum_{n\\ge1}\\frac{\\widehat\\mu(n)}n z^n, \\] so \\(L_n=2\\widehat\\mu(n)/n\\). This definition applies to finite real atomic measures induced by such polygons; all Fourier series below are interpreted in that class.",
+        "status": "unverified",
+        "title": "Signed Schwarz-Christoffel turn measure",
+        "title_hash": "sha256:13bfb46ff6a160cbbb3fc87610837feb59e83291266aba3333db2d6f77efe191"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-admissible-polygon",
+          "lem-edge-moments"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-airy-identity",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 76,
+        "local_verification": {
+          "metrics": {
+            "cached": true,
+            "duration_ms": 273902,
+            "usage": {
+              "total_tokens": 19034
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [
+              "The applicability and regularity hypotheses for the global Airy-potential theorem are asserted rather than checked; in particular, the stress tensor's integrability and the regularity of the resulting potential near corners should be stated.",
+              "The corner estimate for the normalized Dirichlet eigenfunction is invoked without identifying the precise polygonal corner regularity result that supplies the leading mode and derivative bound.",
+              "The one-dimensional integrations converting the two edge moments into equal endpoint gradients, equal vertex values after affine subtraction, and vanishing edge fluxes are compressed and should be shown explicitly.",
+              "The proof should explicitly state that the eigenfunction is the normalized Dirichlet first eigenfunction, since it uses both $u=0$ on the boundary and $\\int_Pu^2=1$."
+            ],
+            "nonblocking_comments": [],
+            "refutation": "",
+            "repair_hints": "State the Airy and corner-regularity results with their hypotheses, verify those hypotheses for the polygon and stress tensor, and include the short edge integrations. Explicitly tie the notation to the normalized Dirichlet eigenfunction in the dependency lemma.",
+            "summary": "The argument establishes the stated identity from the supplied edge-moment assumptions. The Airy-potential construction, boundary-flux argument, corner estimates, and final determinant expansion are mathematically consistent.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:535f85400a2110ed587b7b52d4db8d6b9e29f0b57c8524e8986487d64bb86340"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:5a4e02e55d9bc4cc7d937fd4f416edcfe8d8fb7388762a215b8824752fab55ba",
+        "proof_line": 83,
+        "proof_present": true,
+        "proof_text": "Define the divergence-free stress tensor \\[ T=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I. \\] An Airy potential \\(\\psi\\) with \\(D^2\\psi=R^TTR\\) exists locally and, after setting \\(\\Phi=\\psi-c|x|^2/4\\), satisfies \\[ D^2\\Phi=\\tfrac12(|\\nabla u|^2+\\lambda u^2-c)I-\\nabla u\\otimes\\nabla u. \\] Every boundary segment is effective by @def-admissible-polygon, so the identities in @lem-edge-moments apply on each segment. The planar Airy-potential theorem for a symmetric divergence-free stress on the simply connected polygon supplies one global \\(\\psi\\), unique up to an affine function. The two moments imply that \\(\\nabla\\Phi\\) has the same endpoint values on each segment. Propagating around the boundary and subtracting an affine function makes \\(\\Phi=0\\) at every vertex and \\(\\partial_\\nu\\Phi=0\\) on every segment; the mixed Hessian term vanishes there as well. At a corner of angle \\(\\omega<2\\pi\\), the leading Dirichlet mode is \\(r^\\alpha\\sin(\\alpha\\theta)\\) with \\(\\alpha=\\pi/\\omega>1/2\\), hence \\(|\\nabla u|=O(r^{\\alpha-1})\\), \\(|\\nabla\\Phi|=O(r^{2\\alpha-1}+r)\\), and \\(|D^2\\Phi|=O(r^{2\\alpha-2}+1)\\). These estimates make the circular boundary flux \\(O(\\varepsilon^{4\\alpha-2}+\\varepsilon^{2\\alpha})\\to0\\).Apply the divergence identity \\[ \\operatorname{div}\\{\\Delta\\Phi\\nabla\\Phi-D^2\\Phi\\nabla\\Phi\\}=(\\Delta\\Phi)^2-|D^2\\Phi|^2 \\] to \\(P\\) with corner disks removed and let \\(\\varepsilon\\downarrow0\\). The edge terms vanish by the preceding boundary conditions, hence \\(\\int_P\\det D^2\\Phi=0\\). The eigenvalues of \\(D^2\\Phi\\) are \\((\\lambda u^2-c\\pm|\\nabla u|^2)/2\\), so expanding their product and using \\(\\int_Pu^2=1\\) gives the stated identity.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-admissible-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-edge-moments",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:183086db09decf16c25edb988660b95ec26387bac02ca7e4becc42fcdcf5a68a",
+        "statement_text": "Let \\(P\\) be an admissible polygon whose boundary segments are all effective edges, and assume the edge moments in @lem-edge-moments. Then its first eigenfunction satisfies \\[ \\int_P|\\nabla u|^4=\\lambda^2\\left(\\int_Pu^4-A(P)^{-1}\\right). \\]",
+        "status": "verified",
+        "title": "Airy fourth-power identity",
+        "title_hash": "sha256:0a4e68fdd2b29be98ef10c761b9e84df4c2b78a82eed1f682545f398c1e03d63"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-positive-kernel",
+          "lem-signed-turn-lower-bound",
+          "lem-single-reflex-small-atom"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-atom-deletion",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 342,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:7ed4e7a07c18565dfb47e410ac6bb45a54bcfae5de97c9ad1af299098dd9bb83",
+        "proof_line": 353,
+        "proof_present": true,
+        "proof_text": "Let \\(\\delta=E_b(\\mu)-B_{N-1}\\ge0\\). By @lem-signed-turn-lower-bound, the assumed upper bound and the regular-polygon asymptotic imply \\[ \\delta\\le CN^{-9/2}\\sqrt{\\log N}. \\] For \\(U_b(\\theta)=\\sum_{n\\ge1}b_n\\operatorname{Re}(\\widehat\\mu(n)e^{in\\theta})\\), the Laplace representation in @def-positive-kernel and Cauchy–Schwarz give \\[ \\|U_b\\|_\\infty\\le C\\sqrt\\delta+CN^{-5/2}. \\] The exact expansion is \\[ E_b(\\widetilde\\mu)-E_b(\\mu)= \\frac{2a(E_b(\\mu)-U_b(\\theta_*))+a^2(K_b(0)-E_b(\\mu))}{(1-a)^2}, \\] where \\(K_b(0)=\\sum_{n\\ge1}b_n\\). Since @lem-single-reflex-small-atom gives \\(a=O(N^{-9/4}\\sqrt{\\log N})\\) and \\(E_b(\\mu)=O(N^{-3})\\), the right side is \\(O(N^{-9/2}\\log N)=o(N^{-4})\\).",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-positive-kernel",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-signed-turn-lower-bound",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-single-reflex-small-atom",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:e584eecc8e498b5eebe70cef5435a0e76c81c38c17b904ca256e377f64fb04aa",
+        "statement_text": "Let \\(P\\) be a stationary admissible \\(N\\)-gon in the one-reflex regime satisfying \\(J(P)\\le J(R_{N-1})\\), with \\(J,R\\) as in @def-j-functional and \\(\\mu\\) the one-reflex measure in @def-turn-measure. Let \\(p=N-1\\), and let \\(a\\) be the small positive atom from @lem-single-reflex-small-atom. Put \\[ \\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a}. \\] Then \\(\\widetilde\\mu\\) has total mass \\(1\\) and \\(N-2\\) positive atoms, and \\[ E_b(\\widetilde\\mu)-E_b(\\mu)=o(N^{-4}). \\]",
+        "status": "open",
+        "title": "Deletion preserves the comparison energy",
+        "title_hash": "sha256:6d881823c1e3b99f5bc31f4207e0de6fde877cc737ced87ac5cd4d6f30ad8754"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-stationary-polygon"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-edge-moments",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 61,
+        "local_verification": {
+          "metrics": {
+            "cached": true,
+            "duration_ms": 140084,
+            "usage": {
+              "total_tokens": 13757
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [
+              "The applicability of the stated Hadamard formula to a polygon with corners, vertex variations, and the first eigenvalue is not justified; the needed regularity and simplicity hypotheses should be stated or cited precisely.",
+              "The proof should explicitly write the stationarity equation at each vertex, showing how contributions from both incident edges combine and how linear independence of their normals forces each weighted edge integral to vanish.",
+              "The specialized property of an effective edge—that its endpoints are independently variable genuine corners with linearly independent adjacent normals—is assumed but not defined or cited in the supplied context."
+            ],
+            "nonblocking_comments": [],
+            "refutation": "",
+            "repair_hints": "State the polygonal Hadamard shape-derivative theorem and verify its hypotheses. For an edge E, write the two endpoint equations explicitly as the vanishing of the integrals of (1-s/ell_E)(c-q) and (s/ell_E)(c-q), then solve for the zeroth and first moments.",
+            "summary": "The argument correctly derives the two edge moments from stationarity, using the affine endpoint variations and independence of adjacent edge normals. Some geometric and analytic hypotheses are left implicit.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:eb08f979b82afe7c71804ed7a263da75cb6dc01b7988cc15fe99c9142a49d4fa"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:98fd8572ef90d6bc846550297a8f792e43f15ff631e92d632fdb1be1840164ae",
+        "proof_line": 68,
+        "proof_present": true,
+        "proof_text": "By @def-stationary-polygon, the derivative of \\(J=A\\lambda\\) vanishes for every vertex displacement. Hadamard’s formula is \\[ DJ[V]=A\\int_{\\partial P}(c-q)V\\cdot\\nu\\,ds. \\] Moving one endpoint of an effective edge while keeping the other fixed produces an affine normal velocity on that edge, and the two endpoint velocities give the independent functions \\(1\\) and \\(s/\\ell_E\\). Since adjacent effective edge normals are linearly independent at a genuine corner, stationarity forces both coefficients of these two affine test functions to vanish. Rescaling \\(s/\\ell_E\\) gives the displayed moments.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-stationary-polygon",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:9fe8d6f1f823d7f899ec056bada7582af5281fd0da8b88781d7c08b1b8a825dd",
+        "statement_text": "Let \\(P\\) be admissible and stationary in the sense of @def-stationary-polygon. If \\(u>0\\) is the \\(L^2\\)-normalized first eigenfunction, \\(\\lambda=\\lambda_1(P)\\), \\(c=\\lambda/A(P)\\), and \\(q=|\\partial_\\nu u|^2\\), then every effective edge \\(E\\), parametrized by physical arclength \\(s\\in[0,\\ell_E]\\), satisfies \\[ \\int_E(q-c)\\,ds=0,\\qquad \\int_Es(q-c)\\,ds=0. \\]",
+        "status": "verified",
+        "title": "Stationary edge moments",
+        "title_hash": "sha256:f08eb7330936e6fd24a9ac470f9f46dda383c06f68090cadd014c1014bf61887"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-airy-identity",
+          "lem-edge-moments",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-inverse-energy",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 145,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:19219d7a623fc5b7ea401cb8e7889d693ee1a80abeab3b6e26f8b9d7537bc553",
+        "proof_line": 153,
+        "proof_present": true,
+        "proof_text": "Under the edge-moment hypotheses @lem-edge-moments, pull @lem-airy-identity back by \\(F\\) and use \\(F'^{-1}=1+k\\) to obtain \\[ \\int_{\\mathbb D}|\\nabla v|^4|1+k|^2 =\\lambda^2\\int_{\\mathbb D}v^4|1+g|^2-\\frac{\\lambda^2}{\\pi(1+S)}. \\] The perturbation expansion in @lem-near-circle-conformal gives \\(|\\nabla v|^4=a+b_1+O(S)\\), where \\(a=|\\nabla v_0|^4\\) is radial and \\(b_1\\) has zero circular mean. Since the constant Fourier mode of \\(k\\) is zero, orthogonality leaves a term \\(\\int a|k|^2\\) on the left. On a fixed outer annulus \\(a\\) is bounded below, while \\(k=-g/(1+g)=O(\\sqrt S)\\) on the inner disk. Cauchy–Schwarz and the perturbation bounds therefore give \\[ T\\le C\\{S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\}. \\] Young’s inequality absorbs the mixed term and, for sufficiently small \\(S\\), the last two terms, proving \\(T\\le CS\\).",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-airy-identity",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-edge-moments",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-near-circle-conformal",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:c3c450f06a933586ef2e70b68491cc8808b0cc0881c5436e5233df5bced4926c",
+        "statement_text": "For the conformal data in @def-conformal-data of a stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments and in the regime of @lem-near-circle-conformal, one has \\[ T\\le CS. \\] The constant is independent of the number and separation of the vertices and of the angle sizes.",
+        "status": "open",
+        "title": "Inverse derivative energy",
+        "title_hash": "sha256:905cfa718981c981b0f736c19356622908c5d35a9d256a01b285083f4ebdee9e"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-toeplitz-positive-atoms"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "lem-kernel-comparison",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 246,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:f9a5da75dcf296bbe86085872a9dd09771eabe6705a01aa3b7a454440cbca5e7",
+        "proof_line": 261,
+        "proof_present": true,
+        "proof_text": "The Bessel bounds \\(5.78<j^2<5.8\\) give \\(1.89<\\kappa<1.9\\). The recurrence for \\(J_n\\) implies \\(0<\\rho_n<2\\) and, for \\(n\\ge3\\), \\(\\rho_n<n\\alpha/(n^2+\\kappa)\\) with \\(\\alpha=\\kappa+1\\). Substitution into \\[ a_n=\\frac{n-\\rho_n+\\rho_n^2/(n+1)^2}{n^2(n^2-1)} \\] proves \\(a_n\\ge b_n\\); for \\(n=2\\), the identity \\(J_0(j)=0\\) reduces the inequality to \\(\\kappa^3+7\\kappa^2+12\\kappa-54\\ge0\\), which holds for \\(\\kappa\\ge1.89\\).The Laplace representation follows from \\[ \\int_0^\\infty e^{-nt}(1-\\cos(\\sqrt\\kappa t))\\,dt=\\frac{\\kappa}{n(n^2+\\kappa)}. \\] Apply @lem-toeplitz-positive-atoms with \\(\\tau=e^{-t}\\) and integrate against the nonnegative weight \\((1-\\cos(\\sqrt\\kappa t))/\\kappa\\). Tonelli’s theorem gives \\(E_b(\\mu)\\ge B_p\\).",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-toeplitz-positive-atoms",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:b445743bd17fd80007b51c2f68f8335115089815887c780937d3800ebcfc8c2a",
+        "statement_text": "For every \\(n\\ge2\\), the coefficients in @lem-spectral-core satisfy \\[ 0<b_n\\le a_n. \\] Moreover, \\[ b_n=\\int_0^\\infty e^{-nt}\\frac{1-\\cos(\\sqrt\\kappa t)}\\kappa\\,dt, \\] so for any signed atomic measure of total mass \\(1\\) with \\(p\\) positive atoms, \\[ E_b(\\mu)\\ge B_p. \\]",
+        "status": "unverified",
+        "title": "Positive kernel comparison",
+        "title_hash": "sha256:dcee37fa249d9b38691c5333a2afa5d43cd2e25c9ee5a72bbddd85ba296d862d"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-uniform-w14"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-near-circle-conformal",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 113,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:f36816d3db3588b3041e0bcfd6e73326d95dfd9f2bbf3e9e470df6d53d4488b4",
+        "proof_line": 121,
+        "proof_present": true,
+        "proof_text": "The regular-polygon asymptotic is \\[ \\frac{J(R_M)}{\\pi j^2}=1+\\frac{4\\zeta(3)}{M^3}+O(M^{-5}). \\] After area normalization, the quantitative Faber–Krahn inequality and the assumed upper bound imply convergence in measure to the unit disk. By @lem-uniform-w14, normalized eigenfunctions converge uniformly on compact subsets; positivity of the disk eigenfunction then gives \\(B_{1-\\eta}\\subset P\\) for every fixed \\(\\eta>0\\) and all sufficiently large \\(N\\). The maximum conformal radius is therefore at least \\(1-\\eta\\) and at most \\(1\\). In the normalization \\(F'(0)=1\\), this yields \\(1+S=r_P^{-2}\\to1\\).For the quantitative rate, write the pulled-back eigenproblem as \\[ -\\Delta v=\\lambda|1+g|^2v,\\qquad v|_{\\partial\\mathbb D}=0, \\] with the weighted \\(L^2\\) normalization. The disk Green operator on the zero-trace \\(C^1\\) space satisfies \\[ \\|\\mathcal G(gh)\\|_{C^1}\\le C\\|g\\|_{A^2}\\|h\\|_{C^1},\\qquad \\|\\mathcal G(g_1\\overline{g_2}h)\\|_{C^1}\\le C\\|g_1\\|_{A^2}\\|g_2\\|_{A^2}\\|h\\|_{C^1}. \\] Bergman pointwise bounds near the boundary and the Green kernel estimates prove these inequalities. Analytic perturbation around the simple disk ground state gives \\(v=v_0+v_1+v_2+O_X(S^{3/2})\\) and \\[ \\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}), \\qquad \\rho_n=j\\frac{J_{n+1}(j)}{J_n(j)},\\quad0<\\rho_n<2. \\] Thus the quadratic term is at least \\(S/3\\) and, after shrinking the universal small neighborhood, \\(J(P)/(\\pi j^2)-1\\ge S/6\\). The upper bound is \\(O(N^{-3})\\), hence \\(S\\le CN^{-3}\\).",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-uniform-w14",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:f18679c3a5495dcdb5234eda799911d81a7e8dbbd1ce2d5f850059fa16154088",
+        "statement_text": "For a sequence of admissible stationary \\(N\\)-gons in the sense of @def-stationary-polygon whose canonical boundary presentations consist entirely of effective edges, satisfying the edge moments of @lem-edge-moments and with \\(J,R\\) as in @def-j-functional, \\[ J(P)\\le J(R_{N-1}), \\] with \\(N\\to\\infty\\), the conformal data of @def-conformal-data satisfy \\(S\\to0\\) and, in fact, \\(S\\le C N^{-3}\\) with a universal \\(C\\).",
+        "status": "open",
+        "title": "Near-circle conformal deficit",
+        "title_hash": "sha256:c20131fa644b5f7192b099a11d4f9e5a053ca84fb2066811eb282445c06730fb"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-turn-measure",
+          "lem-kernel-comparison",
+          "lem-spectral-core"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "lem-signed-turn-lower-bound",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 275,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:a1a213ff0829d6170e64e0bf4dc8ec9acc160f6dcb47f5a739868632075284d7",
+        "proof_line": 282,
+        "proof_present": true,
+        "proof_text": "By @lem-spectral-core and @lem-kernel-comparison, \\(a_n\\ge b_n\\) for \\(n\\ge2\\). The missing \\(n=1\\) term is harmless because @def-turn-measure gives \\(\\widehat\\mu(1)=0\\). Hence \\[ \\frac{J(P)}{\\pi j^2}\\ge 1+4E_b(\\mu)-C S^{3/2}\\sqrt{\\log(e/S)}. \\] The lower bound \\(E_b(\\mu)\\ge B_p\\) is exactly @lem-kernel-comparison.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-turn-measure",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-kernel-comparison",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-spectral-core",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:808bc4b0ca4fb31cdd9d6c2a4fdebb36ee3314d39d8fd8b324cea1c32c9b9a52",
+        "statement_text": "For a stationary polygon in the regime of @lem-spectral-core, if \\(p\\) is its number of convex corners, then \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4B_p-C S^{3/2}\\sqrt{\\log(e/S)}. \\]",
+        "status": "unverified",
+        "title": "Signed-turn spectral lower bound",
+        "title_hash": "sha256:23947e1677068225a6687e6a87f3d1faf694ac973807919b088a53eb10148fd7"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-conformal-data",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-single-reflex-small-atom",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 310,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:0105a77da5dfcfd016bc29c1b8c164eb84cba6e0185f938e45233629c93c1009",
+        "proof_line": 317,
+        "proof_present": true,
+        "proof_text": "The boundary identity in @def-conformal-data gives a homogeneous \\(H^{1/2}\\) seminorm of \\(F-F(0)-z\\) equal to \\(S\\); restricting it to a straight prevertex arc of length \\(\\varepsilon\\) gives a lower bound \\(c\\varepsilon^4\\), hence every prevertex gap is at most \\(CS^{1/4}\\). The perturbation estimate in @lem-near-circle-conformal gives for the disk boundary derivative \\(p=-\\partial_rv\\) on every such arc \\[ \\operatorname{osc}_I p\\le C\\{\\sqrt S\\,\\varepsilon\\sqrt{\\log(e/\\varepsilon)}+S\\}\\le CS^{3/4}\\sqrt{\\log(e/S)}. \\]Place the unique negative turn at angle \\(0\\). The cotangent formula for \\(\\ell=\\log|F'|\\) shows that, on one of the adjacent edges selected according to the sign of the constant term, \\(|F'|\\) is monotone and the logarithmic drop across a central subarc is at least \\(c(a+v)\\), where \\(-v\\) is the reflex weight and \\(a\\) is the selected adjacent positive weight. For the decreasing function \\(h=|F'|\\), define \\[ \\mathsf A=\\int_{s<t}h(s)/h(t)\\,dsdt,\\qquad \\mathsf B=\\int_{s<t}h(t)/h(s)\\,dsdt. \\] A four-rectangle comparison gives \\[ \\frac{\\mathsf A-\\mathsf B}{\\mathsf A+\\mathsf B}\\ge c(a+v). \\] Put \\(k_0=h^{-2}\\) and normalize the selected edge to \\(x\\in[0,1]\\). The identity equating \\(D\\) with a first moment of \\(k_0\\) is not valid for a general monotone \\(h\\); the needed valid substitute is the following elementary one-dimensional estimate: \\[ D=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))\\,dsdt}{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))\\,dsdt},\\quad \\int_0^1(x-1/2)p(x)^2k_0(x)\\,dx=0 \\Longrightarrow D\\le C\\frac{\\max_Ip-\\min_Ip}{\\min_Ip}. \\] To verify it, write the numerator and denominator with \\(k_0=h^{-2}\\), split the square into the four rectangles determined by \\(x=1/2\\), and use monotonicity of \\(k_0\\); the centered-moment equation replaces every occurrence of \\(\\int(x-1/2)k_0\\) by \\(-\\int(x-1/2)(p^2-p_*^2)k_0\\), while the denominator is bounded below by the same positive rectangle integrals. Since \\(p\\ge p_D/2\\) uniformly, this gives \\(D\\le C\\operatorname{osc}_I p\\). The lower bound \\(D\\ge c(a+v)\\) and the last inequality imply \\(a+v\\le C S^{3/4}\\sqrt{\\log(e/S)}\\). Combining this with \\(S\\le CN^{-3}\\) proves the stated bound.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-conformal-data",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-near-circle-conformal",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:18dc8c9c83c5e04deb64af98fe53c49bf7a34ddf5bd62c7d2b4d36d39a5dd5fa",
+        "statement_text": "There is a universal \\(C\\) such that a stationary admissible \\(N\\)-gon satisfying the edge moments of @lem-edge-moments, with exactly one reflex corner and in the regime of @lem-near-circle-conformal, has an adjacent convex corner \\(i\\) whose turn weight \\(a=w_i>0\\) in @def-turn-measure satisfies \\[ a\\le C N^{-9/4}\\sqrt{\\log N}. \\]",
+        "status": "open",
+        "title": "Single-reflex small positive atom",
+        "title_hash": "sha256:82c19babcc7d747982639c6c19d7808d5588c6d012677ba1752c65b17a6721a7"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "def-turn-measure",
+          "lem-airy-identity",
+          "lem-inverse-energy",
+          "lem-near-circle-conformal"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-spectral-core",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 166,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:d1c8f91eebe5f7f54aa2ac7853b24f828c2214eeabcfc5f73fbf6ac2990b27f8",
+        "proof_line": 178,
+        "proof_present": true,
+        "proof_text": "The first-order perturbation and the second-order disk calculation from @lem-near-circle-conformal give \\[ \\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}), \\] with \\(\\beta_n=n+1-\\rho_n\\). By @lem-inverse-energy, \\(T\\le CS\\). The identity \\(g+k=-gk\\) gives weighted coefficient bounds; splitting at \\(K=S^{-1/2}\\) yields, for every multiplier \\(O((n+1)^{-2})\\), \\[ \\left|\\sum b_n(|k_n|^2-|g_n|^2)\\right|\\le CS^{3/2}\\sqrt{\\log(e/S)}. \\] The same bound replaces \\(g\\) by \\(L=\\log F'\\) in all such quadratic forms, while the leading \\(T-S\\) term is retained.To compute that leading term, introduce the Airy potential from @lem-airy-identity and the two-variable analytic functional obtained by treating \\(g\\) and \\(k\\) independently. Its quadratic part is computed on a polynomial direction \\(F'(z)=1+ta z^n\\). The first-order boundary flux is \\[ \\delta(q-c)=-\\frac{2p_D^2\\beta_n}{n+1}\\operatorname{Re}(ae^{in\\theta}), \\qquad p_D=j/\\sqrt\\pi. \\] The induced first-order Airy gradient has frequencies \\(n+1\\) and \\(1-n\\); its signed area is \\(-\\pi d_n^2/[8(n^2-1)]\\). Since the Airy identity equals minus four times this area, the quadratic contribution is \\[ 2\\pi p_D^4\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|a|^2. \\] Rotational orthogonality removes cross terms, and density of analytic polynomials extends the calculation to \\(A^2\\). The actual relation \\(g+k=-gk\\) then gives \\[ S-T=2\\sum_{n\\ge2}\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|g_n|^2+O(S^{3/2}\\sqrt{\\log(e/S)}). \\] The logarithmic inequality \\[ \\|L\\|_{A^2}^2\\le (S+T)/2 \\] comes from \\(|f|^2+|f|^{-2}-2\\ge4(\\operatorname{Re}L)^2\\) and equality of real and imaginary Bergman energies. Combining these formulas gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+\\sum_{n\\ge2}\\frac{\\beta_n}{(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right)|L_n|^2-C S^{3/2}\\sqrt{\\log(e/S)}. \\] Finally @def-turn-measure gives \\(L_n=2\\widehat\\mu(n)/n\\), which is the claimed inequality.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "def-turn-measure",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-airy-identity",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-inverse-energy",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-near-circle-conformal",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:d7e157d5753fc8df058785df7bfc673641651f1815c7666db8500286d8ea478d",
+        "statement_text": "There are universal constants \\(C\\) and \\(S_0>0\\) such that every stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments and lying in the regime of @lem-near-circle-conformal, with \\(S\\le S_0\\), satisfies \\[ \\frac{J(P)}{\\pi j^2}\\ge 1+4\\sum_{n\\ge2}a_n|\\widehat\\mu(n)|^2-C S^{3/2}\\sqrt{\\log(e/S)}, \\] where @def-turn-measure defines \\(\\mu\\) and \\[ a_n=\\frac{\\beta_n}{n^2(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right), \\qquad \\beta_n=n+1-j\\frac{J_{n+1}(j)}{J_n(j)}. \\]",
+        "status": "open",
+        "title": "Uniform nonlinear spectral lower bound",
+        "title_hash": "sha256:4fdebf9da59b4720ffc1b4936b73469eecd1a7738dd20a2038c278023ee04652"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "out-of-scope",
+          "status": "unverified"
+        },
+        "id": "lem-toeplitz-positive-atoms",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 213,
+        "local_verification": {
+          "detail": "The proof is ready but fell outside the selected fact or path closure.",
+          "reason": "out-of-scope",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:2956ddc2912e0641574429e38c927490bb9c95b2c5af2dd743143b9dd08ed964",
+        "proof_line": 220,
+        "proof_present": true,
+        "proof_text": "Define on \\(\\ell^2(\\mathbb N_0)\\) the self-adjoint matrix \\[ A_{rs}=\\tau^{(r+s)/2}\\widehat\\mu(r-s)=\\sum_iw_i(v_i)_r\\overline{(v_i)_s}, \\qquad (v_i)_r=\\tau^{r/2}e^{-ir\\theta_i}. \\] The Vandermonde vectors at distinct nodes are linearly independent, so \\(A\\) has exactly \\(p\\) positive eigenvalues \\(\\alpha_1\\ge\\cdots\\ge\\alpha_p>0\\). The trace is \\((1-\\tau)^{-1}\\), and the negative eigenvalues can only decrease the trace, hence \\(Q:=\\sum_i\\alpha_i\\ge(1-\\tau)^{-1}\\). The shift compression and the min–max principle give \\(\\alpha_{i+1}\\le\\tau\\alpha_i\\). For fixed \\(Q\\) and these ratio constraints, a finite exchange argument (move mass from an earlier coordinate to the latest coordinate until the active constraint is met) shows that the minimum of the strictly convex function \\(\\sum_i\\alpha_i^2\\) is attained at \\[ \\alpha_i=Q\\frac{(1-\\tau)\\tau^{i-1}}{1-\\tau^p},\\qquad 1\\le i\\le p. \\] Consequently \\[ \\sum_i\\alpha_i^2\\ge Q^2\\frac{1-\\tau}{1+\\tau}\\frac{1+\\tau^p}{1-\\tau^p} \\ge\\frac{1+\\tau^p}{(1-\\tau^2)(1-\\tau^p)}. \\] On the other hand, \\[ \\|A\\|_{HS}^2=\\frac{1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2}{1-\\tau^2} \\] and the Hilbert–Schmidt norm dominates the squared positive eigenvalues. Rearranging gives \\[ 1+2\\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{1+\\tau^p}{1-\\tau^p}, \\] which is exactly the claimed bound.",
+        "reference_checks": [],
+        "refutation": false,
+        "statement_hash": "sha256:2daeda21ba904e749aa33aa1d097567081f063981251e48f4fd660bf10037e4b",
+        "statement_text": "Let \\(\\mu\\) be a finite real atomic measure of total mass \\(1\\) with exactly \\(p\\) positive atoms, allowing arbitrary negative atoms. For \\(0<\\tau<1\\), \\[ \\sum_{n\\ge1}\\tau^n|\\widehat\\mu(n)|^2\\ge\\frac{\\tau^p}{1-\\tau^p}. \\]",
+        "status": "unverified",
+        "title": "Positive-atom Toeplitz bound",
+        "title_hash": "sha256:885f9fb4c80a040e909eeb31ac8fee5326aa64a76bf4556c79e9ab5e55fcb0e0"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-near-circle-conformal",
+          "lem-signed-turn-lower-bound"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "lem-two-reflex-exclusion",
+        "intent": "draft",
+        "kind": "lemma",
+        "line": 290,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:fbe31ae361ee081d757bdcfd921560e133caf3d5ffbba4d0310b353841790ead",
+        "proof_line": 298,
+        "proof_present": true,
+        "proof_text": "If there are at least two reflex corners, the number \\(p\\) of convex corners is at most \\(N-2\\). By @lem-near-circle-conformal, \\(S\\le CN^{-3}\\), and @lem-signed-turn-lower-bound gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4B_{N-2}-o(N^{-4}). \\] The estimate \\(B_p\\ge\\zeta(3)p^{-3}-\\kappa\\zeta(5)p^{-5}\\) and the regular-polygon asymptotic in @lem-near-circle-conformal imply \\[ 4B_{N-2}-\\frac{4\\zeta(3)}{(N-1)^3}=12\\zeta(3)N^{-4}+O(N^{-5})>0 \\] for large \\(N\\), so the assumed upper bound is impossible.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-near-circle-conformal",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-signed-turn-lower-bound",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:4806930b10792f53f739d493c5015cdd71c43ee489711b03e58beadbaf933703",
+        "statement_text": "There is \\(N_1\\) such that no stationary admissible \\(N\\)-gon in the sense of @def-stationary-polygon, with at least two reflex corners and with \\(J\\) as in @def-j-functional, satisfies \\[ J(P)\\le J(R_{N-1}) \\] for \\(N\\ge N_1\\).",
+        "status": "open",
+        "title": "At least two reflex corners are excluded",
+        "title_hash": "sha256:d6190685891bcca8eef8b0d51b54f4d537e8fd1b349fda88a304798ff989f5cc"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "lemma"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-airy-identity"
+        ],
+        "draft": false,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "status": "verified"
+        },
+        "id": "lem-uniform-w14",
+        "intent": "normal",
+        "kind": "lemma",
+        "line": 101,
+        "local_verification": {
+          "metrics": {
+            "duration_ms": 176844,
+            "usage": {
+              "total_tokens": 15830
+            }
+          },
+          "report": {
+            "critical_errors": [],
+            "gaps": [
+              "The domain-independent heat-kernel estimate is invoked without stating its precise semigroup/Gaussian-domination hypotheses or briefly deriving the displayed constant.",
+              "The zero-extension step should explicitly invoke polygonal Lipschitz regularity and a trace or distributional argument to justify membership in W^{1,4}(R^2)."
+            ],
+            "nonblocking_comments": [
+              "Replacing λ by the upper bound Λ is immediate because λ>0.",
+              "The resulting bound is actually independent of A0, which is stronger than required."
+            ],
+            "refutation": "",
+            "repair_hints": "State the Dirichlet heat-kernel domination and its optimization at t=1/λ, and justify that u has zero trace as a W^{1,4} function on the Lipschitz polygon, so its zero extension has gradient equal to the zero extension of ∇u.",
+            "summary": "The argument establishes the stated uniform W^{1,4} and Morrey bounds from the heat-kernel estimate, the assumed Airy identity, normalization, and zero extension. No critical mathematical error is present.",
+            "verdict": "correct"
+          },
+          "source": "local-verifier-evidence",
+          "status": "verified",
+          "verification_key": "sha256:4919ced27d8cca03caf02492fc1971a8380f625d06f8aa47daefcf68260ac55d"
+        },
+        "mechanical": "ok",
+        "origin": "agent",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:a05e01505b33e74138d2ddbf11c3cc7fbbcc35e2207542d3eccd7f5c01cd1d46",
+        "proof_line": 105,
+        "proof_present": true,
+        "proof_text": "The domain-independent Dirichlet heat-kernel estimate gives \\(\\|u\\|_\\infty^2\\le e^2\\lambda/(8\\pi)\\) for the normalized first eigenfunction. Under the edge-moment hypotheses, @lem-airy-identity applies, and \\(\\int_Pu^4\\le\\|u\\|_\\infty^2\\int_Pu^2=\\|u\\|_\\infty^2\\); combining these facts yields \\[ \\int_P|\\nabla u|^4\\le \\frac{e^2\\lambda^3}{8\\pi}. \\] The same \\(L^\\infty\\) bound gives \\(\\int_P|u|^4\\le\\|u\\|_\\infty^2\\), so the \\(W^{1,4}(P)\\) norm is bounded by a constant depending only on \\(A_0\\) and \\(\\Lambda\\). Since \\(u\\in H^1_0(P)\\), its zero extension has no boundary distribution term in its weak gradient; the extension therefore lies in \\(W^{1,4}(\\mathbb R^2)\\) with the same gradient bound. Morrey’s inequality in dimension two then gives a \\(C^{0,1/2}\\) representative with the same parameter dependence.",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-airy-identity",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:378d8a9fb94512468b7751300cbe1119ce791ef72a67a81c7279075692b8b21e",
+        "statement_text": "For every fixed area \\(A_0>0\\) and eigenvalue bound \\(\\Lambda<\\infty\\), there is \\(C=C(A_0,\\Lambda)\\) such that every admissible stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying the edge-moment hypotheses of @lem-edge-moments, with \\(A(P)=A_0\\) and \\(\\lambda_1(P)\\le\\Lambda\\), has its zero extension \\(\\bar u\\) of the \\(L^2(P)\\)-normalized positive first Dirichlet eigenfunction uniformly bounded in \\(W^{1,4}(\\mathbb R^2)\\) and hence in \\(C^{0,1/2}(\\mathbb R^2)\\).",
+        "status": "verified",
+        "title": "Uniform W1,4 bound",
+        "title_hash": "sha256:0ccb48c08640e1fc8aa892c46a8f9444306f6eda221fa60d44d69ca3f626fb17"
+      },
+      {
+        "abandon": false,
+        "assumed": false,
+        "classes": [
+          "goal",
+          "theorem"
+        ],
+        "construction_dependencies": [],
+        "date": "2026-10-31",
+        "dependencies": [
+          "lem-atom-deletion",
+          "lem-kernel-comparison",
+          "lem-near-circle-conformal",
+          "lem-signed-turn-lower-bound",
+          "lem-single-reflex-small-atom",
+          "lem-spectral-core",
+          "lem-two-reflex-exclusion"
+        ],
+        "draft": true,
+        "export": null,
+        "file": "workspace/large-n-proof.qmd",
+        "global_verification": {
+          "assumptions": [],
+          "blockers": [],
+          "reason": "draft",
+          "status": "open"
+        },
+        "id": "thm-main-large-n-convexity",
+        "intent": "draft",
+        "kind": "theorem",
+        "line": 370,
+        "local_verification": {
+          "detail": "The proof is marked .draft: deliberately unfinished, so it is not sent to the verifier.",
+          "reason": "draft",
+          "status": "not-run"
+        },
+        "mechanical": "ok",
+        "origin": "user",
+        "proof_file": "workspace/large-n-proof.qmd",
+        "proof_hash": "sha256:ea6d5bfa163c09069860cc5ff1c37b6cfd58941dc372b73d4f31b967ee1a212d",
+        "proof_line": 378,
+        "proof_present": true,
+        "proof_text": "Assume the conclusion fails. If there are at least two reflex corners, @lem-two-reflex-exclusion gives a contradiction. Thus there is exactly one reflex corner. Apply @lem-single-reflex-small-atom and @lem-atom-deletion. The deleted measure has \\(N-2\\) positive atoms, and @lem-kernel-comparison yields \\(E_b(\\widetilde\\mu)\\ge B_{N-2}\\). By the proof of @lem-signed-turn-lower-bound (equivalently, by @lem-spectral-core together with @lem-kernel-comparison), \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4E_b(\\mu)-C S^{3/2}\\sqrt{\\log(e/S)}. \\] Using @lem-atom-deletion and \\(S\\le CN^{-3}\\) from @lem-near-circle-conformal gives \\[ \\frac{J(P)}{\\pi j^2}\\ge1+4B_{N-2}-o(N^{-4}). \\] The regular-polygon asymptotic gives \\[ \\frac{J(R_{N-1})}{\\pi j^2}=1+\\frac{4\\zeta(3)}{(N-1)^3}+O(N^{-5}), \\] while \\(B_{N-2}=\\zeta(3)(N-2)^{-3}+O(N^{-5})\\). Their difference is \\(12\\zeta(3)N^{-4}+O(N^{-5})\\), contradicting \\(J(P)\\le J(R_{N-1})\\) for large \\(N\\).",
+        "reference_checks": [
+          {
+            "cycle": "pass",
+            "dependency": "lem-atom-deletion",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-kernel-comparison",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-near-circle-conformal",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-signed-turn-lower-bound",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-single-reflex-small-atom",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-spectral-core",
+            "existence": "pass",
+            "scope": "pass"
+          },
+          {
+            "cycle": "pass",
+            "dependency": "lem-two-reflex-exclusion",
+            "existence": "pass",
+            "scope": "pass"
+          }
+        ],
+        "refutation": false,
+        "statement_hash": "sha256:8460a59a80b8f229f5d66d88d8f0a9f8c5e55daaed4a6206c2c1f55cac0fc0f0",
+        "statement_text": "There is a universal \\(N_0\\) such that, for every \\(N\\ge N_0\\), every admissible stationary simple \\(N\\)-gon \\(P\\) satisfying \\[ J(P)\\le J(R_{N-1}) \\] is convex. Consequently, no such polygon satisfies \\(J(P)<m_{N-1}\\) while being non-convex.",
+        "status": "open",
+        "title": "Large-N low-threshold stationary polygons are convex",
+        "title_hash": "sha256:b10a225d0fdc80be3748c36e966e4d4146bead6cdc6d576167a493c10623fd29"
+      }
+    ],
+    "schema_version": 8,
+    "snapshot_id": "sha256:cda367673da9813af8935a5bee6617855e305c81abc5e01572812c50c32baee3"
+  },
+  "notes": [
+    {
+      "goals": [],
+      "path": "index.qmd"
+    },
+    {
+      "goals": [
+        "thm-main-large-n-convexity"
+      ],
+      "path": "workspace/large-n-proof.qmd"
+    }
+  ],
+  "schema_version": 8,
+  "snapshot_id": "sha256:cda367673da9813af8935a5bee6617855e305c81abc5e01572812c50c32baee3",
+  "source_signature": "sha256:bd5c4bdf2a3ccf9e455f9d9dee98f442dda94c4a9d5364d0a709772a1f8278f1",
+  "summary": {
+    "errors": 0,
+    "facts": 19,
+    "goals": 1,
+    "notes": 2
+  }
+}

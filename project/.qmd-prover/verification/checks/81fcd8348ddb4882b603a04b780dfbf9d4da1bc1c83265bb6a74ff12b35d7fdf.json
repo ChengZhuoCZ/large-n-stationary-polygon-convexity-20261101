@@ -1,0 +1,163 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-frequency-replacement": {
+      "identity": {
+        "statement_hash": "sha256:c44d3f9ab726441375c7b70a39ca012c2f4fd3dfcfc63d1569f998b81a1e5064"
+      },
+      "origin": "fact"
+    },
+    "lem-gradient-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 67281,
+    "usage": {
+      "total_tokens": 13734
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-frequency-replacement",
+        "identity": {
+          "statement_hash": "sha256:c44d3f9ab726441375c7b70a39ca012c2f4fd3dfcfc63d1569f998b81a1e5064"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $g,k,L$ be the normalized analytic data in @def-conformal-data, with $L=\\log(1+g)$, and suppose $S=\\|g\\|_{A^2}^2$ is sufficiently small and $T\\le CS$. If $(m_n)_{n\\ge2}$ is any real sequence with $|m_n|\\le C_m(n+1)^{-2}$, then\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|k_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)},\n$$\nand\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|L_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nIn addition, for $D=g+k$,\n$$\n\\sum_{n\\ge2}\\frac{|D_n|^2}{(n+1)^3}\n\\le CS^2\\log(e/S).\n$$\nThe constant is independent of the polygonal angles and vertex separation.",
+        "title": "Frequency-decaying quadratic replacement"
+      },
+      {
+        "id": "lem-gradient-perturbation",
+        "identity": {
+          "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, the response is diagonal:\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nIn particular, if $M(h,k)=2\\int_{\\mathbb D}b_1(h)\\operatorname{Re}k\\,dA$, then\n$$\nM(h,k)=\\sum_{n\\ge2}m_n\\operatorname{Re}(h_n\\overline{k_n}),\n\\qquad |m_n|\\le C(n+1)^{-3}.\n$$\nOn the boundary, with $p=-\\partial_rv|_{\\partial\\mathbb D}$,\n$$\np(\\theta)=p_D+p_D\\sum_{n\\ge2}\\frac{\\rho_n}{n+1}\\operatorname{Re}(g_ne^{in\\theta})+r_p(\\theta),\n\\qquad \\|r_p\\|_{L^\\infty}\\le CS,\n$$\nand $|\\rho_n|\\le C/(n+1)$.\nThe constant is universal and independent of polygonal angles and vertex separation.",
+        "title": "Gradient perturbation interface"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-frequency-replacement",
+        "lem-gradient-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-bilinear-mode-replacement",
+      "identity": {
+        "proof_hash": "sha256:34c27ac9da6839e3649a323979d02148a9480093f5774ebcd746a0e004954a15",
+        "statement_hash": "sha256:aebd2822df23fb03e15aa64c199c759c4a44f2ce8acc3e5ee2c7c1b4c1101002"
+      },
+      "kind": "lemma",
+      "proof": "By the diagonal representation in @lem-gradient-perturbation, with $D=g+k$,\n$$\nM(g,k)-M(g,-g)=M(g,D)=\\sum_{n\\ge2}m_n\\operatorname{Re}(g_n\\overline{D_n}),\n\\qquad |m_n|\\le C(n+1)^{-3}.\n$$\nThe coefficient splitting in @lem-frequency-replacement gives\n$$\n\\sum_{n\\ge2}\\frac{|D_n|^2}{(n+1)^3}\\le CS^2\\log(e/S),\n\\qquad \\sum_{n\\ge2}\\frac{|g_n|^2}{n+1}=S.\n$$\nCauchy--Schwarz with weights $(n+1)^{-3}$ and $(n+1)^{-1}$ proves the claim.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "In the setting of @lem-frequency-replacement and @lem-gradient-perturbation, let\n$$\nb_1(g)=4\\,\\nabla v_0\\cdot\\nabla v_1(g)\\,|\\nabla v_0|^2,\n$$\nand define $M(g,k)=2\\int_{\\mathbb D}b_1(g)\\operatorname{Re}k\\,dA$. Then\n$$\n|M(g,k)-M(g,-g)|\\le C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is universal.",
+      "title": "Bilinear mode replacement",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:3391d5b41cd0c8ea0aa88c9cc087a48eebfdd0efb304c4145b3bcc832dd5de7f",
+  "proof_hash": "sha256:34c27ac9da6839e3649a323979d02148a9480093f5774ebcd746a0e004954a15",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The proof should explicitly explain the rescaling from the diagonal formula stated for normalized h to M(g,D), using the linearity of the first-order response and g=\\sqrt{S}\\,h.",
+      "The Cauchy–Schwarz step should display that \\(\\sum |g_n|^2/(n+1)^3\\le \\sum |g_n|^2/(n+1)=S\\), and hence produce the factor \\(S^{3/2}\\). The coefficient identity for the A^2 norm is also left implicit."
+    ],
+    "nonblocking_comments": [
+      "The universal constants from the two dependency estimates are correctly absorbed into a single universal constant."
+    ],
+    "refutation": "",
+    "repair_hints": "Add the explicit rescaling argument for M(g,D), then write the weighted Cauchy–Schwarz inequality and bound the g-factor by S.",
+    "summary": "The argument establishes the stated bound by combining the diagonal representation, the supplied weighted estimate for D, and Cauchy–Schwarz. No critical error is present.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-frequency-replacement",
+      "lem-gradient-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:aebd2822df23fb03e15aa64c199c759c4a44f2ce8acc3e5ee2c7c1b4c1101002",
+  "target": "lem-bilinear-mode-replacement",
+  "verification_key": "sha256:81fcd8348ddb4882b603a04b780dfbf9d4da1bc1c83265bb6a74ff12b35d7fdf",
+  "verified_at": "2026-10-31T22:04:00.091Z"
+}

@@ -1,0 +1,268 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-admissible-polygon": {
+      "identity": {
+        "statement_hash": "sha256:37405282ce04c69408d1eb59b3e1fbf43953d02870323c51e9ed9b878d590dc6"
+      },
+      "origin": "fact"
+    },
+    "def-turn-measure": {
+      "identity": {
+        "statement_hash": "sha256:c2f418b6da528c0ee3b88a5bb0f9f4f6c75fd3b52b693f26274bcf2526c3d135"
+      },
+      "origin": "fact"
+    },
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "origin": "fact"
+    },
+    "lem-edge-pressure-oscillation": {
+      "identity": {
+        "statement_hash": "sha256:0f4562f7fa1e13c04609c27386f77e78ed35832db76f949c01176044c23a4157"
+      },
+      "origin": "fact"
+    },
+    "lem-near-circle-conformal": {
+      "identity": {
+        "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+      },
+      "origin": "fact"
+    },
+    "lem-prevertex-gap": {
+      "identity": {
+        "statement_hash": "sha256:3b556a756dd00223a01c84196bc6cf84a79e0822b62b07b822283c78de7dc99d"
+      },
+      "origin": "fact"
+    },
+    "lem-reflex-edge-pressure-comparison": {
+      "identity": {
+        "statement_hash": "sha256:281477997f89928139157b3a13ac9bda106afa6df5bfe5a7274616f5799cd007"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 102926,
+    "usage": {
+      "total_tokens": 16501
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-admissible-polygon",
+        "identity": {
+          "statement_hash": "sha256:37405282ce04c69408d1eb59b3e1fbf43953d02870323c51e9ed9b878d590dc6"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "An admissible polygon is a bounded simple planar polygonal domain whose boundary is a simple cyclic union of finitely many nonzero straight segments, with no self-contact. A genuine corner is a boundary vertex at which the two incident directed segments are not collinear; its interior angle is required to lie strictly between $0$ and $2\\pi$. Starting from any polygonal presentation, delete adjacent collinear redundant vertices cyclically until no such vertex remains; the resulting effective-edge count is the invariant number $N$, and $A(P)$ is the Euclidean area. The cyclic deletion is independent of deletion order because it removes exactly the vertices at which the incoming and outgoing segment directions agree.",
+        "title": "Admissible simple polygon"
+      },
+      {
+        "id": "def-turn-measure",
+        "identity": {
+          "statement_hash": "sha256:c2f418b6da528c0ee3b88a5bb0f9f4f6c75fd3b52b693f26274bcf2526c3d135"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "At the prevertices $e^{i\\theta_i}$ of an admissible polygon in @def-admissible-polygon, with normalized conformal map from @def-conformal-data, put\n$$\nw_i=\\frac{\\pi-\\omega_i}{2\\pi},\\qquad\n\\mu=\\sum_iw_i\\delta_{\\theta_i},\\qquad \\widehat\\mu(n)=\\int e^{-in\\theta}d\\mu(\\theta).\n$$\nThen $\\sum_iw_i=1$ and $\\widehat\\mu(1)=0$ in the chosen $F''(0)=0$ normalization. The Schwarz--Christoffel derivative has logarithm\n$$\nL(z)=\\log F'(z)=2\\sum_{n\\ge1}\\frac{\\widehat\\mu(n)}n z^n,\n$$\nso $L_n=2\\widehat\\mu(n)/n$. This definition applies to finite real atomic measures induced by such polygons; all Fourier series below are interpreted in that class.",
+        "title": "Signed Schwarz-Christoffel turn measure"
+      },
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      },
+      {
+        "id": "lem-edge-pressure-oscillation",
+        "identity": {
+          "statement_hash": "sha256:0f4562f7fa1e13c04609c27386f77e78ed35832db76f949c01176044c23a4157"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "In the regime of @lem-disk-perturbation, for every prevertex arc $I$ corresponding to a straight effective edge, the disk normal derivative $p=-\\partial_rv|_{\\partial\\mathbb D}$ satisfies\n$$\n\\operatorname{osc}_I p\n\\le C S^{3/4}\\sqrt{\\log(e/S)}.\n$$\nMoreover $p\\ge p_D/2$ on the boundary for sufficiently small $S$.\nAlso, for sufficiently small $S$,\n$$\n\\|p-p_D\\|_{L^\\infty(\\partial\\mathbb D)}\\le C\\sqrt S+CS,\n$$\nso $p\\le2p_D$.",
+        "title": "Uniform disk pressure oscillation"
+      },
+      {
+        "id": "lem-near-circle-conformal",
+        "identity": {
+          "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a sequence of admissible stationary $N$-gons in the sense of @def-stationary-polygon whose canonical boundary presentations consist entirely of effective edges, satisfying the edge moments of @lem-edge-moments and with $J,R$ as in @def-j-functional,\n$$\nJ(P)\\le J(R_{N-1}),\n$$\nwith $N\\to\\infty$, the conformal data of @def-conformal-data satisfy $S\\to0$ and, in fact, $S\\le C N^{-3}$ with a universal $C$.",
+        "title": "Near-circle conformal deficit"
+      },
+      {
+        "id": "lem-prevertex-gap",
+        "identity": {
+          "statement_hash": "sha256:3b556a756dd00223a01c84196bc6cf84a79e0822b62b07b822283c78de7dc99d"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For normalized conformal data in @def-conformal-data, let $I$ be the prevertex arc corresponding to a straight effective edge and let $\\varepsilon=|I|$. Then\n$$\n\\varepsilon^4\\le CS.\n$$\nThe constant is universal.",
+        "title": "Straight-edge prevertex gap bound"
+      },
+      {
+        "id": "lem-reflex-edge-pressure-comparison",
+        "identity": {
+          "statement_hash": "sha256:281477997f89928139157b3a13ac9bda106afa6df5bfe5a7274616f5799cd007"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be an admissible stationary polygon with normalized conformal data in the small-$S$ regime of @lem-disk-perturbation, satisfying @lem-edge-moments. Suppose the turn measure in @def-turn-measure has exactly one negative atom $-v$ at a prevertex, with $0<v<1/2$, and let $a>0$ be one of the two adjacent positive atoms selected by the monotonicity sign. Then there is a corresponding effective edge arc $I$ such that\n$$\nc(a+v)\\le D_I\\le C\\operatorname{osc}_I p,\n$$\nwhere\n$$\nD_I=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))\\,dsdt}\n{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))\\,dsdt},\n\\qquad h=|F'|.\n$$",
+        "title": "One-reflex edge pressure comparison"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-admissible-polygon",
+        "def-turn-measure",
+        "lem-disk-perturbation",
+        "lem-edge-pressure-oscillation",
+        "lem-near-circle-conformal",
+        "lem-prevertex-gap",
+        "lem-reflex-edge-pressure-comparison"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-single-reflex-small-atom",
+      "identity": {
+        "proof_hash": "sha256:0d6cc0ecb09e0f99e9eac75944af489f397ac6896cea1f274b0c28b015148dc8",
+        "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9"
+      },
+      "kind": "lemma",
+      "proof": "By @def-turn-measure and the angle restriction in @def-admissible-polygon, a reflex corner contributes exactly one negative atom $-v$ with $0<v<1/2$, while its adjacent convex corners contribute positive atoms. The hypotheses of @lem-near-circle-conformal and @lem-disk-perturbation are met, so $S\\le CN^{-3}$ and the pressure estimate applies. By @lem-prevertex-gap and @lem-edge-pressure-oscillation, every edge arc has length at most $CS^{1/4}$ and\n$$\n\\operatorname{osc}_I p\\le CS^{3/4}\\sqrt{\\log(e/S)}.\n$$\nThe one-reflex comparison @lem-reflex-edge-pressure-comparison gives, for one adjacent positive atom $a$ and the negative mass $v$,\n$$\nc(a+v)\\le D_I\\le C\\operatorname{osc}_I p.\n$$\nThus $a\\le C S^{3/4}\\sqrt{\\log(e/S)}$. After decreasing the small-$S$ threshold, $s\\mapsto s^{3/4}\\sqrt{\\log(e/s)}$ is increasing on $(0,S_0]$. Therefore\n$$\na\\le C N^{-9/4}\\sqrt{\\log N}.\n$$",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "There is a universal $C$ such that a stationary admissible $N$-gon with an effective-edge canonical presentation, satisfying @lem-edge-moments, @lem-disk-perturbation, and $J(P)\\le J(R_{N-1})$ in the regime of @lem-near-circle-conformal, with exactly one reflex corner, has an adjacent convex corner $i$ whose turn weight $a=w_i>0$ in @def-turn-measure satisfies\n$$\na\\le C N^{-9/4}\\sqrt{\\log N}.\n$$",
+      "title": "Single-reflex small positive atom",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:df4089c729725b244793c759757e0c2843e01527f6cfda291113f7a6bbed2954",
+  "proof_hash": "sha256:0d6cc0ecb09e0f99e9eac75944af489f397ac6896cea1f274b0c28b015148dc8",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The final asymptotic step should explicitly ensure \\(C N^{-3}\\) lies in the small-\\(S\\) interval and show σ\\(\\log(e/(C N^{-3}))=O(\\log N)\\). If the statement includes all \\(N\\), the finitely many remaining \\(N\\) require absorbing them into the universal constant using \\(a<1/2\\)."
+    ],
+    "nonblocking_comments": [
+      "The prevertex-gap estimate is invoked but is not needed after the one-reflex pressure-comparison lemma supplies the relevant edge arc.",
+      "Constants are repeatedly renamed \\(C\\), which is harmless for universal bounds."
+    ],
+    "refutation": "",
+    "repair_hints": "State the large-\\(N\\) threshold explicitly, apply monotonicity to \\(f(s)=s^{3/4}\\sqrt{\\log(e/s)}\\), bound \\(f(CN^{-3})\\) by \\(C'N^{-9/4}\\sqrt{\\log N}\\), and enlarge \\(C'\\) to cover any finite exceptional range.",
+    "summary": "The comparison lemma gives \\(a+v\\) bounded by the pressure oscillation, hence \\(a\\le C S^{3/4}\\sqrt{\\log(e/S)}\\); the near-circle estimate then yields the stated \\(N^{-9/4}\\sqrt{\\log N}\\) bound in the small-\\(S\\), large-\\(N\\) regime.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-admissible-polygon",
+      "def-turn-measure",
+      "lem-disk-perturbation",
+      "lem-edge-pressure-oscillation",
+      "lem-near-circle-conformal",
+      "lem-prevertex-gap",
+      "lem-reflex-edge-pressure-comparison"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9",
+  "target": "lem-single-reflex-small-atom",
+  "verification_key": "sha256:0d5b733934d63129587b518b4bcb0f8d86e5ecc2d3d94f60912e845a2d99cdb2",
+  "verified_at": "2026-10-31T23:21:22.379Z"
+}

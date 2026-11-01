@@ -1,0 +1,206 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    },
+    "def-j-functional": {
+      "identity": {
+        "statement_hash": "sha256:53054b04c549c94bda17d3823792506093e3009a788d21ff01ca9a7fad6d7724"
+      },
+      "origin": "fact"
+    },
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "origin": "fact"
+    },
+    "lem-uniform-w14": {
+      "identity": {
+        "statement_hash": "sha256:378d8a9fb94512468b7751300cbe1119ce791ef72a67a81c7279075692b8b21e"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 125161,
+    "usage": {
+      "total_tokens": 18254
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      },
+      {
+        "id": "def-j-functional",
+        "identity": {
+          "statement_hash": "sha256:53054b04c549c94bda17d3823792506093e3009a788d21ff01ca9a7fad6d7724"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For an admissible polygon $P$ in @def-admissible-polygon, let $\\lambda_1(P)$ be the first Dirichlet eigenvalue of $-\\Delta$ on the bounded nondegenerate polygonal domain $P$ and define\n$$\nJ(P)=A(P)\\lambda_1(P),\\qquad\nm_k=\\inf\\{J(Q):Q\\text{ is admissible and has at most }k\\text{ effective edges}\\}.\n$$\nHere $k\\ge3$ is an integer, and $R_k$ denotes the unit-area regular $k$-gon (its position is irrelevant because $J$ is similarity invariant). The first eigenvalue is defined by the Dirichlet Rayleigh quotient on $H_0^1(P)$.",
+        "title": "Area-eigenvalue functional"
+      },
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      },
+      {
+        "id": "lem-uniform-w14",
+        "identity": {
+          "statement_hash": "sha256:378d8a9fb94512468b7751300cbe1119ce791ef72a67a81c7279075692b8b21e"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For every fixed area $A_0>0$ and eigenvalue bound $\\Lambda<\\infty$, there is $C=C(A_0,\\Lambda)$ such that every admissible stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying the edge-moment hypotheses of @lem-edge-moments, with $A(P)=A_0$ and $\\lambda_1(P)\\le\\Lambda$, has its zero extension $\\bar u$ of the $L^2(P)$-normalized positive first Dirichlet eigenfunction uniformly bounded in $W^{1,4}(\\mathbb R^2)$ and hence in $C^{0,1/2}(\\mathbb R^2)$.",
+        "title": "Uniform W1,4 bound"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data",
+        "def-j-functional",
+        "lem-disk-perturbation",
+        "lem-uniform-w14"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-near-circle-conformal",
+      "identity": {
+        "proof_hash": "sha256:d563d052ef3a16e53b9293c889c9027148ab870f8d623890efa8b3e6372b71f8",
+        "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+      },
+      "kind": "lemma",
+      "proof": "Use the similarity invariance in @def-j-functional to normalize $A(P)=\\pi$ and translate so that the Fraenkel-optimal comparison disk is $D=B_1(0)$. The regular-polygon asymptotic is\n$$\n\\frac{J(R_M)}{\\pi j^2}=1+\\frac{4\\zeta(3)}{M^3}+O(M^{-5}).\n$$\nThe upper bound and the displayed asymptotic give $\\lambda_1(P)\\le j^2(1+CN^{-3})$, while Faber--Krahn gives $\\lambda_1(P)\\ge j^2$. Quantitative Faber--Krahn therefore gives $|P\\triangle D|\\to0$. Let $u_N$ be the normalized positive eigenfunction and extend it by zero. By @lem-uniform-w14, the extensions are uniformly bounded in $W^{1,4}(\\mathbb R^2)$ and hence equicontinuous and uniformly bounded. Arzelà--Ascoli gives a locally uniform limit along a subsequence. On every compact set outside $\\overline D$, the limit must vanish: otherwise the uniform Hölder bound would force a fixed positive amount of area in $P_N\\setminus D$, contradicting $|P_N\\triangle D|\\to0$. The same argument gives zero trace on $\\partial D$. Since $\\|u_N\\|_\\infty$ is uniformly bounded, the mass outside $D$ tends to zero; hence the limit has $L^2(D)$ norm one. Weak lower semicontinuity gives $\\int_D|\\nabla u|^2\\le\\liminf\\lambda_1(P_N)=j^2$, while the disk Rayleigh inequality gives the reverse inequality. Thus the limit is the normalized positive disk eigenfunction $u_0$. Uniqueness of the limit upgrades the whole sequence to local uniform convergence, and the boundary Hölder bound upgrades it to uniform convergence on $\\overline D$. Since $u_0>0$ on $B_{1-\\eta}$, eventually $u_N>0$ there; because the zero extension vanishes off $P_N$, $B_{1-\\eta}\\subset P_N$.\n\nThe maximal conformal radius is at least $1-\\eta$ by monotonicity under inclusion and at most $1$ by the conformal area inequality $A(P)\\ge\\pi r_P^2$. In the normalization of @def-conformal-data, $1+S=r_P^{-2}\\to1$.\n\nBy @lem-disk-perturbation, once $N$ is large enough that $S\\le S_0$, the uniform expansion and coercivity give\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nThe regular-polygon upper bound is $O(N^{-3})$, hence $S\\le CN^{-3}$ with a universal constant.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For a sequence of admissible stationary $N$-gons in the sense of @def-stationary-polygon whose canonical boundary presentations consist entirely of effective edges, satisfying the edge moments of @lem-edge-moments and with $J,R$ as in @def-j-functional,\n$$\nJ(P)\\le J(R_{N-1}),\n$$\nwith $N\\to\\infty$, the conformal data of @def-conformal-data satisfy $S\\to0$ and, in fact, $S\\le C N^{-3}$ with a universal $C$.",
+      "title": "Near-circle conformal deficit",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:b42b059da676048046cededa15c0e2a4d20783e92fc664176f77d303ab030128",
+  "proof_hash": "sha256:d563d052ef3a16e53b9293c889c9027148ab870f8d623890efa8b3e6372b71f8",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The regular-polygon asymptotic and quantitative Faber–Krahn estimate should be identified more precisely, including their hypotheses and the resulting constants.",
+      "The argument should explicitly note that the eigenvalue bounds imply a fixed uniform bound needed to apply @lem-uniform-w14, and that the lower and upper bounds yield λ1(P_N)→j^2.",
+      "The weak H^1 compactness, zero-trace conclusion on ∂D, convergence of the L^2 mass, and lower-semicontinuity passage are compressed and should be spelled out.",
+      "The monotonicity of maximal conformal radius and the conformal area inequality should be stated with their applicability to the normalized polygons.",
+      "The switch between area normalization and the similarity normalization used in @def-conformal-data should be made explicit when deriving 1+S=r_P^{-2}."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "State the precise quantitative Faber–Krahn and regular-polygon asymptotic results being used, fix a common eigenvalue bound for all sufficiently large N, and explicitly track the two similarity normalizations. Add the standard weak-convergence, trace, and mass-convergence details before invoking the disk Rayleigh inequality.",
+    "summary": "The proof establishes the stated conclusion from the supplied dependencies and standard mathematics. Its main analytic compactness and normalization transitions are valid, but several nontrivial applications are stated tersely.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data",
+      "def-j-functional",
+      "lem-disk-perturbation",
+      "lem-uniform-w14"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8",
+  "target": "lem-near-circle-conformal",
+  "verification_key": "sha256:85144de88038dcd40dc3cd0415b19765c3fc3806e77c700d3e65139516479f46",
+  "verified_at": "2026-10-31T21:07:46.570Z"
+}

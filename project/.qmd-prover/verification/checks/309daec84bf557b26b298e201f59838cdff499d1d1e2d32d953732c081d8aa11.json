@@ -1,0 +1,184 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    },
+    "def-j-functional": {
+      "identity": {
+        "statement_hash": "sha256:53054b04c549c94bda17d3823792506093e3009a788d21ff01ca9a7fad6d7724"
+      },
+      "origin": "fact"
+    },
+    "lem-c1-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:c0c6c2146f45211d5bc89e5c1c8696a5ff372e1ae95be9129cd0996e1093619b"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 140092,
+    "usage": {
+      "total_tokens": 18610
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      },
+      {
+        "id": "def-j-functional",
+        "identity": {
+          "statement_hash": "sha256:53054b04c549c94bda17d3823792506093e3009a788d21ff01ca9a7fad6d7724"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For an admissible polygon $P$ in @def-admissible-polygon, let $\\lambda_1(P)$ be the first Dirichlet eigenvalue of $-\\Delta$ on the bounded nondegenerate polygonal domain $P$ and define\n$$\nJ(P)=A(P)\\lambda_1(P),\\qquad\nm_k=\\inf\\{J(Q):Q\\text{ is admissible and has at most }k\\text{ effective edges}\\}.\n$$\nHere $k\\ge3$ is an integer, and $R_k$ denotes the unit-area regular $k$-gon (its position is irrelevant because $J$ is similarity invariant). The first eigenvalue is defined by the Dirichlet Rayleigh quotient on $H_0^1(P)$.",
+        "title": "Area-eigenvalue functional"
+      },
+      {
+        "id": "lem-c1-perturbation",
+        "identity": {
+          "statement_hash": "sha256:c0c6c2146f45211d5bc89e5c1c8696a5ff372e1ae95be9129cd0996e1093619b"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let\n$$\nX=\\{\\phi\\in C^1(\\overline{\\mathbb D};\\mathbb R):\\phi|_{\\partial\\mathbb D}=0\\},\n\\qquad \\|\\phi\\|_X=\\|\\nabla\\phi\\|_{L^\\infty}.\n$$\nFor normalized conformal data from @def-conformal-data with $S=\\|g\\|_{A^2}^2$ sufficiently small, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the pulled-back first eigenfunction has a uniform real-analytic expansion\n$$\nv=v_0+t v_1+v^{(2)}+R,\n\\qquad \\|v_1\\|_X\\le C,\n\\qquad \\|v^{(2)}\\|_X\\le CS,\n\\qquad \\|R\\|_X\\le CS^{3/2},\n$$\nwhere $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$, $v_1$ has no radial Fourier mode, and the corresponding eigenvalue branch is the positive first branch. More precisely, with $g=th$,\n$$\n(-\\Delta-j^2)v_1=2j^2\\operatorname{Re}(h)v_0\\quad\\text{in }\\mathbb D,\n\\qquad v_1|_{\\partial\\mathbb D}=0.\n$$\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, then\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\quad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.",
+        "title": "Uniform C1 conformal perturbation"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data",
+        "def-j-functional",
+        "lem-c1-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-disk-perturbation",
+      "identity": {
+        "proof_hash": "sha256:96182dc917b54bc45817bc3122cfa6da6fe5f5519d9f54638d4780ef93361398",
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "kind": "lemma",
+      "proof": "By @def-j-functional, $J(P)=A(P)\\lambda_1(P)$; after @def-conformal-data normalizes $A(P)=\\pi(1+S)$, it remains to expand $\\lambda_1(P)$. The fixed-space expansion in @lem-c1-perturbation supplies the uniform eigenpair branch and remainder. For the quantitative rate, write the pulled-back eigenproblem as\n$$\n-\\Delta v=\\lambda|1+g|^2v,\\qquad v|_{\\partial\\mathbb D}=0,\n$$\nwith the weighted $L^2$ normalization. Put $d(z)=1-|z|$. For $g\\in A^2$ with no constant or linear term, the Bergman pointwise estimate gives $|g(z)|\\le C\\|g\\|_{A^2}/d(z)$. Consequently, Hardy's inequality gives, for all $\\varphi,\\psi\\in H^1_0(\\mathbb D)$,\n$$\n\\left|\\int_{\\mathbb D}2\\operatorname{Re}(g)\\varphi\\psi\\right|\\le C\\sqrt S\\,\\|\\varphi\\|_{H^1_0}\\|\\psi\\|_{H^1_0},\\qquad\n\\left|\\int_{\\mathbb D}|g|^2\\varphi\\psi\\right|\\le CS\\,\\|\\varphi\\|_{H^1_0}\\|\\psi\\|_{H^1_0}.\n$$\nIndeed $|g|^2\\le CS/d^2$, $\\int|\\varphi|^2/d^2\\le4\\int|\\nabla\\varphi|^2$, and Cauchy--Schwarz handles the first integral. Therefore the closed forms\n$$\nq_t[\\varphi]=\\int|\\nabla\\varphi|^2,\\qquad m_t[\\varphi]=\\int|1+t h|^2|\\varphi|^2\\quad(g=th)\n$$\nform a real-analytic type-(a) family on the fixed domain $H^1_0(\\mathbb D)$ for real $|t|$ small (equivalently, a holomorphic two-parameter family in $(t,\\bar t)$), with uniform form bounds. The simple disk eigenvalue is isolated by a fixed spectral gap, so the real-analytic form perturbation theorem applies uniformly to this family.\n\nWrite $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$. The simple disk eigenvalue is isolated by a fixed spectral gap. The form version of analytic simple-eigenvalue perturbation therefore gives, uniformly in such $h$,\n$$\nv=v_0+t v_1+t^2v_2+O_{H^1_0}(t^3),\n\\qquad\n\\lambda= j^2+t\\lambda_1+t^2\\lambda_2+O(t^3).\n$$\nThe case $S=0$ is the disk and the assertion is immediate, so assume $S>0$. The first variation is $\\lambda_1=-j^2\\int_{\\mathbb D}(h+\\bar h)v_0^2=0$ because $v_0$ is radial and $h$ has no constant coefficient. Write $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$ and $p_D=j/\\sqrt\\pi$. For the real mode $h=a z^n$, the first-order equation in the $n$th angular sector has the explicit solution\n$$\nv_1(r,\\theta)=a w_n(r)\\cos(n\\theta),\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1}.\n$$\nThe Bessel equation verifies the radial equation and $w_n(1)=0$. The second-order solvability condition is\n$$\n\\frac{\\lambda_2}{j^2a^2}=-2\\pi\\int_0^1\\left(r^{2n+1}v_0(r)^2+r^{n+1}v_0(r)w_n(r)\\right)dr.\n$$\nSubstitution of $w_n$ and one integration by parts reduce this to\n$$\n\\frac{\\lambda_2}{j^2a^2}=-\\frac{\\rho_n}{(n+1)^2},\n\\qquad \\rho_n=j\\frac{J_{n+1}(j)}{J_n(j)},\\qquad 0<\\rho_n<2.\n$$\nThe only nontrivial radial integral is\n$$\n\\int_0^1r^{n+1}v_0(r)J_n(jr)\\,dr\n=\\frac{J_{n+1}(j)}{2\\sqrt\\pi(n+1)},\n$$\nwhich follows by one integration by parts from the Bessel equation. Orthogonality of distinct angular modes and density of analytic polynomials extend the formula to every $h\\in A^2$. Since $A(P)=\\pi(1+S)$ in @def-conformal-data, this yields the uniform expansion\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}).\n$$\nThe perturbed branch remains the first eigenvalue by the weighted min--max principle: the mass form $\\int|1+g|^2|\\varphi|^2$ is positive on nonzero $H^1_0$ functions, and the branch is the positive continuation of the disk ground state. The sine mode is obtained by a phase rotation, and polarization plus density of analytic polynomials extends the second-order form from real monomials to arbitrary complex $h\\in A^2$. The Bessel interlacing inequalities $J_n(j)\\ne0$ and $0<\\rho_n<2$ hold for the first zero $j=j_{0,1}$. Thus\n$$\n\\frac{\\lambda}{j^2}=1-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}).\n$$\nMultiplying by $A(P)/(\\pi)=1+S$ from @def-conformal-data produces the displayed $J$ expansion; the cross term $S\\sum\\rho_n|g_n|^2/(n+1)^2$ is $O(S^2)$ and is absorbed in $O(S^{3/2})$. Since $0<\\rho_n<2$, the quadratic term is at least $S/3$; after shrinking the universal small neighborhood, $J(P)/(\\pi j^2)-1\\ge S/6$. This proves the uniform perturbation expansion and coercivity.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+      "title": "Uniform disk perturbation expansion",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:349b0c6e1f2d9b3a15e48a53925a93ea701f1ec55e6998a718b6e2204cc71cf8",
+  "proof_hash": "sha256:96182dc917b54bc45817bc3122cfa6da6fe5f5519d9f54638d4780ef93361398",
+  "report": {
+    "critical_errors": [
+      "The assertion that 0<\\rho_n<2 implies \\(\\sum_{n\\ge2}\\rho_n|g_n|^2/(n+1)^2\\ge S/3\\) is false. Since \\(S=\\sum |g_n|^2/(n+1)\\), a single mode gives a ratio \\(Q/S=\\rho_n/(n+1)\\), and the stated bounds on \\(\\rho_n\\) provide no uniform positive lower bound (indeed this ratio tends to zero for high modes). Consequently the claimed \\(S/6\\) coercivity does not follow."
+    ],
+    "gaps": [
+      "The application of a real-analytic form perturbation theorem to the generalized weighted eigenvalue problem is only asserted; a uniform compact-operator or equivalent formulation and uniform remainder control are not supplied.",
+      "The extension of the second-order calculation from individual real monomials to arbitrary complex \\(h\\in A^2\\), including boundedness of the quadratic form and passage from finite polynomials to the full series, is asserted without justification."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Remove or replace the coercivity claim, or add an additional hypothesis that yields a uniform lower bound comparing the quadratic form with S. Separately, justify the uniform analytic perturbation setup and the density/polarization extension in detail.",
+    "summary": "The proof contains a critical invalid inequality, so it does not establish the stated coercivity conclusion. The perturbative expansion may be plausible, but the final lower bound is unsupported.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data",
+      "def-j-functional",
+      "lem-c1-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80",
+  "target": "lem-disk-perturbation",
+  "verification_key": "sha256:309daec84bf557b26b298e201f59838cdff499d1d1e2d32d953732c081d8aa11",
+  "verified_at": "2026-10-31T20:10:57.477Z"
+}

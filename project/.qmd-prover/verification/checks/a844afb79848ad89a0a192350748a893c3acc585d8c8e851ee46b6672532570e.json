@@ -1,0 +1,248 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-turn-measure": {
+      "identity": {
+        "statement_hash": "sha256:c2f418b6da528c0ee3b88a5bb0f9f4f6c75fd3b52b693f26274bcf2526c3d135"
+      },
+      "origin": "fact"
+    },
+    "lem-airy-quadratic-response": {
+      "identity": {
+        "statement_hash": "sha256:ef355210750db226cfedfba500a58493a2677420fab8ace862522f8ec52a72b1"
+      },
+      "origin": "fact"
+    },
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "origin": "fact"
+    },
+    "lem-frequency-replacement": {
+      "identity": {
+        "statement_hash": "sha256:96ed0940173e2f153c6d06233c5fad63fe678f9b26051427b6586f3a2ecc910d"
+      },
+      "origin": "fact"
+    },
+    "lem-gradient-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:f6066fc6cdf591f4ae0e39620749ad0ba8e7cb15652f65ed58e96f874db44475"
+      },
+      "origin": "fact"
+    },
+    "lem-inverse-energy": {
+      "identity": {
+        "statement_hash": "sha256:83102e5d4dd5037a7727ec1036190655837dfe2c5609651b8d62847a1813af6b"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 140084,
+    "usage": {
+      "total_tokens": 18378
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-turn-measure",
+        "identity": {
+          "statement_hash": "sha256:c2f418b6da528c0ee3b88a5bb0f9f4f6c75fd3b52b693f26274bcf2526c3d135"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "At the prevertices $e^{i\\theta_i}$ of an admissible polygon in @def-admissible-polygon, with normalized conformal map from @def-conformal-data, put\n$$\nw_i=\\frac{\\pi-\\omega_i}{2\\pi},\\qquad\n\\mu=\\sum_iw_i\\delta_{\\theta_i},\\qquad \\widehat\\mu(n)=\\int e^{-in\\theta}d\\mu(\\theta).\n$$\nThen $\\sum_iw_i=1$ and $\\widehat\\mu(1)=0$ in the chosen $F''(0)=0$ normalization. The Schwarz--Christoffel derivative has logarithm\n$$\nL(z)=\\log F'(z)=2\\sum_{n\\ge1}\\frac{\\widehat\\mu(n)}n z^n,\n$$\nso $L_n=2\\widehat\\mu(n)/n$. This definition applies to finite real atomic measures induced by such polygons; all Fourier series below are interpreted in that class.",
+        "title": "Signed Schwarz-Christoffel turn measure"
+      },
+      {
+        "id": "lem-airy-quadratic-response",
+        "identity": {
+          "statement_hash": "sha256:ef355210750db226cfedfba500a58493a2677420fab8ace862522f8ec52a72b1"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Under the hypotheses of @lem-inverse-energy and @def-conformal-data, put\n$$\n\\rho_n=j\\frac{J_{n+1}(j)}{J_n(j)},\n\\qquad \\beta_n=n+1-\\rho_n,\n\\qquad d_n=\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}.\n$$\nThen, for sufficiently small $S$,\n$$\n\\left|S-T-2\\sum_{n\\ge2}d_n|g_n|^2\\right|\n\\le C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is universal.",
+        "title": "Airy quadratic response"
+      },
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      },
+      {
+        "id": "lem-frequency-replacement",
+        "identity": {
+          "statement_hash": "sha256:96ed0940173e2f153c6d06233c5fad63fe678f9b26051427b6586f3a2ecc910d"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $g,k,L$ be the normalized analytic data in @def-conformal-data, with $L=\\log(1+g)$, and suppose $S=\\|g\\|_{A^2}^2$ is sufficiently small and $T\\le CS$. If $(m_n)_{n\\ge2}$ is any real sequence with $|m_n|\\le C_m(n+1)^{-2}$, then\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|k_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)},\n$$\nand\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|L_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is independent of the polygonal angles and vertex separation.",
+        "title": "Frequency-decaying quadratic replacement"
+      },
+      {
+        "id": "lem-gradient-perturbation",
+        "identity": {
+          "statement_hash": "sha256:f6066fc6cdf591f4ae0e39620749ad0ba8e7cb15652f65ed58e96f874db44475"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nThe constant is universal and independent of polygonal angles and vertex separation.",
+        "title": "Gradient perturbation interface"
+      },
+      {
+        "id": "lem-inverse-energy",
+        "identity": {
+          "statement_hash": "sha256:83102e5d4dd5037a7727ec1036190655837dfe2c5609651b8d62847a1813af6b"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the conformal data in @def-conformal-data of a stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments, @lem-disk-perturbation, and @lem-gradient-perturbation, and in the regime of @lem-near-circle-conformal, one has\n$$\nT\\le CS.\n$$\nThe constant is independent of the number and separation of the vertices and of the angle sizes.",
+        "title": "Inverse derivative energy"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-turn-measure",
+        "lem-airy-quadratic-response",
+        "lem-disk-perturbation",
+        "lem-frequency-replacement",
+        "lem-gradient-perturbation",
+        "lem-inverse-energy"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-spectral-core",
+      "identity": {
+        "proof_hash": "sha256:b3cfc5a8e3768215735f1e19da6f4cae12364ccea8c788959fd5e11654e739ad",
+        "statement_hash": "sha256:c0eb5e2464b9b32984b8ca71a690828166d0f689d29ad70384e08cc8558a2ff6"
+      },
+      "kind": "lemma",
+      "proof": "The first-order perturbation and the second-order disk calculation from @lem-disk-perturbation give\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+O(S^{3/2}),\n$$\nwith $\\beta_n=n+1-\\rho_n$. By @lem-gradient-perturbation, @lem-inverse-energy and @lem-airy-quadratic-response,\n$$\nS-T=2\\sum_{n\\ge2}\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|g_n|^2+O\\bigl(S^{3/2}\\sqrt{\\log(e/S)}\\bigr).\n$$\nBy @lem-frequency-replacement, $\\|L\\|_{A^2}^2\\le(S+T)/2$ and every quadratic form with multiplier $O((n+1)^{-2})$ may replace $g$ by $L$ at an error of order $S^{3/2}\\sqrt{\\log(e/S)}$. Combining these facts with the scalar expansion gives\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+\\sum_{n\\ge2}\\frac{\\beta_n}{(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right)|L_n|^2-C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nFinally @def-turn-measure gives $L_n=2\\widehat\\mu(n)/n$, which is the claimed inequality.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "There are universal constants $C$ and $S_0>0$ such that every stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments, @lem-disk-perturbation, and @lem-gradient-perturbation, and lying in the regime of @lem-near-circle-conformal, with $S\\le S_0$, satisfies\n$$\n\\frac{J(P)}{\\pi j^2}\\ge 1+4\\sum_{n\\ge2}a_n|\\widehat\\mu(n)|^2-C S^{3/2}\\sqrt{\\log(e/S)},\n$$\nwhere @def-turn-measure defines $\\mu$ and\n$$\na_n=\\frac{\\beta_n}{n^2(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right),\n\\qquad \\beta_n=n+1-j\\frac{J_{n+1}(j)}{J_n(j)}.\n$$",
+      "title": "Uniform nonlinear spectral lower bound",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:6e90bf8288398ff3c1ad9634cf5ad1caa0aa12b35c43df62131d541873a9b623",
+  "proof_hash": "sha256:b3cfc5a8e3768215735f1e19da6f4cae12364ccea8c788959fd5e11654e739ad",
+  "report": {
+    "critical_errors": [
+      "The proof claims that @lem-frequency-replacement gives \\(\\|L\\|_{A^2}^2\\le (S+T)/2\\), but that lemma only controls differences of quadratic forms whose multipliers are \\(O((n+1)^{-2})\\). This missing inequality is essential: it is needed to deduce \\(S\\ge \\|L\\|_{A^2}^2+(S-T)/2\\) and thus produce the extra \\(d_n\\) contribution. Without an independently supplied premise establishing this norm inequality, the displayed expansions do not imply the claimed result."
+    ],
+    "gaps": [
+      "The final coefficient identification also leaves implicit the precise coefficient expansion of \\(\\|L\\|_{A^2}^2\\) and the associated algebra, including the absorption of the \\(O(S^{3/2})\\) remainder into the logarithmic error."
+    ],
+    "nonblocking_comments": [
+      "The citation of @lem-gradient-perturbation is unnecessary for the displayed Airy relation, since @lem-airy-quadratic-response already states it under the relevant hypotheses."
+    ],
+    "refutation": "",
+    "repair_hints": "Supply and cite a result proving \\(\\|L\\|_{A^2}^2\\le(S+T)/2\\) (with the precise definition/Parseval formula for the \\(A^2\\) norm), then explicitly derive the lower bound from \\(S-T\\), apply frequency replacement only to the resulting \\(O((n+1)^{-2})\\) multipliers, and track the remainder absorption.",
+    "summary": "The proof has a load-bearing unsupported step. The cited frequency-replacement lemma does not imply the asserted inequality for the Bergman norm, so the final lower bound does not follow from the supplied dependencies.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-turn-measure",
+      "lem-airy-quadratic-response",
+      "lem-disk-perturbation",
+      "lem-frequency-replacement",
+      "lem-gradient-perturbation",
+      "lem-inverse-energy"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:c0eb5e2464b9b32984b8ca71a690828166d0f689d29ad70384e08cc8558a2ff6",
+  "target": "lem-spectral-core",
+  "verification_key": "sha256:a844afb79848ad89a0a192350748a893c3acc585d8c8e851ee46b6672532570e",
+  "verified_at": "2026-10-31T19:32:20.806Z"
+}

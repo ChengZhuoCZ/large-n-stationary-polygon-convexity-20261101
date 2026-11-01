@@ -1,0 +1,291 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-atom-deletion": {
+      "identity": {
+        "statement_hash": "sha256:4372825ae31c0dbf2d9738d41a91dcf642a2b29b95d8ba5b6a8d497d554ca54d"
+      },
+      "origin": "fact"
+    },
+    "lem-bp-asymptotic": {
+      "identity": {
+        "statement_hash": "sha256:e8e0a3600f109f6716ed6ada0f3f116304a81f1dd393a8f6c9cb3070c8c7cc07"
+      },
+      "origin": "fact"
+    },
+    "lem-kernel-comparison": {
+      "identity": {
+        "statement_hash": "sha256:4010a617a2f322e2a3a250a97ed0766b74b7d56b894d590482f70bd246eb1e6f"
+      },
+      "origin": "fact"
+    },
+    "lem-near-circle-conformal": {
+      "identity": {
+        "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+      },
+      "origin": "fact"
+    },
+    "lem-regular-polygon-asymptotic": {
+      "identity": {
+        "statement_hash": "sha256:2b5f98f2c6d6dfe08c078481b17030b44052b8eee9ba677d0719d0cfac1d0991"
+      },
+      "origin": "fact"
+    },
+    "lem-single-reflex-small-atom": {
+      "identity": {
+        "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9"
+      },
+      "origin": "fact"
+    },
+    "lem-spectral-core": {
+      "identity": {
+        "statement_hash": "sha256:0ec9f026e4f9161b84c9a8352030d0976faa852e855f8051d69581223ac17711"
+      },
+      "origin": "fact"
+    },
+    "lem-two-reflex-exclusion": {
+      "identity": {
+        "statement_hash": "sha256:ab34ef67e77d5a7c6497408beb3bba230c14f821a0113308778e1357405a84fc"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 101395,
+    "usage": {
+      "total_tokens": 16321
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-atom-deletion",
+        "identity": {
+          "statement_hash": "sha256:4372825ae31c0dbf2d9738d41a91dcf642a2b29b95d8ba5b6a8d497d554ca54d"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $(P_N)$ be a sequence of stationary admissible $N$-gons with effective-edge canonical presentations, satisfying @lem-edge-moments, @lem-disk-perturbation, @lem-gradient-perturbation, @lem-spectral-core, @lem-near-circle-conformal, and $J(P_N)\\le J(R_{N-1})$, in the one-reflex regime of @def-turn-measure. Let $p=N-1$, let $a$ be the small positive atom from @lem-single-reflex-small-atom, and define $E_b$ as in @def-positive-kernel. Put\n$$\n\\widetilde\\mu=\\frac{\\mu-a\\delta_{\\theta_*}}{1-a}.\n$$\nThen $\\widetilde\\mu$ has total mass $1$ and $N-2$ positive atoms, and\n$$\nE_b(\\widetilde\\mu)-E_b(\\mu)=o(N^{-4}).\n$$",
+        "title": "Deletion preserves the comparison energy"
+      },
+      {
+        "id": "lem-bp-asymptotic",
+        "identity": {
+          "statement_hash": "sha256:e8e0a3600f109f6716ed6ada0f3f116304a81f1dd393a8f6c9cb3070c8c7cc07"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For $B_p$ in @def-positive-kernel,\n$$\nB_p=\\frac{\\zeta(3)}{p^3}-\\frac{\\kappa\\zeta(5)}{p^5}+O(p^{-7})\n\\quad (p\\to\\infty),\n$$\nand $B_p$ is strictly decreasing in $p$.",
+        "title": "Discrete comparison energy asymptotic"
+      },
+      {
+        "id": "lem-kernel-comparison",
+        "identity": {
+          "statement_hash": "sha256:4010a617a2f322e2a3a250a97ed0766b74b7d56b894d590482f70bd246eb1e6f"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For every $n\\ge2$, the coefficients in @lem-spectral-core satisfy\n$$\n0<b_n\\le a_n.\n$$\nMoreover,\n$$\nb_n=\\int_0^\\infty e^{-nt}\\frac{1-\\cos(\\sqrt\\kappa t)}\\kappa\\,dt,\n$$\nso for any signed atomic measure of total mass $1$ with $p$ positive atoms,\n$$\nE_b(\\mu)\\ge B_p.\n$$",
+        "title": "Positive kernel comparison"
+      },
+      {
+        "id": "lem-near-circle-conformal",
+        "identity": {
+          "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a sequence of admissible stationary $N$-gons in the sense of @def-stationary-polygon whose canonical boundary presentations consist entirely of effective edges, satisfying the edge moments of @lem-edge-moments and with $J,R$ as in @def-j-functional,\n$$\nJ(P)\\le J(R_{N-1}),\n$$\nwith $N\\to\\infty$, the conformal data of @def-conformal-data satisfy $S\\to0$ and, in fact, $S\\le C N^{-3}$ with a universal $C$.",
+        "title": "Near-circle conformal deficit"
+      },
+      {
+        "id": "lem-regular-polygon-asymptotic",
+        "identity": {
+          "statement_hash": "sha256:2b5f98f2c6d6dfe08c078481b17030b44052b8eee9ba677d0719d0cfac1d0991"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the unit-area regular $M$-gon in @def-j-functional,\n$$\n\\frac{J(R_M)}{\\pi j^2}=1+\\frac{4\\zeta(3)}{M^3}+O(M^{-9/2})\n\\quad (M\\to\\infty).\n$$",
+        "title": "Regular polygon spectral asymptotic"
+      },
+      {
+        "id": "lem-single-reflex-small-atom",
+        "identity": {
+          "statement_hash": "sha256:83185d968f960b9fe41f0e4ec1467e6cf4bcf7989dcb4527940be7a28a2980c9"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There is a universal $C$ such that a stationary admissible $N$-gon with an effective-edge canonical presentation, satisfying @lem-edge-moments, @lem-disk-perturbation, and $J(P)\\le J(R_{N-1})$ in the regime of @lem-near-circle-conformal, with exactly one reflex corner, has an adjacent convex corner $i$ whose turn weight $a=w_i>0$ in @def-turn-measure satisfies\n$$\na\\le C N^{-9/4}\\sqrt{\\log N}.\n$$",
+        "title": "Single-reflex small positive atom"
+      },
+      {
+        "id": "lem-spectral-core",
+        "identity": {
+          "statement_hash": "sha256:0ec9f026e4f9161b84c9a8352030d0976faa852e855f8051d69581223ac17711"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $C$ and $S_0>0$ such that every stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments, @lem-disk-perturbation, and @lem-gradient-perturbation, and lying in the regime of @lem-near-circle-conformal, with $S\\le S_0$, satisfies\n$$\n\\frac{J(P)}{\\pi j^2}\\ge 1+4\\sum_{n\\ge2}a_n|\\widehat\\mu(n)|^2-C S^{3/2}\\sqrt{\\log(e/S)},\n$$\nwhere @def-turn-measure defines $\\mu$ and\n$$\na_n=\\frac{\\beta_n}{n^2(n+1)^2}\\left(1+\\frac{\\beta_n}{n^2-1}\\right),\n\\qquad \\beta_n=n+1-j\\frac{J_{n+1}(j)}{J_n(j)}.\n$$",
+        "title": "Uniform nonlinear spectral lower bound"
+      },
+      {
+        "id": "lem-two-reflex-exclusion",
+        "identity": {
+          "statement_hash": "sha256:ab34ef67e77d5a7c6497408beb3bba230c14f821a0113308778e1357405a84fc"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There is $N_1$ such that no stationary admissible $N$-gon in the sense of @def-stationary-polygon, with at least two reflex corners, satisfying @lem-edge-moments, @lem-spectral-core, and the regime of @lem-near-circle-conformal, and with $J$ as in @def-j-functional, satisfies\n$$\nJ(P)\\le J(R_{N-1})\n$$\nfor $N\\ge N_1$.",
+        "title": "At least two reflex corners are excluded"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-atom-deletion",
+        "lem-bp-asymptotic",
+        "lem-kernel-comparison",
+        "lem-near-circle-conformal",
+        "lem-regular-polygon-asymptotic",
+        "lem-single-reflex-small-atom",
+        "lem-spectral-core",
+        "lem-two-reflex-exclusion"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "thm-main-large-n-convexity",
+      "identity": {
+        "proof_hash": "sha256:9e88c40b1fbde29b6d9ace1bb02dda44dc2e3d01d69b750827919d05046b6b36",
+        "statement_hash": "sha256:8460a59a80b8f229f5d66d88d8f0a9f8c5e55daaed4a6206c2c1f55cac0fc0f0"
+      },
+      "kind": "theorem",
+      "proof": "Assume the conclusion fails and choose a sequence of counterexamples with $N\\to\\infty$. If there are at least two reflex corners, the hypotheses of @lem-two-reflex-exclusion hold and give a contradiction. Thus, after discarding finitely many terms, there is exactly one reflex corner. The hypotheses of @lem-single-reflex-small-atom and @lem-atom-deletion hold, so the deleted measure has $N-2$ positive atoms and @lem-kernel-comparison yields $E_b(\\widetilde\\mu)\\ge B_{N-2}$. By @lem-atom-deletion,\n$$\nE_b(\\mu)\\ge B_{N-2}-o(N^{-4}).\n$$\nThe spectral-core estimate @lem-spectral-core together with @lem-kernel-comparison gives\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+4E_b(\\mu)-C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nUsing @lem-near-circle-conformal, the error is $o(N^{-4})$, so\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+4B_{N-2}-o(N^{-4}).\n$$\nThe regular-polygon asymptotic @lem-regular-polygon-asymptotic gives\n$$\n\\frac{J(R_{N-1})}{\\pi j^2}=1+\\frac{4\\zeta(3)}{(N-1)^3}+O(N^{-9/2}),\n$$\nwhile @lem-bp-asymptotic gives $B_{N-2}=\\zeta(3)(N-2)^{-3}+O(N^{-5})$. Their difference is $12\\zeta(3)N^{-4}+O(N^{-9/2})+o(N^{-4})>0$ for large $N$, contradicting $J(P)\\le J(R_{N-1})$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "There is a universal $N_0$ such that, for every $N\\ge N_0$, every admissible stationary simple $N$-gon $P$ satisfying\n$$\nJ(P)\\le J(R_{N-1})\n$$\n is convex. Consequently, no such polygon satisfies $J(P)<m_{N-1}$ while being non-convex.",
+      "title": "Large-N low-threshold stationary polygons are convex",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:7df2143cb4519cb6530647f4121161ee7a8749feed05bae983750a8a4d6d2716",
+  "proof_hash": "sha256:9e88c40b1fbde29b6d9ace1bb02dda44dc2e3d01d69b750827919d05046b6b36",
+  "report": {
+    "critical_errors": [
+      "The proof asserts that the hypotheses of the two-reflex exclusion, single-reflex, atom-deletion, near-circle, and spectral-core lemmas hold, although the target assumes only an admissible stationary simple polygon. No supplied dependency states that admissibility entails an effective-edge canonical presentation, the edge moments, disk and gradient perturbation conditions, or the relevant near-circle regime. These are load-bearing hypotheses, so the cited lemmas cannot be applied from the packet as written.",
+      "The second sentence of the target is not established. The proof only derives exclusion under $J(P)\\le J(R_{N-1})$ and never states or proves any relation between $m_{N-1}$ and $J(R_{N-1})$ that would imply the claimed consequence; $m_{N-1}$ is not defined in the supplied context."
+    ],
+    "gaps": [
+      "The proof should explicitly arrange that, after passing to sufficiently large indices, the near-circle estimate gives $S\\le S_0$ before invoking the spectral-core lemma and that all finite-index thresholds are simultaneously satisfied."
+    ],
+    "nonblocking_comments": [
+      "Given the missing applicability issues were repaired, the conversion of $S\\le C N^{-3}$ into an $o(N^{-4})$ error and the stated $12\\zeta(3)N^{-4}$ asymptotic gap are consistent."
+    ],
+    "refutation": "",
+    "repair_hints": "State the definition or a supplied lemma showing that every target polygon has all required canonical-presentation, moment, perturbation, and near-circle properties, and invoke the near-circle estimate before the lemmas requiring its regime. Define $m_{N-1}$ and include the needed inequality (for example, $m_{N-1}\\le J(R_{N-1})$) to derive the consequence.",
+    "summary": "The asymptotic contradiction is coherent conditional on all cited lemmas, but the proof does not establish that the target's polygons satisfy the substantial hypotheses required by those lemmas. It also never justifies the stated consequence involving the undefined quantity $m_{N-1}$.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-atom-deletion",
+      "lem-bp-asymptotic",
+      "lem-kernel-comparison",
+      "lem-near-circle-conformal",
+      "lem-regular-polygon-asymptotic",
+      "lem-single-reflex-small-atom",
+      "lem-spectral-core",
+      "lem-two-reflex-exclusion"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:8460a59a80b8f229f5d66d88d8f0a9f8c5e55daaed4a6206c2c1f55cac0fc0f0",
+  "target": "thm-main-large-n-convexity",
+  "verification_key": "sha256:82037c232bd050f688fd4a095d06331d01e28588eb65b450460a04e5ba42a9c6",
+  "verified_at": "2026-10-31T23:52:16.978Z"
+}

@@ -1,0 +1,144 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-edge-pressure-oscillation": {
+      "identity": {
+        "statement_hash": "sha256:6724492ba7d2ba341f9767ff97bb51ed6cc1a35cbb775cdd7273ff3d0fd5c876"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 60416,
+    "usage": {
+      "total_tokens": 12186
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-edge-pressure-oscillation",
+        "identity": {
+          "statement_hash": "sha256:6724492ba7d2ba341f9767ff97bb51ed6cc1a35cbb775cdd7273ff3d0fd5c876"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "In the regime of @lem-disk-perturbation, for every prevertex arc $I$ corresponding to a straight effective edge, the disk normal derivative $p=-\\partial_rv|_{\\partial\\mathbb D}$ satisfies\n$$\n\\operatorname{osc}_I p\n\\le C S^{3/4}\\sqrt{\\log(e/S)}.\n$$\nMoreover $p\\ge p_D/2$ on the boundary for sufficiently small $S$.",
+        "title": "Uniform disk pressure oscillation"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-edge-pressure-oscillation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-reflex-edge-pressure-comparison",
+      "identity": {
+        "proof_hash": "sha256:bcadd2aecf94a20f1ac56d8a804c3fb32cf9a892828a4646dbddf65ad5a8dfd1",
+        "statement_hash": "sha256:bbbfb7a9fc54e4fa19252c58892de5919eed7b114684d3028ff485cc44882715"
+      },
+      "kind": "lemma",
+      "proof": "After rotating the negative atom to $0$, the Schwarz--Christoffel cotangent formula shows that one adjacent edge has monotone $h$ and a logarithmic drop at least $c(a+v)$ on its central subarc. Four-rectangle comparison then gives the lower bound for $D_I$. For the upper bound, put $k_0=h^{-2}$ and use the two edge moments to obtain the centered identity\n$$\n\\int_0^1(x-1/2)p(x)^2k_0(x)\\,dx=0.\n$$\nSplitting the square into the four rectangles determined by $x=1/2$, monotonicity of $k_0$ bounds the numerator of $D_I$ by the oscillation of $p$ times the same positive rectangle integrals that lower-bound its denominator. Since $p\\ge p_D/2$ by @lem-edge-pressure-oscillation, $D_I\\le C\\operatorname{osc}_I p$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Suppose the turn measure in @def-turn-measure has exactly one negative atom $-v$ and let $a>0$ be one of the two adjacent positive atoms selected by the monotonicity sign. Under the edge moments @lem-edge-moments, there is a corresponding edge arc $I$ such that\n$$\nc(a+v)\\le D_I\\le C\\operatorname{osc}_I p,\n$$\nwhere\n$$\nD_I=\\frac{\\int_{s<t}(h(s)/h(t)-h(t)/h(s))\\,dsdt}\n{\\int_{s<t}(h(s)/h(t)+h(t)/h(s))\\,dsdt},\n\\qquad h=|F'|.\n$$",
+      "title": "One-reflex edge pressure comparison",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:38ece5444fe961e4121b2de1e299e79f1992c324db7d40387d9c254800c93514",
+  "proof_hash": "sha256:bcadd2aecf94a20f1ac56d8a804c3fb32cf9a892828a4646dbddf65ad5a8dfd1",
+  "report": {
+    "critical_errors": [
+      "The proof invokes the Schwarz–Christoffel cotangent formula and “the two edge moments,” but the statements of @def-turn-measure and @lem-edge-moments are absent from the supplied dependencies. Consequently the claimed centered identity is unsupported and the hypotheses needed for the argument cannot be checked.",
+      "The asserted upper bound does not follow from the displayed identity. The identity involves $p^2h^{-2}$, whereas $D_I$ involves pairwise ratios of $h$; no relation or calculation is given that converts the rectangle estimates for the former into a bound for the latter by $\\operatorname{osc}_I p$.",
+      "The lower bound is likewise reduced to an unproved “four-rectangle comparison,” with no quantitative relation between the claimed logarithmic drop of $h$ and the double integrals defining $D_I$, nor a verification that the required central subarc and constants exist."
+    ],
+    "gaps": [
+      "The proof does not establish that the selected arc $I$ satisfies the “straight effective edge” and small-parameter hypotheses required to apply @lem-edge-pressure-oscillation.",
+      "The monotonicity of $h$ and the claimed logarithmic drop are stated without an explicit formula or a check of the atom and adjacency hypotheses."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Provide the exact statements of @def-turn-measure and @lem-edge-moments, derive the centered identity from them, and give the missing algebra relating the $p^2h^{-2}$ rectangle integrals to the numerator and denominator of $D_I$. State and prove the quantitative four-rectangle estimates and verify all hypotheses of @lem-edge-pressure-oscillation for the chosen arc.",
+    "summary": "The submission does not establish the lemma. Its central lower- and upper-bound arguments are asserted without the hypotheses and calculations needed to connect them to the stated quantity $D_I$.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-edge-pressure-oscillation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:bbbfb7a9fc54e4fa19252c58892de5919eed7b114684d3028ff485cc44882715",
+  "target": "lem-reflex-edge-pressure-comparison",
+  "verification_key": "sha256:602719d6e7e297d3b5ea217d8de3c683fbee3f57fb274a6b15e20002a8cfb0fe",
+  "verified_at": "2026-10-31T21:29:56.742Z"
+}

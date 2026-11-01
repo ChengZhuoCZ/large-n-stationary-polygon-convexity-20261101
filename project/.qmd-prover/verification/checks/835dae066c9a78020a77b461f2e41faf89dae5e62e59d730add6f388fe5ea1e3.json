@@ -1,0 +1,144 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-edge-moments": {
+      "identity": {
+        "statement_hash": "sha256:07aff343977bfec90391555a0d168fdd918b58daa3d387fb22c5e4dec888e152"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 100103,
+    "usage": {
+      "total_tokens": 18039
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-edge-moments",
+        "identity": {
+          "statement_hash": "sha256:07aff343977bfec90391555a0d168fdd918b58daa3d387fb22c5e4dec888e152"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be admissible and stationary in the sense of @def-stationary-polygon. If $u>0$ is the $L^2$-normalized first eigenfunction, $\\lambda=\\lambda_1(P)$, $c=\\lambda/A(P)$, and $q=|\\partial_\\nu u|^2$, then every effective edge $E$, parametrized by physical arclength $s\\in[0,\\ell_E]$, satisfies\n$$\n\\int_E(q-c)\\,ds=0,\\qquad \\int_Es(q-c)\\,ds=0.\n$$",
+        "title": "Stationary edge moments"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-edge-moments"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-airy-identity",
+      "identity": {
+        "proof_hash": "sha256:4d637c73add97f6e45c3d996d27c7d8cc4928c0669a468f5f38cbf1a5ee64e28",
+        "statement_hash": "sha256:55f5e43552defad268715e8fb970b754bd700c88bd223921cfaf13680c2ec298"
+      },
+      "kind": "lemma",
+      "proof": "Define the divergence-free stress tensor\n$$\nT=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I.\n$$\nAn Airy potential $\\psi$ with $D^2\\psi=R^TTR$ exists locally and, after setting $\\Phi=\\psi-c|x|^2/4$, satisfies\n$$\nD^2\\Phi=\\tfrac12(|\\nabla u|^2+\\lambda u^2-c)I-\\nabla u\\otimes\\nabla u.\n$$\nOn each open edge, the two identities in @lem-edge-moments imply $\\nabla\\Phi$ has the same endpoint values. Propagating around the boundary and subtracting an affine function makes $\\Phi=0$ at every vertex and $\\partial_\\nu\\Phi=0$ on every open edge; the mixed Hessian term vanishes there as well. At a corner of angle $\\omega<2\\pi$, the leading Dirichlet mode is $r^\\alpha\\sin(\\alpha\\theta)$ with $\\alpha=\\pi/\\omega>1/2$. Thus $|\\nabla u|^4$ is locally integrable and the boundary terms on circles of radius $\\varepsilon$ tend to zero.\n\nApply the divergence identity\n$$\n\\operatorname{div}\\{\\Delta\\Phi\\nabla\\Phi-D^2\\Phi\\nabla\\Phi\\}=(\\Delta\\Phi)^2-|D^2\\Phi|^2\n$$\nto $P$ with corner disks removed and let $\\varepsilon\\downarrow0$. The edge terms vanish by the preceding boundary conditions, hence $\\int_P\\det D^2\\Phi=0$. The eigenvalues of $D^2\\Phi$ are $(\\lambda u^2-c\\pm|\\nabla u|^2)/2$, so expanding their product and using $\\int_Pu^2=1$ gives the stated identity.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Under the hypotheses of @lem-edge-moments, the first eigenfunction satisfies\n$$\n\\int_P|\\nabla u|^4=\\lambda^2\\left(\\int_Pu^4-A(P)^{-1}\\right).\n$$",
+      "title": "Airy fourth-power identity",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:3aaf5c4bf40cdb6e2b153b9efe454354c421dd744e8b0864cb8efc75a0881d84",
+  "proof_hash": "sha256:4d637c73add97f6e45c3d996d27c7d8cc4928c0669a468f5f38cbf1a5ee64e28",
+  "report": {
+    "critical_errors": [
+      "The proof states that the two moment identities hold on each open edge, but @lem-edge-moments guarantees them only on effective edges. No supplied statement identifies all open boundary edges as effective, so boundary terms on any other edge need not vanish and the divergence-theorem conclusion does not follow."
+    ],
+    "gaps": [
+      "Only local existence of the Airy potential is asserted, while the proof requires one globally defined potential on P to subtract a single affine function and apply the divergence identity globally; the patching and required regularity are not supplied.",
+      "The corner-mode statement is used to conclude that the circle boundary fluxes vanish, but local integrability of |∇u|^4 alone does not establish that flux limit. Explicit estimates for Φ, ∇Φ, and D²Φ near each corner are needed."
+    ],
+    "nonblocking_comments": [
+      "The stated Hessian eigenvalues and the final algebraic expansion are consistent once the determinant integral is established."
+    ],
+    "refutation": "",
+    "repair_hints": "Either prove that every boundary edge is effective (or provide the two moment identities for every edge), then construct and regularize a global Airy potential on P and derive explicit corner decay estimates showing each circular boundary flux tends to zero.",
+    "summary": "The argument applies the edge-moment lemma to every open boundary edge, although the dependency asserts those identities only for effective edges. Without establishing that every boundary edge is effective, the boundary cancellation and hence the determinant integral are unsupported.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-edge-moments"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:55f5e43552defad268715e8fb970b754bd700c88bd223921cfaf13680c2ec298",
+  "target": "lem-airy-identity",
+  "verification_key": "sha256:835dae066c9a78020a77b461f2e41faf89dae5e62e59d730add6f388fe5ea1e3",
+  "verified_at": "2026-10-31T15:35:18.462Z"
+}

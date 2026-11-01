@@ -1,0 +1,162 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-c1-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:5e41489de67dfbb7f1bb3a6ce3b6e86fc34c9c67badabf477696079a741f21e0"
+      },
+      "origin": "fact"
+    },
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 140935,
+    "usage": {
+      "total_tokens": 18845
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-c1-perturbation",
+        "identity": {
+          "statement_hash": "sha256:5e41489de67dfbb7f1bb3a6ce3b6e86fc34c9c67badabf477696079a741f21e0"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let\n$$\nX=\\{\\phi\\in C^1(\\overline{\\mathbb D};\\mathbb R):\\phi|_{\\partial\\mathbb D}=0\\},\n\\qquad \\|\\phi\\|_X=\\|\\nabla\\phi\\|_{L^\\infty}.\n$$\nFor normalized conformal data from @def-conformal-data with $S=\\|g\\|_{A^2}^2$ sufficiently small, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the pulled-back first eigenfunction has a uniform real-analytic expansion\n$$\nv=v_0+t v_1+v^{(2)}+R,\n\\qquad \\|v_1\\|_X\\le C,\n\\qquad \\|v^{(2)}\\|_X\\le CS,\n\\qquad \\|R\\|_X\\le CS^{3/2},\n$$\nwhere $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$, $v_1$ has no radial Fourier mode, and the corresponding eigenvalue branch is the positive first branch. More precisely, with $g=th$,\n$$\n(-\\Delta-j^2)v_1=2j^2\\operatorname{Re}(h)v_0\\quad\\text{in }\\mathbb D,\n\\qquad v_1|_{\\partial\\mathbb D}=0.\n$$\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, then\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\quad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nThe same branch has a real-analytic eigenvalue expansion\n$$\n\\lambda(g)=j^2+\\lambda^{(1)}(g)+\\lambda^{(2)}(g)+O(\\|g\\|_{A^2}^3),\n$$\nwhere $\\lambda^{(r)}$ is homogeneous of degree $r$.",
+        "title": "Uniform C1 conformal perturbation"
+      },
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-c1-perturbation",
+        "lem-disk-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-gradient-perturbation",
+      "identity": {
+        "proof_hash": "sha256:b58608ada58d3814dc124ef08573e5b44e184f8751f3e0eb36afb1539fb6e06c",
+        "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185"
+      },
+      "kind": "lemma",
+      "proof": "If $S=0$, then $g=0$ and the assertion is immediate. For $S>0$, @lem-c1-perturbation and @lem-disk-perturbation give the fixed-space expansion and the weighted equation\n$$\n-\\Delta v=\\lambda|1+th|^2v,\n\\qquad \\int_{\\mathbb D}v^2|1+th|^2dA=1.\n$$\n$$\nv=v_0+t v_1+R_2,\n\\qquad \\|v_1\\|_X\\le C,\n\\qquad \\|R_2\\|_X\\le CS,\n\\qquad t=\\sqrt S,\n$$\nwhere $R_2=v^{(2)}+R$.\nwith $v_1$ having no radial Fourier mode. Differentiating the weighted equation at $t=0$ gives\n$$\n-\\Delta v_1-j^2v_1=2j^2\\operatorname{Re}(h)v_0\n$$\nHere the first eigenvalue derivative is\n$$\n\\lambda'(0)=-2j^2\\int_{\\mathbb D}\\operatorname{Re}(h)v_0^2dA=0,\n$$\nbecause $v_0$ is radial and $h$ has no constant coefficient; the derivative of the normalization contributes no radial mode either. Imposing $v_1|_{\\partial\\mathbb D}=0$ gives the displayed Bessel solution $w_n$; the Bessel recurrence gives $w_n'(1)=-p_D\\rho_n/(n+1)$. Since $X\\hookrightarrow W^{1,4}(\\mathbb D)$ for zero-boundary functions, the claimed $W^{1,4}$ estimate follows. Set $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$; angular orthogonality gives its zero circular mean. The pointwise inequality\n$$\n\\bigl||x+y|^4-|x|^4-4|x|^2x\\cdot y\\bigr|\\le C(|x|^2|y|^2+|y|^4)\n$$\nwith $x=\\nabla v_0$ and $y=t\\nabla v_1+\\nabla R_2$ gives the stated remainder after separately bounding the omitted linear term $4|\\nabla v_0|^2\\nabla v_0\\cdot\\nabla R_2$ by $CS$ and using the $X$ bounds for the quadratic terms.\nBecause $\\nabla v_0$ and $\\nabla v_1$ are bounded and $\\|\\nabla R_2\\|_{L^\\infty}\\le CS$, the same pointwise inequality gives the $L^\\infty$ remainder bound in the statement; the definition of $b_1$ gives $\\|b_1\\|_{L^\\infty}\\le C$.\nFinally angular orthogonality gives\n$$\n2\\int_{\\mathbb D}b_1(h)\\operatorname{Re}k\\,dA\n=\\sum_{n\\ge2}m_n\\operatorname{Re}(h_n\\overline{k_n}),\n\\qquad\nm_n=8\\pi\\int_0^1v_0'(r)^3w_n'(r)r^{n+1}\\,dr.\n$$\nWriting $J_n(jr)/(r^nJ_n(j))$ as its Bessel power series, the denominator is at least $1-j^2/[4(n+1)]>1/2$ for $n\\ge2$, and its derivative is $O((n+1)^{-1})$. Together with $w_n'(1)=O((n+1)^{-1})$ and $A_0'(1)=0$ for $A_0(r)=rv_0'(r)/p_D$, one obtains $|w_n'(r)|\\le Cr^{n-1}((1-r)^2+(1-r)/(n+1)+(n+1)^{-2})$. Integrating the three Beta functions gives $|m_n|\\le C(n+1)^{-3}$.\nEvaluating the expansion at the boundary also gives\n$$\np(\\theta)=p_D+p_D\\sum_{n\\ge2}\\frac{\\rho_n}{n+1}\\operatorname{Re}(g_ne^{in\\theta})+r_p(\\theta),\n\\qquad \\|r_p\\|_{L^\\infty}\\le CS,\n$$\nand the same Bessel series gives $|\\rho_n|\\le C/(n+1)$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, the response is diagonal:\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nIn particular, if $M(h,k)=2\\int_{\\mathbb D}b_1(h)\\operatorname{Re}k\\,dA$, then\n$$\nM(h,k)=\\sum_{n\\ge2}m_n\\operatorname{Re}(h_n\\overline{k_n}),\n\\qquad |m_n|\\le C(n+1)^{-3}.\n$$\nOn the boundary, with $p=-\\partial_rv|_{\\partial\\mathbb D}$,\n$$\np(\\theta)=p_D+p_D\\sum_{n\\ge2}\\frac{\\rho_n}{n+1}\\operatorname{Re}(g_ne^{in\\theta})+r_p(\\theta),\n\\qquad \\|r_p\\|_{L^\\infty}\\le CS,\n$$\nand $|\\rho_n|\\le C/(n+1)$.\nThe constant is universal and independent of polygonal angles and vertex separation.",
+      "title": "Gradient perturbation interface",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:13f70e544378c5ba084f228e4397ed2634fadf9e37ce7abbaa7385422619a6eb",
+  "proof_hash": "sha256:b58608ada58d3814dc124ef08573e5b44e184f8751f3e0eb36afb1539fb6e06c",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The formula for the first eigenvalue derivative and the effect of differentiating the normalization are asserted without explicitly carrying out the solvability calculation against v0.",
+      "The passage from the Bessel power-series estimates to the displayed uniform bound on w_n' and then to the three Beta-integral estimates for |m_n| is only sketched. In particular, the stated w_n' bound requires the stronger rho_n=O((n+1)^-1), whereas only the weaker w_n'(1)=O((n+1)^-1) is invoked at that point; this can be supplied directly from the same Bessel series.",
+      "The boundary estimate |rho_n|<=C/(n+1) is attributed to the Bessel series without displaying the ratio estimate and its uniform constants."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Explicitly derive lambda'(0) by integrating the differentiated eigenvalue equation against v0 and using the differentiated normalization. Then establish rho_n=O((n+1)^-1) before deriving the w_n' bound, and show the resulting Beta-integral estimates in detail.",
+    "summary": "The submitted argument establishes the stated result from the two assumed dependencies. Its main estimates and Fourier decompositions are valid, though several technical derivations are only sketched.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-c1-perturbation",
+      "lem-disk-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185",
+  "target": "lem-gradient-perturbation",
+  "verification_key": "sha256:1a35960cd0ccf0d4a65023d58a468d7d3b2d00d2da31e139156ff07e388666c3",
+  "verified_at": "2026-10-31T21:41:44.082Z"
+}

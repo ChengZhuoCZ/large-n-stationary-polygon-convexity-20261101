@@ -1,0 +1,165 @@
+{
+  "accepted": false,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-airy-identity": {
+      "identity": {
+        "statement_hash": "sha256:55f5e43552defad268715e8fb970b754bd700c88bd223921cfaf13680c2ec298"
+      },
+      "origin": "fact"
+    },
+    "lem-near-circle-conformal": {
+      "identity": {
+        "statement_hash": "sha256:1e8462d5e639d495a24001342bf3273f81838203afd0dc85aab01fa40cb51f47"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 55817,
+    "usage": {
+      "total_tokens": 14400
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "rejected",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-airy-identity",
+        "identity": {
+          "statement_hash": "sha256:55f5e43552defad268715e8fb970b754bd700c88bd223921cfaf13680c2ec298"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Under the hypotheses of @lem-edge-moments, the first eigenfunction satisfies\n$$\n\\int_P|\\nabla u|^4=\\lambda^2\\left(\\int_Pu^4-A(P)^{-1}\\right).\n$$",
+        "title": "Airy fourth-power identity"
+      },
+      {
+        "id": "lem-near-circle-conformal",
+        "identity": {
+          "statement_hash": "sha256:1e8462d5e639d495a24001342bf3273f81838203afd0dc85aab01fa40cb51f47"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a sequence of admissible stationary $N$-gons satisfying\n$$\nJ(P)\\le J(R_{N-1}),\n$$\nwith $N\\to\\infty$, the conformal data of @def-conformal-data satisfy $S\\to0$ and, in fact, $S\\le C N^{-3}$ with a universal $C$.",
+        "title": "Near-circle conformal deficit"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-airy-identity",
+        "lem-near-circle-conformal"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-inverse-energy",
+      "identity": {
+        "proof_hash": "sha256:133abab7e48162f7d70d5970c85077760e55275e1604c91faf93b4dcfc0d31e3",
+        "statement_hash": "sha256:c380b4958213ed10690ce31a2e0e79be543e0f0e8894e57acb0dde71b8c589e0"
+      },
+      "kind": "lemma",
+      "proof": "Pull @lem-airy-identity back by $F$ and use $F'^{-1}=1+k$ to obtain\n$$\n\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2\n=\\lambda^2\\int_{\\mathbb D}v^4|1+g|^2-\\frac{\\lambda^2}{\\pi(1+S)}.\n$$\nThe perturbation expansion in @lem-near-circle-conformal gives $|\\nabla v|^4=a+b_1+O(S)$, where $a=|\\nabla v_0|^4$ is radial and $b_1$ has zero circular mean. Since the constant Fourier mode of $k$ is zero, orthogonality leaves a term $\\int a|k|^2$ on the left. On a fixed outer annulus $a$ is bounded below, while $k=-g/(1+g)=O(\\sqrt S)$ on the inner disk. Cauchy--Schwarz and the perturbation bounds therefore give\n$$\nT\\le C\\{S+\\sqrt S\\sqrt T+\\sqrt S\\,T+ST\\}.\n$$\nYoung's inequality absorbs the mixed term and, for sufficiently small $S$, the last two terms, proving $T\\le CS$.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "For the conformal data in @def-conformal-data of a stationary polygon in the regime of @lem-near-circle-conformal, one has\n$$\nT\\le CS.\n$$\nThe constant is independent of the number and separation of the vertices and of the angle sizes.",
+      "title": "Inverse derivative energy",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:cd3ae9ffa3de10c8c73b6e03ed9f5deead599b36bbb5a12dd1ccb829c8f0fdb7",
+  "proof_hash": "sha256:133abab7e48162f7d70d5970c85077760e55275e1604c91faf93b4dcfc0d31e3",
+  "report": {
+    "critical_errors": [
+      "@lem-airy-identity requires the hypotheses of @lem-edge-moments, but neither those hypotheses nor their implication from being a stationary polygon are supplied or established.",
+      "The claimed perturbation expansion, zero-mean properties, pointwise bound for k, and the resulting inequality for T are not consequences of @lem-near-circle-conformal, whose statement only gives S→0 and S≤CN^{-3}. These unsupported estimates are the load-bearing step of the argument.",
+      "The packet supplies no semantic definition of @def-conformal-data, so identities such as F'^{-1}=1+k, the zero constant Fourier mode of k, the area normalization, and the relation between T and k cannot be checked. Uniformity of the eventual constant in the polygon parameters is likewise not demonstrated."
+    ],
+    "gaps": [
+      "The Fourier orthogonality calculation and bounds for all cross terms involving b_1, the O(S) remainder, and the right-hand side are omitted.",
+      "The smallness threshold needed to absorb the terms involving T and the dependence of all constants on the stated parameters should be made explicit."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Supply the missing conformal-data and edge-moment hypotheses, state uniform perturbation estimates as available dependencies or prove them, define T precisely, and derive the displayed inequality with parameter-uniform constants before performing the absorption.",
+    "summary": "The proof does not establish the target. Its decisive estimate is asserted using perturbation facts absent from the dependencies, and the hypotheses needed to apply the Airy identity are not verified.",
+    "verdict": "incorrect"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-airy-identity",
+      "lem-near-circle-conformal"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:c380b4958213ed10690ce31a2e0e79be543e0f0e8894e57acb0dde71b8c589e0",
+  "target": "lem-inverse-energy",
+  "verification_key": "sha256:190b867ad59893ba894a71236fd9e7e36d8792422a5de1d107178b4dc7c3dee2",
+  "verified_at": "2026-10-31T15:41:06.530Z"
+}

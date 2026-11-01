@@ -1,0 +1,311 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    },
+    "lem-airy-boundary-quadratic": {
+      "identity": {
+        "statement_hash": "sha256:85e578a2469fd7c520ab35374f9d5170360bd883ac582d952f3fccf5e80092de"
+      },
+      "origin": "fact"
+    },
+    "lem-airy-identity": {
+      "identity": {
+        "statement_hash": "sha256:183086db09decf16c25edb988660b95ec26387bac02ca7e4becc42fcdcf5a68a"
+      },
+      "origin": "fact"
+    },
+    "lem-bilinear-mode-replacement": {
+      "identity": {
+        "statement_hash": "sha256:aebd2822df23fb03e15aa64c199c759c4a44f2ce8acc3e5ee2c7c1b4c1101002"
+      },
+      "origin": "fact"
+    },
+    "lem-c1-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:5e41489de67dfbb7f1bb3a6ce3b6e86fc34c9c67badabf477696079a741f21e0"
+      },
+      "origin": "fact"
+    },
+    "lem-disk-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+      },
+      "origin": "fact"
+    },
+    "lem-frequency-replacement": {
+      "identity": {
+        "statement_hash": "sha256:c44d3f9ab726441375c7b70a39ca012c2f4fd3dfcfc63d1569f998b81a1e5064"
+      },
+      "origin": "fact"
+    },
+    "lem-gradient-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:4dd0bffcd01ed65f425306a2c547104f57564b2c2fde19b3b927d6227a98e673"
+      },
+      "origin": "fact"
+    },
+    "lem-inverse-energy": {
+      "identity": {
+        "statement_hash": "sha256:aaf689c1fb36428c9570c97cd25432e0fea44790e89eed5f31440dec959b74d7"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 176706,
+    "usage": {
+      "total_tokens": 23391
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      },
+      {
+        "id": "lem-airy-boundary-quadratic",
+        "identity": {
+          "statement_hash": "sha256:85e578a2469fd7c520ab35374f9d5170360bd883ac582d952f3fccf5e80092de"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $g$ be an analytic polynomial with no constant or linear coefficient. Let $v(g),\\lambda(g)$ be the positive weighted disk branch in @lem-c1-perturbation and let $H_2$ be the second homogeneous term at $(g,k)=(0,0)$ of\n$$\n\\mathscr H(g,k)=\\int_{\\mathbb D}|\\nabla v(g)|^4|1+k|^2dA\n-\\lambda(g)^2\\int_{\\mathbb D}v(g)^4|1+g|^2dA\n+\\frac{\\lambda(g)^2}{\\pi(1+\\|g\\|_{A^2}^2)}.\n$$\nFor the inverse path $k=-g$, the second homogeneous term is\n$$\nH_2(g,-g)=2\\pi p_D^4\\sum_{n\\ge2}\n\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|g_n|^2,\n\\qquad p_D=j/\\sqrt\\pi,\n$$\nwhere $\\beta_n=n+1-jJ_{n+1}(j)/J_n(j)$.",
+        "title": "Airy boundary quadratic calculation"
+      },
+      {
+        "id": "lem-airy-identity",
+        "identity": {
+          "statement_hash": "sha256:183086db09decf16c25edb988660b95ec26387bac02ca7e4becc42fcdcf5a68a"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $P$ be an admissible polygon whose boundary segments are all effective edges, and assume the edge moments in @lem-edge-moments. Then its first eigenfunction satisfies\n$$\n\\int_P|\\nabla u|^4=\\lambda^2\\left(\\int_Pu^4-A(P)^{-1}\\right).\n$$",
+        "title": "Airy fourth-power identity"
+      },
+      {
+        "id": "lem-bilinear-mode-replacement",
+        "identity": {
+          "statement_hash": "sha256:aebd2822df23fb03e15aa64c199c759c4a44f2ce8acc3e5ee2c7c1b4c1101002"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "In the setting of @lem-frequency-replacement and @lem-gradient-perturbation, let\n$$\nb_1(g)=4\\,\\nabla v_0\\cdot\\nabla v_1(g)\\,|\\nabla v_0|^2,\n$$\nand define $M(g,k)=2\\int_{\\mathbb D}b_1(g)\\operatorname{Re}k\\,dA$. Then\n$$\n|M(g,k)-M(g,-g)|\\le C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is universal.",
+        "title": "Bilinear mode replacement"
+      },
+      {
+        "id": "lem-c1-perturbation",
+        "identity": {
+          "statement_hash": "sha256:5e41489de67dfbb7f1bb3a6ce3b6e86fc34c9c67badabf477696079a741f21e0"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let\n$$\nX=\\{\\phi\\in C^1(\\overline{\\mathbb D};\\mathbb R):\\phi|_{\\partial\\mathbb D}=0\\},\n\\qquad \\|\\phi\\|_X=\\|\\nabla\\phi\\|_{L^\\infty}.\n$$\nFor normalized conformal data from @def-conformal-data with $S=\\|g\\|_{A^2}^2$ sufficiently small, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the pulled-back first eigenfunction has a uniform real-analytic expansion\n$$\nv=v_0+t v_1+v^{(2)}+R,\n\\qquad \\|v_1\\|_X\\le C,\n\\qquad \\|v^{(2)}\\|_X\\le CS,\n\\qquad \\|R\\|_X\\le CS^{3/2},\n$$\nwhere $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$, $v_1$ has no radial Fourier mode, and the corresponding eigenvalue branch is the positive first branch. More precisely, with $g=th$,\n$$\n(-\\Delta-j^2)v_1=2j^2\\operatorname{Re}(h)v_0\\quad\\text{in }\\mathbb D,\n\\qquad v_1|_{\\partial\\mathbb D}=0.\n$$\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, then\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\quad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nThe same branch has a real-analytic eigenvalue expansion\n$$\n\\lambda(g)=j^2+\\lambda^{(1)}(g)+\\lambda^{(2)}(g)+O(\\|g\\|_{A^2}^3),\n$$\nwhere $\\lambda^{(r)}$ is homogeneous of degree $r$.",
+        "title": "Uniform C1 conformal perturbation"
+      },
+      {
+        "id": "lem-disk-perturbation",
+        "identity": {
+          "statement_hash": "sha256:ca3b650d7594209db8a0019259f09ca81ed4e37cf349188bc633c73916e83c80"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "There are universal constants $S_0,C>0$ such that, for normalized conformal data from @def-conformal-data with $S\\le S_0$, if $v$ is the positive first solution of\n$$\n-\\Delta v=\\lambda|1+g|^2v\\quad\\text{in }\\mathbb D,qquad v|_{\\partial\\mathbb D}=0,qquad \\int_{\\mathbb D}v^2|1+g|^2=1,\n$$\nthen, with $J$ as in @def-j-functional,\n$$\n\\frac{J(P)}{\\pi j^2}=1+S-\\sum_{n\\ge2}\\frac{\\rho_n}{(n+1)^2}|g_n|^2+R(g),qquad |R(g)|\\le CS^{3/2},\n$$\nwhere $j=j_{0,1}$ is the first positive zero of $J_0$, $\\rho_n=jJ_{n+1}(j)/J_n(j)$, and $0<\\rho_n<2$. In particular,\n$$\n\\frac{J(P)}{\\pi j^2}-1\\ge S/6.\n$$\nMoreover, writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, the corresponding normalized eigenpair satisfies\n$$\n\\|v-v_0\\|_{H^1_0(\\mathbb D)}\\le Ct,\n\\qquad |\\lambda-j^2|\\le Ct^2.\n$$",
+        "title": "Uniform disk perturbation expansion"
+      },
+      {
+        "id": "lem-frequency-replacement",
+        "identity": {
+          "statement_hash": "sha256:c44d3f9ab726441375c7b70a39ca012c2f4fd3dfcfc63d1569f998b81a1e5064"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $g,k,L$ be the normalized analytic data in @def-conformal-data, with $L=\\log(1+g)$, and suppose $S=\\|g\\|_{A^2}^2$ is sufficiently small and $T\\le CS$. If $(m_n)_{n\\ge2}$ is any real sequence with $|m_n|\\le C_m(n+1)^{-2}$, then\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|k_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)},\n$$\nand\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|L_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nIn addition, for $D=g+k$,\n$$\n\\sum_{n\\ge2}\\frac{|D_n|^2}{(n+1)^3}\n\\le CS^2\\log(e/S).\n$$\nThe constant is independent of the polygonal angles and vertex separation.",
+        "title": "Frequency-decaying quadratic replacement"
+      },
+      {
+        "id": "lem-gradient-perturbation",
+        "identity": {
+          "statement_hash": "sha256:4dd0bffcd01ed65f425306a2c547104f57564b2c2fde19b3b927d6227a98e673"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, the response is diagonal:\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nIn particular, if $M(h,k)=2\\int_{\\mathbb D}b_1(h)\\operatorname{Re}k\\,dA$, then\n$$\nM(h,k)=\\sum_{n\\ge2}m_n\\operatorname{Re}(h_n\\overline{k_n}),\n\\qquad |m_n|\\le C(n+1)^{-3}.\n$$\nThe constant is universal and independent of polygonal angles and vertex separation.",
+        "title": "Gradient perturbation interface"
+      },
+      {
+        "id": "lem-inverse-energy",
+        "identity": {
+          "statement_hash": "sha256:aaf689c1fb36428c9570c97cd25432e0fea44790e89eed5f31440dec959b74d7"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the conformal data in @def-conformal-data of a stationary polygon whose canonical boundary presentation consists entirely of effective edges, satisfying @lem-edge-moments, @lem-disk-perturbation, and @lem-gradient-perturbation, and in the regime of @lem-near-circle-conformal, one has\n$$\nT\\le CS.\n$$\nThe constant is independent of the number and separation of the vertices and of the angle sizes.",
+        "title": "Inverse derivative energy"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data",
+        "lem-airy-boundary-quadratic",
+        "lem-airy-identity",
+        "lem-bilinear-mode-replacement",
+        "lem-c1-perturbation",
+        "lem-disk-perturbation",
+        "lem-frequency-replacement",
+        "lem-gradient-perturbation",
+        "lem-inverse-energy"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-airy-quadratic-response",
+      "identity": {
+        "proof_hash": "sha256:5ab20c0283d0379d69b5ffb64f3d9cdf63b8d37b8b5fc5c1d65b965b60649ce4",
+        "statement_hash": "sha256:9e255cb7d5d53bde13bf325c3794e0b4600ebfc8fe26c0304422258d0615839e"
+      },
+      "kind": "lemma",
+      "proof": "By @def-conformal-data, write $F'=1+g$, $k=(1+g)^{-1}-1$, $S=\\|g\\|_{A^2}^2$, and $T=\\|k\\|_{A^2}^2$. Let $v(g)$ and $\\lambda(g)$ be the fixed-space positive branch from @lem-c1-perturbation and @lem-disk-perturbation. Treat $g$ and $k$ temporarily as independent analytic variables and define\n$$\n\\mathscr H(g,k)=\\int_{\\mathbb D}|\\nabla v(g)|^4|1+k|^2dA\n-\\lambda(g)^2\\int_{\\mathbb D}v(g)^4|1+g|^2dA\n +\\frac{\\lambda(g)^2}{\\pi(1+\\|g\\|_{A^2}^2)}.\n$$\nThe fixed-space expansion in @lem-c1-perturbation and the form expansion in @lem-disk-perturbation imply a uniform Taylor formula\n$$\n\\mathscr H(g,k)=H_2(g,k)+R_H(g,k),\n\\qquad |R_H(g,k)|\\le C(\\|g\\|_{A^2}+\\|k\\|_{A^2})^3.\n$$\nThis is obtained by multiplying the second-order Taylor polynomials; the eigenvalue expansion is part of @lem-c1-perturbation, every product of two $A^2$ factors is controlled by Cauchy--Schwarz, and the $C^1$ eigenfunction remainder is uniform.\n\nFor the quadratic part, put $a=|\\nabla v_0|^4$, $p_D=j/\\sqrt\\pi$, and let $b_1$ be the first gradient variation in @lem-gradient-perturbation. Direct multiplication gives\n$$\nH_2(g,k)=\\pi p_D^4(T-S)+Q_0(g)+A(k)+M(g,k),\n$$\nwhere $A(k)=\\int(a-p_D^4)|k|^2dA$ and $M(g,k)=2\\int b_1(g)\\operatorname{Re}k\\,dA$; $Q_0$ contains the remaining pure quadratic terms in $v(g)$, $\\lambda(g)$ and $g$.\n\nFor the quadratic part, the radial term $A(k)$ has coefficients $O((n+1)^{-2})$ by $|a(r)-p_D^4|\\le C(1-r)$. The phase-sensitive term is handled by @lem-bilinear-mode-replacement. The pure inverse-path quadratic form is exactly the Airy boundary calculation in @lem-airy-boundary-quadratic, and polynomial density extends it to all $A^2$ data because its multiplier is $O((n+1)^{-2})$. Thus\n$$\nH_2(g,-g)=2\\pi p_D^4\\sum_{n\\ge2}d_n|g_n|^2.\n$$\nFor the actual inverse relation, @lem-frequency-replacement and @lem-bilinear-mode-replacement replace $A(k)+M(g,k)$ by $A(-g)+M(g,-g)$ with error $O(S^{3/2}\\sqrt{\\log(e/S)})$. The same bound controls $R_H$ because @lem-inverse-energy gives $T\\le CS$. Indeed, with $v=u\\circ F$, the chain rule and conformal Jacobian give\n$$\n\\int_P|\\nabla u|^4=\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2dA,\n\\quad\n\\int_Pu^4=\\int_{\\mathbb D}v^4|1+g|^2dA,\n\\quad\nA(P)=\\pi(1+S),\n$$\nso @lem-airy-identity is exactly $\\mathscr H(g,k)=0$. Dividing by $\\pi p_D^4$ proves the formula.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Under the hypotheses of @lem-inverse-energy and @def-conformal-data, put\n$$\n\\rho_n=j\\frac{J_{n+1}(j)}{J_n(j)},\n\\qquad \\beta_n=n+1-\\rho_n,\n\\qquad d_n=\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}.\n$$\nThen, for sufficiently small $S$,\n$$\n\\left|S-T-2\\sum_{n\\ge2}d_n|g_n|^2\\right|\n\\le C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is universal.",
+      "title": "Airy quadratic response",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:87e54374bba19daf94ef1419d073251ac41f91813c7d416b07a4732750a58bf4",
+  "proof_hash": "sha256:5ab20c0283d0379d69b5ffb64f3d9cdf63b8d37b8b5fc5c1d65b965b60649ce4",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The claimed expansion \\(\\mathscr H=H_2+R_H\\) requires explicit verification that the constant and linear terms vanish, including the disk Bessel identity at \\((g,k)=(0,0)\\), angular cancellations, and the vanishing first eigenvalue variation.",
+      "The extension from polynomial \\(g\\) in the Airy boundary calculation to arbitrary \\(A^2\\) data is asserted via density but does not explicitly establish continuity of the quadratic form.",
+      "The final algebra is implicit: one must write \\(H_2(g,k)=\\pi p_D^4(T-S)+H_2(g,-g)+O(S^{3/2}\\sqrt{\\log(e/S)})\\), use \\(\\mathscr H=0\\), and divide by \\(\\pi p_D^4\\)."
+    ],
+    "nonblocking_comments": [
+      "The notation \\(T\\) is initially defined for the inverse relation and then used informally while \\(g,k\\) are treated as independent; interpreting it as \\(\\|k\\|_{A^2}^2\\) resolves the ambiguity."
+    ],
+    "refutation": "",
+    "repair_hints": "Add the lower-order cancellation calculations, state the continuity argument needed for polynomial density, and display the final substitution and rearrangement explicitly.",
+    "summary": "The argument correctly combines the quadratic expansion, inverse-path replacement estimates, and the Airy identity to obtain the stated estimate. No critical error invalidates the conclusion.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data",
+      "lem-airy-boundary-quadratic",
+      "lem-airy-identity",
+      "lem-bilinear-mode-replacement",
+      "lem-c1-perturbation",
+      "lem-disk-perturbation",
+      "lem-frequency-replacement",
+      "lem-gradient-perturbation",
+      "lem-inverse-energy"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:9e255cb7d5d53bde13bf325c3794e0b4600ebfc8fe26c0304422258d0615839e",
+  "target": "lem-airy-quadratic-response",
+  "verification_key": "sha256:0f5047beb4983992f43afe9962d8dce118c2fe6317fa51dc881cbb8890c5dba3",
+  "verified_at": "2026-10-31T20:58:44.122Z"
+}

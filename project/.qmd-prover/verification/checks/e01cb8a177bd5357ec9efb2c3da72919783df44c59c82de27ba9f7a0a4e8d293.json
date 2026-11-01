@@ -1,0 +1,140 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "def-conformal-data": {
+      "identity": {
+        "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 52752,
+    "usage": {
+      "total_tokens": 15836
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "def-conformal-data",
+        "identity": {
+          "statement_hash": "sha256:e57bcab0f2155a0ac30d139ea60aaac08d290cd7e1e2b3ca8a3172272483ce83"
+        },
+        "kind": "definition",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a polygon $P$ in @def-admissible-polygon, let $r_P$ be its maximal conformal radius and choose a Riemann map $F:\\mathbb D\\to P$ centered at a maximizing point, with $F'(0)=r_P>0$ and $F''(0)=0$. The equality $F''(0)=0$ is the first-order condition for the maximum of $(1-|a|^2)|F'(a)|$. Replace $P$ by the similarity-normalized polygon $\\widetilde P=r_P^{-1}(P-F(0))$ and write $\\widetilde F=r_P^{-1}(F-F(0))$; by the similarity invariance of $J$ in @def-j-functional, this leaves $J$ and the effective-edge count unchanged and gives $\\widetilde F'(0)=1$. In the normalized notation,\n$$\n\\widetilde F'(z)=1+g(z),\\qquad g(z)=\\sum_{n\\ge2}g_nz^n.\n$$\nSet\n$$\nS=\\|g\\|_{A^2}^2=\\sum_{n\\ge2}\\frac{|g_n|^2}{n+1},\\qquad\nT=\\|(\\widetilde F')^{-1}-1\\|_{A^2}^2,\\qquad \\|h\\|_{A^2}^2=\\pi^{-1}\\int_{\\mathbb D}|h|^2dA.\n$$\nThe area identity is $A(\\widetilde P)=\\pi(1+S)$; all later uses of $P,F,A,\\lambda_1$ are understood in this similarity-normalized representative. Write $k=(\\widetilde F')^{-1}-1$, so $T=\\|k\\|_{A^2}^2$ and $g+k=-gk$. The inverse derivative is in $A^2$: at a prevertex with interior angle $\\omega\\in(0,2\\pi)$, the Schwarz--Christoffel exponent is $\\alpha=\\omega/\\pi-1<1$, so $|(\\widetilde F')^{-1}|^2=O(r^{-2\\alpha})$ and its area integral is bounded by $C\\int_0^\\varepsilon r^{1-2\\alpha}\\,dr<\\infty$.",
+        "title": "Normalized conformal data"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "def-conformal-data"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-frequency-replacement",
+      "identity": {
+        "proof_hash": "sha256:e2e79a0fa14434f80791b3aac8c15a7f32e73025d0c4b846003cb98573050d8b",
+        "statement_hash": "sha256:96ed0940173e2f153c6d06233c5fad63fe678f9b26051427b6586f3a2ecc910d"
+      },
+      "kind": "lemma",
+      "proof": "Put $D=g+k$. Since $g+k=-gk$ by @def-conformal-data, Hölder gives\n$$\n\\|D\\|_{A^1}\\le \\|g\\|_{A^2}\\|k\\|_{A^2}\\le CS,\n\\qquad\n\\|D\\|_{A^2}^2\\le2(S+T)\\le CS.\n$$\nThe constant and linear coefficients of $D$ vanish. For every $n\\ge2$, the coefficient formula and the two bounds imply\n$$\n|D_n|\\le C(n+1)S,\n\\qquad\n\\sum_{n\\ge2}\\frac{|D_n|^2}{n+1}\\le CS.\n$$\nWith $K=\\lceil S^{-1/2}\\rceil$, splitting at $K$ gives\n$$\n\\sum_{n\\ge2}\\frac{|D_n|^2}{(n+1)^3}\n\\le C S^2\\sum_{n\\le K}\\frac1{n+1}\n +C(K+1)^{-2}\\sum_{n>K}\\frac{|D_n|^2}{n+1}\n\\le CS^2\\log(e/S).\n$$\nLet $E=k-g$. Since $|k_n|^2-|g_n|^2=\\operatorname{Re}(D_n\\overline{E_n})$, Cauchy--Schwarz gives\n$$\n\\left|\\sum_{n\\ge2}m_n(|k_n|^2-|g_n|^2)\\right|\n\\le C C_m\n\\left(\\sum_{n\\ge2}\\frac{|D_n|^2}{(n+1)^3}\\right)^{1/2}\n\\left(\\sum_{n\\ge2}\\frac{|E_n|^2}{n+1}\\right)^{1/2}\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)}.\n$$\n\nPut $W=L-g$. The scalar estimate\n$$\n|e^z-1-z|\\le C\\bigl(|e^z-1|^2+|z|^2\\bigr)\n$$\nand $e^L-1=g$ give $\\|W\\|_{A^1}\\le CS$. Also\n$$\n\\|L\\|_{A^2}^2\\le(S+T)/2\n$$\nbecause $|e^L|^2+|e^{-L}|^2-2\\ge4(\\operatorname{Re}L)^2$ pointwise and the real and imaginary parts of an analytic function with zero constant term have equal Bergman energy. Hence $\\|W\\|_{A^2}^2\\le CS$. The same low/high frequency split gives\n$$\n\\sum_{n\\ge2}\\frac{|W_n|^2}{(n+1)^3}\\le CS^2\\log(e/S).\n$$\nFinally $|L_n|^2-|g_n|^2=\\operatorname{Re}(W_n\\overline{(L_n+g_n)})$ and $\\sum|L_n+g_n|^2/(n+1)\\le CS$, so the second estimate follows by Cauchy--Schwarz.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $g,k,L$ be the normalized analytic data in @def-conformal-data, with $L=\\log(1+g)$, and suppose $S=\\|g\\|_{A^2}^2$ is sufficiently small and $T\\le CS$. If $(m_n)_{n\\ge2}$ is any real sequence with $|m_n|\\le C_m(n+1)^{-2}$, then\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|k_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)},\n$$\nand\n$$\n\\left|\\sum_{n\\ge2}m_n\\bigl(|L_n|^2-|g_n|^2\\bigr)\\right|\n\\le C C_m S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nThe constant is independent of the polygonal angles and vertex separation.",
+      "title": "Frequency-decaying quadratic replacement",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:5a35b300d1de1abe4df71f570fa9e6c07e4dd1ea1f2377655597204850fc6b33",
+  "proof_hash": "sha256:e2e79a0fa14434f80791b3aac8c15a7f32e73025d0c4b846003cb98573050d8b",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The proof should justify the Bergman-energy identity for L while its A^2 integrability is being established, for example by applying the identity on smaller disks and passing to the limit.",
+      "For the second low/high-frequency split, it should explicitly note that L=log(1+g) has vanishing constant and linear coefficients, so W=L−g does as well; it should also explicitly identify e^{-L}=1+k when using the pointwise bound."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Add the omitted coefficient observations and a brief radial-truncation or power-series justification for the Re/Im Bergman-energy equality, together with e^{-L}=1+k.",
+    "summary": "The argument establishes both stated estimates from the supplied conformal-data definition and the hypothesis T≤CS. The coefficient splitting and weighted Cauchy–Schwarz steps are valid, and the logarithmic estimate for L follows from the stated exponential inequality and Bergman-energy identity.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "def-conformal-data"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:96ed0940173e2f153c6d06233c5fad63fe678f9b26051427b6586f3a2ecc910d",
+  "target": "lem-frequency-replacement",
+  "verification_key": "sha256:e01cb8a177bd5357ec9efb2c3da72919783df44c59c82de27ba9f7a0a4e8d293",
+  "verified_at": "2026-10-31T19:21:01.601Z"
+}

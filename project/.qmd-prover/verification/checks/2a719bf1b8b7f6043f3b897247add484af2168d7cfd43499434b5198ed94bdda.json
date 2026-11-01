@@ -1,0 +1,166 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-airy-boundary-flux": {
+      "identity": {
+        "statement_hash": "sha256:4652fb4bf0b5fddaf01de238dbc7492e275ed9eda148d908961019366ab8d6bd"
+      },
+      "origin": "fact"
+    },
+    "lem-gradient-perturbation": {
+      "identity": {
+        "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 177199,
+    "usage": {
+      "total_tokens": 18786
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-airy-boundary-flux",
+        "identity": {
+          "statement_hash": "sha256:4652fb4bf0b5fddaf01de238dbc7492e275ed9eda148d908961019366ab8d6bd"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "Let $\\Omega$ be a simply connected smooth planar domain, $u$ its $L^2$-normalized first Dirichlet eigenfunction with eigenvalue $\\lambda$, $A=|\\Omega|$, $c=\\lambda/A$, and $q=|\\partial_\\nu u|^2$. Put\n$$\nT=\\nabla u\\otimes\\nabla u-\\tfrac12(|\\nabla u|^2-\\lambda u^2)I.\n$$\nLet $\\Phi=\\psi-c|x|^2/4$, where $\\psi$ is an Airy potential with $D^2\\psi=R^TTR$ and $R$ is rotation by $\\pi/2$. If $F(e^{i\\theta})$ parametrizes $\\partial\\Omega$ counterclockwise and $\\Gamma(\\theta)=\\nabla\\Phi(F(e^{i\\theta}))$ is identified with a complex vector, then\n$$\n\\frac{d\\Gamma}{d\\theta}=\\frac12(q-c)i e^{i\\theta}F'(e^{i\\theta}).\n$$\nMoreover, for\n$$\n\\mathscr H=\\int_\\Omega|\\nabla u|^4dA-\\lambda^2\\int_\\Omega u^4dA+\\frac{\\lambda^2}{A},\n$$\none has\n$$\n\\mathscr H=-4\\operatorname{Area}_{\\rm signed}(\\Gamma).\n$$",
+        "title": "Airy boundary flux and area identity"
+      },
+      {
+        "id": "lem-gradient-perturbation",
+        "identity": {
+          "statement_hash": "sha256:2ded7d03e9120124f67d93eb56fea587bdf6ee1b926725827e680885b29a4185"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the normalized conformal data in @def-conformal-data in the regime of @lem-disk-perturbation, let $v$ be the positive weighted first eigenfunction and let $v_0(r)=J_0(jr)/(\\sqrt\\pi J_1(j))$. Writing $g=t h$ with $t=\\sqrt S$ and $\\|h\\|_{A^2}=1$, there is a first-order response $v_1$ with no radial Fourier mode such that\n$$\n\\|v-v_0-t v_1\\|_{W^{1,4}(\\mathbb D)}\\le CS,\n$$\nand, with $b_1=4\\,\\nabla v_0\\cdot\\nabla v_1\\,|\\nabla v_0|^2$,\n$$\n\\int_0^{2\\pi}b_1(r,\\theta)\\,d\\theta=0,\n\\qquad\n\\bigl\\||\\nabla v|^4-|\\nabla v_0|^4-tb_1\\bigr\\|_{L^1(\\mathbb D)}\\le CS.\n$$\nMoreover, $\\|b_1\\|_{L^\\infty(\\mathbb D)}\\le C$ and the remainder in this last display is bounded in $L^\\infty(\\mathbb D)$ by $CS$.\nIf $h(z)=\\sum_{n\\ge2}h_nz^n$, the response is diagonal:\n$$\nv_1(r,\\theta)=\\sum_{n\\ge2}w_n(r)\\operatorname{Re}(h_ne^{in\\theta}),\n\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nwhere $p_D=j/\\sqrt\\pi$ and $w_n'(1)=-p_D\\rho_n/(n+1)$ with $\\rho_n=jJ_{n+1}(j)/J_n(j)$.\nIn particular, if $M(h,k)=2\\int_{\\mathbb D}b_1(h)\\operatorname{Re}k\\,dA$, then\n$$\nM(h,k)=\\sum_{n\\ge2}m_n\\operatorname{Re}(h_n\\overline{k_n}),\n\\qquad |m_n|\\le C(n+1)^{-3}.\n$$\nOn the boundary, with $p=-\\partial_rv|_{\\partial\\mathbb D}$,\n$$\np(\\theta)=p_D+p_D\\sum_{n\\ge2}\\frac{\\rho_n}{n+1}\\operatorname{Re}(g_ne^{in\\theta})+r_p(\\theta),\n\\qquad \\|r_p\\|_{L^\\infty}\\le CS,\n$$\nand $|\\rho_n|\\le C/(n+1)$.\nThe constant is universal and independent of polygonal angles and vertex separation.",
+        "title": "Gradient perturbation interface"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-airy-boundary-flux",
+        "lem-gradient-perturbation"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-airy-boundary-quadratic",
+      "identity": {
+        "proof_hash": "sha256:fd6be6a126758a97b733bbbdc467fa3d98b6001bc9fd9cfd720b529cd7ec1aeb",
+        "statement_hash": "sha256:85e578a2469fd7c520ab35374f9d5170360bd883ac582d952f3fccf5e80092de"
+      },
+      "kind": "lemma",
+      "proof": "For one real monomial $g=az^n$, the first-order disk equation in @lem-gradient-perturbation gives\n$$\nv_1(r,\\theta)=a w_n(r)\\cos(n\\theta),\n\\qquad\nw_n(r)=\\frac{r^{n+1}v_0'(r)+p_DJ_n(jr)/J_n(j)}{n+1},\n$$\nand the Bessel recurrence gives $w_n'(1)=-p_D\\rho_n/(n+1)$. The physical flux is $q=p^2/|1+g|^2$, so\n$$\n\\delta(q-c)=-\\frac{2p_D^2\\beta_n}{n+1}\\operatorname{Re}(ae^{in\\theta}).\n$$\nBy @lem-airy-boundary-flux, the calibrated Airy boundary gradient satisfies\n$$\n\\frac{d\\Gamma}{d\\theta}=\\frac12(q-c)i e^{i\\theta}F'(e^{i\\theta}).\n$$\nAt the disk $\\Gamma$ is constant. Integrating the first variation gives frequencies $n+1$ and $1-n$. If $d=-2p_D^2\\beta_na/(n+1)$, the signed Fourier-area formula gives\n$$\n\\operatorname{Area}_{\\rm signed}(\\dot\\Gamma)=-\\frac{\\pi d^2}{8(n^2-1)}.\n$$\nFor the conformal pullback $v=u\\circ F$, the chain rule and $dA_x=|F'|^2dA_z$ give\n$$\n\\int_\\Omega|\\nabla u|^4dA_x=\\int_{\\mathbb D}|\\nabla v|^4|1+k|^2dA_z,\n\\quad\n\\int_\\Omega u^4dA_x=\\int_{\\mathbb D}v^4|1+g|^2dA_z,\n\\quad\nA(\\Omega)=\\pi(1+\\|g\\|_{A^2}^2).\n$$\nThus the physical functional in @lem-airy-boundary-flux is the disk functional $\\mathscr H(g,k)$ on the inverse path $k=(1+g)^{-1}-1$. The second identity of @lem-airy-boundary-flux therefore gives $H_2=-4$ times this signed area, hence\n$$\nH_2(az^n,-az^n)=2\\pi p_D^4\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|a|^2.\n$$\nRotation handles complex $a$, and angular orthogonality eliminates mixed modes. Summing over finite polynomials proves the formula.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "Let $g$ be an analytic polynomial with no constant or linear coefficient. Let $v(g),\\lambda(g)$ be the positive weighted disk branch in @lem-c1-perturbation and let $H_2$ be the second homogeneous term at $(g,k)=(0,0)$ of\n$$\n\\mathscr H(g,k)=\\int_{\\mathbb D}|\\nabla v(g)|^4|1+k|^2dA\n-\\lambda(g)^2\\int_{\\mathbb D}v(g)^4|1+g|^2dA\n+\\frac{\\lambda(g)^2}{\\pi(1+\\|g\\|_{A^2}^2)}.\n$$\nFor the inverse path $k=-g$, the second homogeneous term is\n$$\nH_2(g,-g)=2\\pi p_D^4\\sum_{n\\ge2}\n\\frac{\\beta_n^2}{(n+1)^2(n^2-1)}|g_n|^2,\n\\qquad p_D=j/\\sqrt\\pi,\n$$\nwhere $\\beta_n=n+1-jJ_{n+1}(j)/J_n(j)$.",
+      "title": "Airy boundary quadratic calculation",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:c9a34b1d8be41115eccae0f3026bdbffb6e355b549e312c4273d57ea250df466",
+  "proof_hash": "sha256:fd6be6a126758a97b733bbbdc467fa3d98b6001bc9fd9cfd720b529cd7ec1aeb",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The proof passes from the physical inverse path k=(1+g)^{-1}-1 to the target evaluation H₂(g,-g) without showing that the O(g²) correction in k cannot change the quadratic coefficient. This requires checking that the relevant linear term in the disk functional vanishes, using angular orthogonality for analytic perturbations with no constant term.",
+      "In deriving δ(q-c), the variation of c=λ/A is omitted. One should show its first-order contribution vanishes for a nonradial n≥2 mode, or explain that any remaining constant Fourier mode contributes only a translation component to Γ and does not affect the quadratic signed area.",
+      "The passage from the exact Airy identity to the quadratic relation H₂=-4 Area_signed(Γ̇) should explicitly note that Γ is constant at the disk and that the linear area term therefore vanishes, with the stated Fourier-area normalization.",
+      "The reduction from real to complex coefficients by rotation and the preservation of the functional under that rotation are asserted rather than briefly justified."
+    ],
+    "nonblocking_comments": [
+      "The coefficient computation for a real monomial is consistent: the two Fourier frequencies are n+1 and 1-n, yielding the factor 2πp_D⁴/((n+1)²(n²-1)).",
+      "Angular orthogonality does eliminate mixed modes once the first-order Airy variation is established."
+    ],
+    "refutation": "",
+    "repair_hints": "Add a short Taylor-expansion argument for k=(1+g)^{-1}-1=-g+g²+O(g³), proving the linear functional applied to g² vanishes. Track the first variation of c or isolate its constant Fourier mode and show it has no signed-area contribution. State the quadratic expansion of the Airy area around the constant disk value and justify rotational invariance for complex coefficients.",
+    "summary": "The argument correctly derives the stated quadratic coefficient from the first-order boundary flux and Airy area identity. Several second-order identifications and first-variation details are left implicit and should be supplied for standard rigor.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-airy-boundary-flux",
+      "lem-gradient-perturbation"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:85e578a2469fd7c520ab35374f9d5170360bd883ac582d952f3fccf5e80092de",
+  "target": "lem-airy-boundary-quadratic",
+  "verification_key": "sha256:2a719bf1b8b7f6043f3b897247add484af2168d7cfd43499434b5198ed94bdda",
+  "verified_at": "2026-10-31T21:53:45.543Z"
+}

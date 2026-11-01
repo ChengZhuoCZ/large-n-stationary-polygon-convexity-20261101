@@ -1,0 +1,203 @@
+{
+  "accepted": true,
+  "checker_contract": {
+    "backend": "codex",
+    "citations": "standard",
+    "effort": "high",
+    "fresh_context": true,
+    "model": "gpt-6.1-sol",
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "rigor": "standard",
+    "rigor_disprove": "standard",
+    "tools": []
+  },
+  "dependency_snapshot": {
+    "lem-bp-asymptotic": {
+      "identity": {
+        "statement_hash": "sha256:f3aa0eb6a115435af37685a2a0647e00f9abcaa2cf917b71043233ecc2b24ca5"
+      },
+      "origin": "fact"
+    },
+    "lem-near-circle-conformal": {
+      "identity": {
+        "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+      },
+      "origin": "fact"
+    },
+    "lem-regular-polygon-asymptotic": {
+      "identity": {
+        "statement_hash": "sha256:d6a86857de6595c7f42ebf375ec061032a2f1a9667abdac2e9a8530333a909dd"
+      },
+      "origin": "fact"
+    },
+    "lem-signed-turn-lower-bound": {
+      "identity": {
+        "statement_hash": "sha256:c2202dfd9de5166bf99cbee05b04d75b894b0f3cbb398f1ba84b57620fbb88d6"
+      },
+      "origin": "fact"
+    }
+  },
+  "external_basis_hash": "sha256:189a7191e11a8ffb10d00eb84bf8241b8fb7ee9e41da9f83736f27be9e0b8e25",
+  "metrics": {
+    "duration_ms": 80912,
+    "usage": {
+      "total_tokens": 14029
+    }
+  },
+  "operation": "local-conditional-verification",
+  "outcome": "verified",
+  "packet": {
+    "checker_contract": {
+      "backend": "codex",
+      "citations": "standard",
+      "effort": "high",
+      "fresh_context": true,
+      "model": "gpt-6.1-sol",
+      "protocol": {
+        "name": "qmd-prover-independent-verifier",
+        "version": 6
+      },
+      "rigor": "standard",
+      "rigor_disprove": "standard",
+      "tools": []
+    },
+    "dependencies": [
+      {
+        "id": "lem-bp-asymptotic",
+        "identity": {
+          "statement_hash": "sha256:f3aa0eb6a115435af37685a2a0647e00f9abcaa2cf917b71043233ecc2b24ca5"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For $B_p$ in @def-positive-kernel,\n$$\nB_p=\\frac{\\zeta(3)}{p^3}-\\frac{\\kappa\\zeta(5)}{p^5}+O(p^{-7})\n\\quad (p\\to\\infty),\n$$\nand $B_p$ is strictly decreasing in $p$.",
+        "title": "Discrete comparison energy asymptotic"
+      },
+      {
+        "id": "lem-near-circle-conformal",
+        "identity": {
+          "statement_hash": "sha256:753f093cbc22e8ba3ae183009dd6f92c25c435eadd4de7611412efe3522852b8"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a sequence of admissible stationary $N$-gons in the sense of @def-stationary-polygon whose canonical boundary presentations consist entirely of effective edges, satisfying the edge moments of @lem-edge-moments and with $J,R$ as in @def-j-functional,\n$$\nJ(P)\\le J(R_{N-1}),\n$$\nwith $N\\to\\infty$, the conformal data of @def-conformal-data satisfy $S\\to0$ and, in fact, $S\\le C N^{-3}$ with a universal $C$.",
+        "title": "Near-circle conformal deficit"
+      },
+      {
+        "id": "lem-regular-polygon-asymptotic",
+        "identity": {
+          "statement_hash": "sha256:d6a86857de6595c7f42ebf375ec061032a2f1a9667abdac2e9a8530333a909dd"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For the unit-area regular $M$-gon in @def-j-functional,\n$$\n\\frac{J(R_M)}{\\pi j^2}=1+\\frac{4\\zeta(3)}{M^3}+O(M^{-9/2})\n\\quad (M\\to\\infty).\n$$",
+        "title": "Regular polygon spectral asymptotic"
+      },
+      {
+        "id": "lem-signed-turn-lower-bound",
+        "identity": {
+          "statement_hash": "sha256:c2202dfd9de5166bf99cbee05b04d75b894b0f3cbb398f1ba84b57620fbb88d6"
+        },
+        "kind": "lemma",
+        "origin": "fact",
+        "source": {
+          "file": "workspace/large-n-proof.qmd"
+        },
+        "statement": "For a stationary polygon in the regime of @lem-spectral-core, if $p$ is its number of convex corners, then\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+4B_p-C S^{3/2}\\sqrt{\\log(e/S)}.\n$$",
+        "title": "Signed-turn spectral lower bound"
+      }
+    ],
+    "external_basis": {
+      "content": null,
+      "mode": "unrestricted",
+      "path": ".qmd-prover/.external.qmd"
+    },
+    "instructions": "You are an independent mathematical verifier. Judge the submission strictly on its own merits: you did not write it, and you must neither assume it is correct nor repair it.\n\nJudge the submission from the material in this packet, and never rely on outside expectations about how this result is usually proved. Reason from the packet alone: do not read files, run commands, or search the web.\n\nThis is a LOCAL, CONDITIONAL check. Assume every statement in dependencies is true exactly as written, and do not consider how or whether it was proved: dependency proofs and their verification states are withheld deliberately and composed separately. Your only question is whether the submitted argument (the proof, construction, or refutation in target) establishes the exact target from those assumed dependency statements, the semantic context, and the permitted external basis — and from nothing else.\n\nThe target is a theorem-like result (theorem, lemma, proposition, or corollary) with a submitted proof. Confirm that the proof establishes the exact stated result, and not a nearby, weaker, stronger, converse, or special-case claim.\n\nAmong dependencies, entries with kind \"definition\" are the semantic context: each fixes the meaning of the terms and notation it introduces and may be unfolded. Every other dependency is a fact whose statement you may assume but not unfold. A citation like @some-id in the text refers to the dependency carrying that id.\n\nThe external_basis field fixes what mathematics you may use beyond the supplied dependencies:\n- mode \"unrestricted\": you may use standard, well-established mathematics as background (ordinary set theory, induction, elementary logic, and the like), but identify any nontrivial external result you invoke precisely enough to confirm its hypotheses; do not import project-specific results that are absent from the dependencies.\n- mode \"declared\": you may use only the external results or classes of results described in external_basis.content, together with unambiguously elementary reasoning; treat anything beyond that as unavailable.\n- mode \"none\": you may use no external mathematical results at all; every nonelementary fact must come from the supplied dependencies.\n\nEstablish the exact target and nothing weaker, stronger, or adjacent. Check that every cited dependency is applied with the exact hypotheses, domains, directions, side conditions, and quantified variables its statement requires — naming a result is not evidence that it applies. Scrutinize quantifier order and scope, variable binding and capture, hidden existence, uniqueness, or well-definedness assumptions, degenerate and boundary cases, and whether every case the argument relies on is actually covered.\n\nSort every defect you find into one of two kinds, because they are judged differently. A critical_error means the submission does not establish the target as written: a step that is wrong, invalid, or circular, a use of a dependency, definition, or hypothesis that does not actually apply, or a load-bearing part of the argument that is missing and cannot be routinely supplied. A gap means the argument is correct and complete in structure but a step is left terser or less justified than the rigor level below asks for, so a competent reader could routinely fill it. Put anything that does not bear on validity in nonblocking_comments, and never silently fill or replace a step.\n\nCorrectness is a floor and is never relaxed: leniency about the meaning of a term, or about how tersely a routine step is stated, never licenses a wrong or unsupported inference. A cited definition, lemma, or hypothesis supports a step only when it applies exactly as stated — invoking one for a claim it does not entail, or appealing to a result whose hypotheses are not met, is a critical_error, not acceptable shorthand.\n\nCitations (standard): if the argument leans on a specialized term, object, or notation whose precise meaning you genuinely doubt is standard, and that meaning is not fixed by the semantic context or the external basis, report it as a gap. Do not flag ordinary, unambiguously standard vocabulary, or a notion whose intended meaning is clear from context.\n\nRigor (standard): judge the argument at an ordinary rigorous level. Report as a gap a step whose justification a competent reader would want to see spelled out, but take genuinely mechanical or immediate steps as evident, and do not manufacture gaps from routine notation, standard conventions, or completeness points that do not bear on whether the argument goes through. A routine well-definedness claim need not carry its own proof; a nontrivial one should.\n\nReturn exactly one JSON object matching output_schema, and nothing else — no prose, no markdown, no code fences.\n- verdict \"correct\": the submission is valid and establishes the exact target — it has no critical_errors. Still list under gaps every step left less justified than the rigor level asks for; report them honestly even when they do not overturn a correct argument.\n- verdict \"incorrect\": the submission does not establish the target as written — it has at least one critical_error. List them. This rejects the argument; it does not assert the target is false.\n- verdict \"disproved\": the exact target statement is itself false; provide a self-contained refutation.",
+    "output_schema": {
+      "critical_errors": [
+        "string: each a wrong or invalid step that breaks the argument"
+      ],
+      "gaps": [
+        "string: each a necessary step left missing or unjustified"
+      ],
+      "nonblocking_comments": [
+        "string: each an observation that does not affect validity"
+      ],
+      "refutation": "string: self-contained counterexample, nonempty iff verdict is disproved",
+      "repair_hints": "string: concrete guidance for fixing the errors and gaps, or empty",
+      "summary": "string: one or two sentences stating the overall judgement",
+      "verdict": "correct | incorrect | disproved"
+    },
+    "protocol": {
+      "name": "qmd-prover-independent-verifier",
+      "version": 6
+    },
+    "schema_version": 6,
+    "scope": {
+      "direct_dependency_ids": [
+        "lem-bp-asymptotic",
+        "lem-near-circle-conformal",
+        "lem-regular-polygon-asymptotic",
+        "lem-signed-turn-lower-bound"
+      ],
+      "source_file": "workspace/large-n-proof.qmd",
+      "type": "local-conditional-check"
+    },
+    "target": {
+      "id": "lem-two-reflex-exclusion",
+      "identity": {
+        "proof_hash": "sha256:fdbec3f9fdd188c1ddb761f65398d244fb57b6a1b316eef65f4971d4b88e92de",
+        "statement_hash": "sha256:463ff56188bed04b01984ebc39abf956b405df10281eaa091e6ae90f035a3a13"
+      },
+      "kind": "lemma",
+      "proof": "Assume for contradiction that there is a sequence of such polygons with $N\\to\\infty$ and $J(P)\\le J(R_{N-1})$. If there are at least two reflex corners, the number $p$ of convex corners is at most $N-2$. By @lem-near-circle-conformal, $S\\le CN^{-3}$, and @lem-signed-turn-lower-bound gives\n$$\n\\frac{J(P)}{\\pi j^2}\\ge1+4B_p-C S^{3/2}\\sqrt{\\log(e/S)}.\n$$\nBy @lem-bp-asymptotic, $B_p\\ge B_{N-2}$ and\n$$\nB_{N-2}=\\zeta(3)(N-2)^{-3}+O(N^{-5}).\n$$\nThe conformal estimate makes the error $o(N^{-4})$. By @lem-regular-polygon-asymptotic,\n$$\n4B_{N-2}-\\frac{4\\zeta(3)}{(N-1)^3}=12\\zeta(3)N^{-4}+O(N^{-5})>0\n$$\nfor large $N$, so the lower bound is strictly larger than $J(R_{N-1})/(\\pi j^2)$, contradicting the assumed upper bound.",
+      "source": {
+        "file": "workspace/large-n-proof.qmd"
+      },
+      "statement": "There is $N_1$ such that no stationary admissible $N$-gon in the sense of @def-stationary-polygon, with at least two reflex corners, satisfying @lem-edge-moments, @lem-spectral-core, and the regime of @lem-near-circle-conformal, and with $J$ as in @def-j-functional, satisfies\n$$\nJ(P)\\le J(R_{N-1})\n$$\nfor $N\\ge N_1$.",
+      "title": "At least two reflex corners are excluded",
+      "verification_mode": "proof"
+    },
+    "task": "local-conditional-mathematical-verification"
+  },
+  "packet_hash": "sha256:3f217760d5c132fd9a124e99f79ac9172b3190ed934682b09289ba383bea8e9b",
+  "proof_hash": "sha256:fdbec3f9fdd188c1ddb761f65398d244fb57b6a1b316eef65f4971d4b88e92de",
+  "report": {
+    "critical_errors": [],
+    "gaps": [
+      "The final comparison should explicitly include the O(N^{-9/2}) remainder in the regular-polygon asymptotic: the difference is 12ζ(3)N^{-4}+O(N^{-9/2})+o(N^{-4}), which is still positive for large N.",
+      "The argument implicitly requires πj^2>0 when comparing the normalized inequalities with the assumed unnormalized inequality; this should be stated or cited from the definition of j."
+    ],
+    "nonblocking_comments": [],
+    "refutation": "",
+    "repair_hints": "Add the explicit subtraction of the regular-polygon remainder and state positivity of the normalization factor πj^2 before comparing normalized quantities.",
+    "summary": "The proof establishes the claimed exclusion for sufficiently large N. Its leading asymptotic gap is of order N^{-4}, while both the conformal error and the regular-polygon remainder are smaller.",
+    "verdict": "correct"
+  },
+  "schema_version": 8,
+  "scope": {
+    "direct_dependency_ids": [
+      "lem-bp-asymptotic",
+      "lem-near-circle-conformal",
+      "lem-regular-polygon-asymptotic",
+      "lem-signed-turn-lower-bound"
+    ],
+    "source_file": "workspace/large-n-proof.qmd",
+    "type": "local-conditional-check"
+  },
+  "statement_hash": "sha256:463ff56188bed04b01984ebc39abf956b405df10281eaa091e6ae90f035a3a13",
+  "target": "lem-two-reflex-exclusion",
+  "verification_key": "sha256:0a4a31cf84ff8feb32cb42ed41516e8fbe10561c2d03366b16ad15a106f60854",
+  "verified_at": "2026-10-31T21:23:57.521Z"
+}
